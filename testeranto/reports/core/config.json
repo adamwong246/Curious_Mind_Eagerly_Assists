@@ -1,0 +1,40 @@
+{
+  "tests": [
+    [
+      "test/llm.test.ts",
+      "node",
+      {
+        "ports": 0
+      },
+      []
+    ],
+    [
+      "test/memory.test.ts",
+      "node",
+      {
+        "ports": 0
+      },
+      []
+    ],
+    [
+      "test/nucleus.test.ts",
+      "node",
+      {
+        "ports": 0
+      },
+      []
+    ]
+  ],
+  "ports": [
+    "3001"
+  ],
+  "src": "src",
+  "debugger": false,
+  "minify": false,
+  "clearScreen": false,
+  "externals": [],
+  "importPlugins": [],
+  "nodePlugins": [],
+  "webPlugins": [],
+  "buildDir": "/Users/adam/Code/untitledAiProject0/testeranto/bundles/core"
+}

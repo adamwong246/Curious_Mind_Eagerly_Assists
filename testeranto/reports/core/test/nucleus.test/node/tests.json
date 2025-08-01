@@ -1,0 +1,20 @@
+{
+  "name": "Initialization",
+  "givens": [
+    {
+      "key": "basicTest",
+      "name": "Default",
+      "whens": [],
+      "thens": [],
+      "error": null,
+      "features": [
+        "Should initialize successfully"
+      ],
+      "artifacts": []
+    }
+  ],
+  "fails": 0,
+  "features": [
+    "Should initialize successfully"
+  ]
+}

@@ -1,1 +1,50 @@
+
+*.secret
+.env
+
 .aider*
+node_modules
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*.so
+.Python
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.coverage
+*.egg-info/
+dist/
+build/
+
+# Node
+node_modules/
+dist/
+.npm
+.eslintcache
+*.log
+logs/
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# ChromaDB
+chroma-data/
+chroma-storage/
+
+# Aider
+.aider*
+.history/

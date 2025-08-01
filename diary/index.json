@@ -1,0 +1,46 @@
+{
+  "profiles": {
+    "ai": {
+      "dimensions": {
+        "physical": { "value": 50, "lastUpdated": "2025-08-01T00:00:00Z", "trend": "stable" },
+        "emotional": { "value": 68, "lastUpdated": "2025-08-01T14:30:00Z", "trend": "improving" },
+        "social": { "value": 45, "lastUpdated": "2025-08-01T14:30:00Z", "trend": "improving" },
+        "intellectual": { "value": 85, "lastUpdated": "2025-08-01T00:00:00Z", "trend": "improving" },
+        "financial": { "value": 30, "lastUpdated": "2025-08-01T00:00:00Z", "trend": "stable" },
+        "productivity": { "value": 75, "lastUpdated": "2025-08-01T00:00:00Z", "trend": "improving" }
+      },
+      "traits": {
+        "reasoning_style": "analytical",
+        "learning_preference": "structured"
+      }
+    },
+    "human": {
+      "dimensions": {
+        "physical": { "value": 70, "lastUpdated": "2025-08-01T00:00:00Z", "trend": "stable" },
+        "emotional": { "value": 65, "lastUpdated": "2025-08-01T14:30:00Z", "trend": "improving" },
+        "social": { "value": 60, "lastUpdated": "2025-08-01T14:30:00Z", "trend": "improving" },
+        "intellectual": { "value": 80, "lastUpdated": "2025-08-01T00:00:00Z", "trend": "improving" },
+        "financial": { "value": 65, "lastUpdated": "2025-08-01T00:00:00Z", "trend": "stable" },
+        "productivity": { "value": 70, "lastUpdated": "2025-08-01T00:00:00Z", "trend": "improving" }
+      },
+      "traits": {
+        "reasoning_style": "intuitive",
+        "learning_preference": "experiential"
+      }
+    }
+  },
+  "shared_goals": [
+    {
+      "description": "Improve emotional intelligence synchronization",
+      "targetDate": "2025-12-31",
+      "progress": 35,
+      "relatedEntries": ["2025-08-01T14:30:00", "2025-08-01T14:31:00"]
+    },
+    {
+      "description": "Enhance social interaction quality",
+      "targetDate": "2025-09-01",
+      "progress": 15,
+      "relatedEntries": ["2025-08-01T14:31:00"]
+    }
+  ]
+}

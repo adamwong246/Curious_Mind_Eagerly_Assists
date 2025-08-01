@@ -1,0 +1,25 @@
+{
+  "errors": [
+    {
+      "id": "",
+      "location": {
+        "column": 23,
+        "file": "src/services/google.ts",
+        "length": 12,
+        "line": 1,
+        "lineText": "import { google } from 'googleapis';",
+        "namespace": "",
+        "suggestion": ""
+      },
+      "notes": [
+        {
+          "location": null,
+          "text": "You can mark the path \"googleapis\" as external to exclude it from the bundle, which will remove this error."
+        }
+      ],
+      "pluginName": "",
+      "text": "Could not resolve \"googleapis\""
+    }
+  ],
+  "warnings": []
+}
