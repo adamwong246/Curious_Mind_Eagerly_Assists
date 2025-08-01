@@ -5,8 +5,6 @@ import * as dotenv from 'dotenv';
 // Load environment variables from .env file
 dotenv.config();
 
-console.log(dotenv.config());
-
 interface EmailMessage {
   id: string;
   subject: string;

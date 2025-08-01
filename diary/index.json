@@ -11,7 +11,15 @@
       },
       "traits": {
         "reasoning_style": "analytical",
-        "learning_preference": "structured"
+        "learning_preference": "structured",
+        "social_skills": {
+          "active_listening": 60,
+          "empathy": 55,
+          "personalization": 40,
+          "context_retention": 65,
+          "sentiment_awareness": 50,
+          "conversation_flow": 45
+        }
       }
     },
     "human": {

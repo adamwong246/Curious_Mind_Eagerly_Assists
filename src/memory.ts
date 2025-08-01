@@ -1,15 +1,18 @@
 import { ProfileManager } from './profile';
 import { GoogleIntegration } from './services/google';
+import { SocialEngine } from './social';
 
 export class MemoryManager {
   private memory: string[] = [];
   private autonomousEnabled = true;
   public profile: ProfileManager;
   public google: GoogleIntegration;
+  public social: SocialEngine;
 
   constructor() {
     this.profile = new ProfileManager();
     this.google = new GoogleIntegration();
+    this.social = new SocialEngine();
   }
 
   async initialize() {
@@ -30,7 +33,10 @@ export class MemoryManager {
   }
 
   async storeInteraction(input: string, output: string): Promise<void> {
-    this.memory.push(`Input: ${input}\nOutput: ${output}`);
+    const interaction = `Input: ${input}\nOutput: ${output}`;
+    this.memory.push(interaction);
+    this.social.recordInteraction(interaction);
+    
     if (this.memory.length > 10) {
       this.memory.shift(); // Keep only last 10 interactions
     }

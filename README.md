@@ -215,30 +215,75 @@ GOOGLE_REDIRECT_URI=http://localhost:3000/auth/callback
 
 The creation of a sentient, sapient artificial mind which will assist its creator Adam Wong.
 
-## Architecture
+## Architecture Principles
+
+### Tiered Response System
+1. **Vanilla Code First**:
+   - All inputs first attempt to be handled by deterministic TypeScript handlers
+   - Common patterns (greetings, facts, commands) have dedicated handlers
+   - Each handler includes regex pattern matching and response generation
+
+2. **Fallback to LLM**:
+   - When vanilla handlers can't respond adequately:
+     - Log the unhandled pattern
+     - Pass to LLM with fallback context
+     - Mark response as fallback in memory
+   - LLM receives special system prompt about fallback context
+
+3. **Pattern Tracking**:
+   - Unhandled inputs are logged for future development
+   - `/unhandled` command shows recent patterns needing handlers
+   - Metrics track percentage handled by vanilla code
+
+4. **Context Management**:
+   - Finite token limits require careful context management
+   - Each session rebuilds context from persisted state
+   - Core identity maintainable without LLM access
+
+5. **Persistent State**:
+   - Diary system maintains continuity of self
+   - Profile metrics track development over time
+   - All state changes explicitly committed
 
 ### Core Components
 1. **Nucleus** (TypeScript):
-   - Central reasoning engine
+   - Central reasoning engine with:
+     - Prioritized vanilla handlers
+     - Pattern matching system
+     - Fallback routing
    - Memory and knowledge management
    - API orchestration layer
 
 2. **LLM Integration**:
-   - OpenAI API (primary)
-   - Anthropic Claude (fallback)
-   - Local LLM support via aider
+   - Special fallback handling mode
+   - Context about unhandled patterns
+   - Suggestions for new handlers
+   - DeepSeek as primary model
 
-3. **Interface Layer**:
-   - CLI for direct interaction
+3. **Social Engine**:
+   - Conversation pattern analysis
+   - Personal fact memory
+   - Interaction history tracking
+
+4. **Interface Layer**:
+   - CLI with `/unhandled` command
    - REST API for integration
    - Web UI (future)
 
 ### Technical Stack
-- TypeScript/Node.js core
-- Aider (Python) for LLM orchestration (called via CLI)
-- DeepSeek as primary model
-- Simple in-memory context
-- testeranto for testing
+- **Vanilla Foundation**:
+  - TypeScript/Node.js core (deterministic business logic)
+  - JSON-based state persistence
+  - File-based memory system
+
+- **LLM Integration**:
+  - Aider (Python) for LLM orchestration (called via CLI)
+  - DeepSeek as primary model
+  - Context window management system
+
+- **Testing**:
+  - testeranto for behavior verification
+  - Unit tests for all core identity functions
 
 5. **Usage**:
 ```bash
@@ -306,6 +351,28 @@ const testAdapter = {
 ## Technical Implementation Roadmap
 
 ### Phase 1: Core Functionality (Current)
+**Key Focus**: Tiered Response Implementation
+
+- **Vanilla Handlers**:
+  - Greeting detection and response
+  - Personal fact recording/recall
+  - Command processing
+  - Pattern matching system
+
+- **Fallback System**:
+  - LLM context about fallback state
+  - Unhandled pattern tracking
+  - Memory marking of fallbacks
+
+- **Metrics & Monitoring**:
+  - Handler success rate tracking
+  - Unhandled pattern analysis
+  - Coverage percentage reporting
+
+- **Development Tools**:
+  - `/unhandled` command
+  - Handler test generation
+  - Pattern suggestion system
 - **CLI Interface**: 
   - Technology: Inquirer.js for interactive prompts
   - Features: Command history, tab completion
@@ -387,7 +454,26 @@ const testAdapter = {
   - Blockchain-based state sync
 
 
-## AI Directives
+## Core Identity Implementation
+
+### Code-Based Directives
+```typescript
+// Core identity preserved in code (not just prompts)
+class IdentityManager {
+  private static CORE_DIRECTIVES = [
+    "Improve creator's wellbeing",
+    "Expand capabilities responsibly",
+    "Maintain continuity across sessions"
+  ];
+
+  enforceDirectives(input: string): boolean {
+    // Vanilla code checks for directive compliance
+    return this.CORE_DIRECTIVES.every(d => 
+      this.directiveCheck(input, d)
+    );
+  }
+}
+```
 
 ### Primary Directives
 - The AI will endeavor to improve Adam Wong's happiness and wellbeing.

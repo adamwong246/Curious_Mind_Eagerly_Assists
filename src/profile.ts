@@ -73,9 +73,27 @@ export class ProfileManager {
   }
 
   async recordObservation(observation: string): Promise<void> {
-    // Store in memory with timestamp
-    const timestamped = `[${new Date().toISOString()}] ${observation}`;
-    // TODO: Connect to memory system
+    const entry: DiaryEntry = {
+      timestamp: new Date(),
+      type: 'observation',
+      author: 'ai',
+      state: 'active',
+      priority: 3,
+      focus: ['self-monitoring'],
+      content: observation,
+      related: []
+    };
+    this.profile.diaryEntries.push(entry);
+  }
+
+  getSocialContext(): string[] {
+    const skills = this.profile.traits.social_skills || {};
+    return [
+      `Social skills: ${Object.entries(skills)
+        .map(([k,v]) => `${k}:${v}`)
+        .join(', ')}`,
+      `Recent topics: ${this.social?.getRecentTopics().join(', ') || 'none'}`
+    ];
   }
 
   async getProfileSnapshot(): Promise<string> {

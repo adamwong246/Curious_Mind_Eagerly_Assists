@@ -1,10 +1,19 @@
 import * as dotenv from 'dotenv';
 import express from 'express';
+
+// ANSI color codes
+export const COLORS = {
+  vanilla: '\x1b[36m', // Cyan
+  llm: '\x1b[35m', // Magenta
+  system: '\x1b[33m', // Yellow
+  reset: '\x1b[0m'
+};
 dotenv.config();
 
 import { Nucleus } from './nucleus';
 import { MemoryManager } from './memory';
 import { LLMIntegration } from './llm';
+import { Logger } from './logger';
 
 const app = express();
 app.use(express.json());
@@ -26,6 +35,21 @@ class UntitledAI {
     this.setupServer();
   }
 
+  private getTimeOfDay(): 'morning'|'afternoon'|'evening' {
+    const hour = new Date().getHours();
+    if (hour < 12) return 'morning';
+    if (hour < 18) return 'afternoon';
+    return 'evening';
+  }
+
+  private getLastInteractionHours(memory: MemoryManager): number | undefined {
+    if (memory.social.getInteractionPatterns().frequency === 0) {
+      return undefined;
+    }
+    const lastInteraction = memory.social.getInteractionPatterns().timeBetweenInteractions;
+    return lastInteraction ? lastInteraction / (1000 * 60 * 60) : undefined;
+  }
+  
   private setupServer() {
     this.server.use(express.json());
 
@@ -58,16 +82,28 @@ class UntitledAI {
   }
 
   async initialize() {
-    await this.memory.initialize();
-    await this.llm.initialize();
+    // try {
+      // await this.memory.initialize();
+      // await this.llm.initialize();
 
-    this.server.listen(this.serverPort, () => {
-      console.log(`Server running on port ${this.serverPort}`);
-      console.log(`OAuth callback URL: http://localhost:${this.serverPort}/auth/google/callback`);
-    });
+    //   // Verify LLM connectivity
+    //   try {
+    //     await this.llm.generateResponse('test', []);
+    //   } catch (error) {
+    //     console.error(`${COLORS.system}[Warning] LLM connectivity issue: ${error instanceof Error ? error.message : String(error)}${COLORS.reset}`);
+    //   }
 
-    console.log('Untitled AI initialized (in-memory mode)');
-    console.log('Type /lock to disable autonomous mode, /unlock to enable');
+    //   this.server.listen(this.serverPort, () => {
+    //     console.log(`Server running on port ${this.serverPort}`);
+    //     console.log(`OAuth callback URL: http://localhost:${this.serverPort}/auth/google/callback`);
+    //   });
+
+    //   console.log('Untitled AI initialized (in-memory mode)');
+    //   console.log('Type /lock to disable autonomous mode, /unlock to enable');
+    // } catch (error) {
+    //   console.error(`${COLORS.system}[Error] Initialization failed: ${error instanceof Error ? error.message : String(error)}${COLORS.reset}`);
+    //   process.exit(1);
+    // }
   }
 }
 
@@ -76,13 +112,25 @@ const ai = new UntitledAI();
 // Initialize and set up CLI
 async function main() {
   try {
+    
     await ai.initialize();
+    
+    
     console.log('AI ready. Type /lock to disable autonomous mode, /unlock to enable');
     
-    // Set up stdin listener
+    // Set up controlled stdin listener
+    const showPrompt = () => process.stdout.write('> ');
+    showPrompt();
+    
     process.stdin.setEncoding('utf8');
     process.stdin.on('data', async (data) => {
+      // Ignore empty inputs
       const input = data.toString().trim();
+      if (!input) {
+        showPrompt();
+        return;
+      }
+      // const input = data.toString().trim();
       
       if (input === '/profile') {
         console.log(await ai.memory.profile.getProfileSnapshot());
@@ -137,17 +185,41 @@ async function main() {
         ai.nucleus.enableAutonomousMode();
         console.log('Autonomous mode enabled');
       } else if (input) {
+        Logger.info(`User input: "${input}"`);
+        
         try {
-          const response = await ai.nucleus.processInput(input);
-          console.log('AI:', response);
+          // First try vanilla handlers
+          const handled = await ai.nucleus.processInput(input);
+          
+          if (handled) {
+            // Vanilla handler succeeded - response was already handled
+            process.stdout.write('\n> ');
+            return; // Exit this handler iteration
+          }
+
+          try {
+            // Only fallback to LLM if vanilla explicitly returned [Fallback]
+            Logger.info('No vanilla handler matched, falling back to LLM');
+            process.stdout.write(`${COLORS.system}[Notice] Processing with LLM...${COLORS.reset}\n`);
+            
+            const llmResponse = await ai.nucleus.processLLMFallback(input);
+            Logger.llm(`LLM response: ${llmResponse}`);
+            console.log(`${COLORS.llm}${llmResponse.replace('[Fallback] ', '')}${COLORS.reset}`);
+          } catch (err) {
+            Logger.error(`LLM fallback error: ${err}`);
+            console.error(`${COLORS.system}[Error] LLM processing failed: ${err instanceof Error ? err.message : String(err)}${COLORS.reset}`);
+          }
         } catch (err) {
-          console.error('Error processing input:', err);
+          Logger.error(`LLM fallback error: ${err}`);
+          console.error(`${COLORS.system}[Error] LLM processing failed: ${err instanceof Error ? err.message : String(err)}${COLORS.reset}`);
         }
+        
+        process.stdout.write('\n> ');
       }
     });
     
     // Start self-improvement loop
-    await ai.nucleus.startSelfImprovementLoop();
+    // await ai.nucleus.startSelfImprovementLoop();
     
   } catch (err) {
     console.error('Failed to initialize AI:', err);
