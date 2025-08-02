@@ -6,6 +6,7 @@ import { Logger } from './logger';
 const COLORS = {
   system: '\x1b[33m', // Yellow
   llm: '\x1b[35m', // Magenta  
+  vanilla: '\x1b[0m',
   reset: '\x1b[0m'
 };
 

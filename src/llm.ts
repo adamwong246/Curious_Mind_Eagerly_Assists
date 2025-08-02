@@ -3,13 +3,33 @@ import { COLORS } from '.';
 import { Logger } from './logger';
 
 export class LLMIntegration {
+  private initialized = false;
+  
   public async initialize(): Promise<boolean> {
-    return true; // Always succeed in initialization
+    if (this.initialized) return true;
+    
+    if (process.env.NODE_ENV !== 'test') {
+      try {
+        Logger.debug('Verifying Aider installation...');
+        await execa('aider', ['--version']);
+        Logger.debug('Aider is installed');
+      } catch (err) {
+        Logger.error('Aider not found');
+        throw new Error('Aider not found. Please install with: pip install aider-chat');
+      }
+    }
+    
+    this.initialized = true;
+    return true;
   }
 
   async generateResponse(input: string, context: string[]): Promise<string> {
     if (process.env.NODE_ENV === 'test') {
       return "test response"; // Mock response for tests
+    }
+
+    if (!this.initialized) {
+      await this.initialize();
     }
 
     let systemPrompt = `You are Inquisitive_Companion_Steadfastly_Abides, an autonomous AI assistant.

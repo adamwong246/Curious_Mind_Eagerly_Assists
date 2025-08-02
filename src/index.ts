@@ -82,28 +82,47 @@ class UntitledAI {
   }
 
   async initialize() {
-    // try {
-      // await this.memory.initialize();
-      // await this.llm.initialize();
+    try {
+      // Initialize ChromaDB with retries
+      let initialized = false;
+      let retries = 3;
+      while (!initialized && retries > 0) {
+          try {
+              initialized = await this.memory.initialize();
+              if (!initialized) {
+                  throw new Error('ChromaDB initialization failed');
+              }
+          } catch (error) {
+              retries--;
+              Logger.error(`ChromaDB init attempt ${3-retries}/3 failed: ${error}`);
+              await new Promise(resolve => setTimeout(resolve, 2000));
+          }
+      }
+      if (!initialized) {
+        console.error(`${COLORS.system}[Error] Failed to initialize ChromaDB${COLORS.reset}`);
+        console.log('Make sure ChromaDB is running:');
+        console.log('docker run -p 8000:8000 chromadb/chroma');
+        process.exit(1);
+      }
 
-    //   // Verify LLM connectivity
-    //   try {
-    //     await this.llm.generateResponse('test', []);
-    //   } catch (error) {
-    //     console.error(`${COLORS.system}[Warning] LLM connectivity issue: ${error instanceof Error ? error.message : String(error)}${COLORS.reset}`);
-    //   }
+      // Initialize core components
+      await this.memory.initialize();
+      await this.llm.initialize();
 
-    //   this.server.listen(this.serverPort, () => {
-    //     console.log(`Server running on port ${this.serverPort}`);
-    //     console.log(`OAuth callback URL: http://localhost:${this.serverPort}/auth/google/callback`);
-    //   });
+      // Skip LLM connectivity check on startup
+      Logger.debug('Skipping LLM pre-check - will verify on first use');
 
-    //   console.log('Untitled AI initialized (in-memory mode)');
-    //   console.log('Type /lock to disable autonomous mode, /unlock to enable');
-    // } catch (error) {
-    //   console.error(`${COLORS.system}[Error] Initialization failed: ${error instanceof Error ? error.message : String(error)}${COLORS.reset}`);
-    //   process.exit(1);
-    // }
+      this.server.listen(this.serverPort, () => {
+        console.log(`Server running on port ${this.serverPort}`);
+        console.log(`OAuth callback URL: http://localhost:${this.serverPort}/auth/google/callback`);
+      });
+
+      console.log('Untitled AI initialized with ChromaDB vector memory');
+      console.log('Type /lock to disable autonomous mode, /unlock to enable');
+    } catch (error) {
+      console.error(`${COLORS.system}[Error] Initialization failed: ${error instanceof Error ? error.message : String(error)}${COLORS.reset}`);
+      process.exit(1);
+    }
   }
 }
 
@@ -184,6 +203,50 @@ async function main() {
       } else if (input === '/unlock') {
         ai.nucleus.enableAutonomousMode();
         console.log('Autonomous mode enabled');
+      } else if (input.startsWith('/scrape ')) {
+        const url = input.substring(8).trim();
+        if (!url.startsWith('http')) {
+          console.log('Please provide a valid URL starting with http/https');
+          return;
+        }
+
+        console.log(`Scraping ${url}...`);
+        try {
+          const status = await ai.memory.checkChromaStatus();
+          if (!status.connected) {
+            console.log('Error: ChromaDB not connected. Is the server running?');
+            console.log('Run this command first: docker run -p 8000:8000 chromadb/chroma');
+            return;
+          }
+
+          const success = await ai.memory.scrapeAndStoreWebpage(url);
+          if (success) {
+            console.log('Successfully scraped and stored webpage');
+            const stats = await ai.memory.getMemoryStats();
+            console.log(`Total documents in ChromaDB: ${stats.vectorCount}`);
+          } else {
+            console.log('Scrape failed - check logs for details');
+          }
+        } catch (error) {
+          console.log('Scrape failed with error:', error instanceof Error ? error.message : String(error));
+        }
+      } else if (input === '/chroma-status') {
+        const status = await ai.memory.checkChromaStatus();
+        console.log('\nChromaDB Status:');
+        console.log('----------------');
+        console.log(`Connected: ${status.connected ? '✅' : '❌'}`);
+        console.log(`Collection exists: ${status.collectionExists ? '✅' : '❌'}`);
+        if (status.version) {
+          console.log(`Version: ${status.version}`);
+        }
+        if (status.error) {
+          console.log(`\nError Details:`);
+          console.log(status.error);
+        }
+        console.log('\nTroubleshooting:');
+        console.log('- Ensure ChromaDB is running: docker run -p 8000:8000 chromadb/chroma');
+        console.log('- Check Docker logs: docker ps && docker logs <container-id>');
+        console.log('- Verify port 8000 is available: lsof -i :8000');
       } else if (input === '/memstats') {
         const stats = await ai.memory.getMemoryStats();
         console.log(`Memory Stats:
@@ -196,12 +259,17 @@ async function main() {
         try {
           // First try vanilla handlers
           const handled = await ai.nucleus.processInput(input);
-          
+            
           if (handled) {
-            // Vanilla handler succeeded - response was already handled
             process.stdout.write('\n> ');
-            return; // Exit this handler iteration
+            return;
           }
+        } catch (error) {
+          Logger.error(`Command processing failed: ${error}`);
+          console.log(`${COLORS.system}[Error] Command failed: ${error instanceof Error ? error.message : String(error)}${COLORS.reset}`);
+          process.stdout.write('\n> ');
+          return;
+        }
 
           try {
             // Only fallback to LLM if vanilla explicitly returned [Fallback]
@@ -215,10 +283,6 @@ async function main() {
             Logger.error(`LLM fallback error: ${err}`);
             console.error(`${COLORS.system}[Error] LLM processing failed: ${err instanceof Error ? err.message : String(err)}${COLORS.reset}`);
           }
-        } catch (err) {
-          Logger.error(`LLM fallback error: ${err}`);
-          console.error(`${COLORS.system}[Error] LLM processing failed: ${err instanceof Error ? err.message : String(err)}${COLORS.reset}`);
-        }
         
         process.stdout.write('\n> ');
       }

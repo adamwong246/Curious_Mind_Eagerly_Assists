@@ -39,7 +39,7 @@ export class SocialEngine {
 
   rememberPersonalFact(fact: {subject: string; detail: string, importance?: number}): void {
     this.personalFacts.set(fact.subject, fact.detail);
-    this.recordInteraction(`Remembered fact: ${fact.subject}`);
+    // this.recordInteraction(`Remembered fact: ${fact.subject}`);
   }
 
   recordInteraction(content: string, sentiment?: number): void {
