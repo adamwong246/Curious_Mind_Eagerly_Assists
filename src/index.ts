@@ -184,6 +184,12 @@ async function main() {
       } else if (input === '/unlock') {
         ai.nucleus.enableAutonomousMode();
         console.log('Autonomous mode enabled');
+      } else if (input === '/memstats') {
+        const stats = await ai.memory.getMemoryStats();
+        console.log(`Memory Stats:
+- Short-term: ${stats.shortTerm} interactions
+- Vector DB: ${stats.vectorCount} stored memories
+- Last stored: ${stats.lastStored?.toLocaleString() || 'never'}`);
       } else if (input) {
         Logger.info(`User input: "${input}"`);
         
