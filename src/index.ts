@@ -24,6 +24,11 @@ class UntitledAI {
   private llm: LLMIntegration;
   private server: express.Express;
   private serverPort: number;
+  private unhandledInputs: Array<{
+    input: string;
+    timestamp: Date;
+    count: number;
+  }> = [];
 
   constructor() {
     this.memory = new MemoryManager();
@@ -212,18 +217,11 @@ async function main() {
 
         console.log(`Scraping ${url}...`);
         try {
-          const status = await ai.memory.checkChromaStatus();
-          if (!status.connected) {
-            console.log('Error: ChromaDB not connected. Is the server running?');
-            console.log('Run this command first: docker run -p 8000:8000 chromadb/chroma');
-            return;
-          }
-
           const success = await ai.memory.scrapeAndStoreWebpage(url);
           if (success) {
             console.log('Successfully scraped and stored webpage');
-            const stats = await ai.memory.getMemoryStats();
-            console.log(`Total documents in ChromaDB: ${stats.vectorCount}`);
+            const { shortTerm } = await ai.memory.getMemoryStats();
+            console.log(`Total interactions in memory: ${shortTerm}`);
           } else {
             console.log('Scrape failed - check logs for details');
           }
@@ -231,28 +229,40 @@ async function main() {
           console.log('Scrape failed with error:', error instanceof Error ? error.message : String(error));
         }
       } else if (input === '/chroma-status') {
-        const status = await ai.memory.checkChromaStatus();
-        console.log('\nChromaDB Status:');
-        console.log('----------------');
-        console.log(`Connected: ${status.connected ? '✅' : '❌'}`);
-        console.log(`Collection exists: ${status.collectionExists ? '✅' : '❌'}`);
-        if (status.version) {
-          console.log(`Version: ${status.version}`);
+        const { connected } = await ai.memory.checkChromaStatus();
+        console.log(`ChromaDB: ${connected ? '✅ Connected' : '❌ Not connected'}`);
+      } else if (input === '/unhandled') {
+        const patterns = ai.unhandledInputs.sort((a, b) => b.count - a.count);
+        if (patterns.length === 0) {
+          console.log('No unhandled patterns recorded');
+        } else {
+          console.log('Unhandled patterns needing handlers:');
+          patterns.forEach((p, i) => {
+            console.log(`${i+1}. "${p.input}"`);
+            console.log(`   Count: ${p.count}, Last: ${p.timestamp.toLocaleString()}`);
+          });
         }
-        if (status.error) {
-          console.log(`\nError Details:`);
-          console.log(status.error);
-        }
-        console.log('\nTroubleshooting:');
-        console.log('- Ensure ChromaDB is running: docker run -p 8000:8000 chromadb/chroma');
-        console.log('- Check Docker logs: docker ps && docker logs <container-id>');
-        console.log('- Verify port 8000 is available: lsof -i :8000');
       } else if (input === '/memstats') {
-        const stats = await ai.memory.getMemoryStats();
+        const { shortTerm, lastStored, scrapedCount } = await ai.memory.getMemoryStats();
         console.log(`Memory Stats:
-- Short-term: ${stats.shortTerm} interactions
-- Vector DB: ${stats.vectorCount} stored memories
-- Last stored: ${stats.lastStored?.toLocaleString() || 'never'}`);
+- Short-term: ${shortTerm} interactions
+- Scraped pages: ${scrapedCount}
+- Last stored: ${lastStored?.toLocaleString() || 'never'}`);
+      } else if (input.startsWith('/show-scrape ')) {
+        const url = input.substring('/show-scrape '.length).trim();
+        const scrapes = await ai.memory.getScrapedContent(url);
+        
+        if (scrapes.length === 0) {
+          console.log('No scraped content found' + (url ? ` for ${url}` : ''));
+          return;
+        }
+        
+        console.log(`Found ${scrapes.length} scraped pages:`);
+        scrapes.forEach((scrape, i) => {
+          console.log(`\n${i+1}. ${scrape.url}`);
+          console.log(`   Scraped at: ${scrape.timestamp.toLocaleString()}`);
+          console.log(`   Content preview: ${scrape.content.substring(0, 100)}...`);
+        });
       } else if (input) {
         Logger.info(`User input: "${input}"`);
         
@@ -271,17 +281,20 @@ async function main() {
           return;
         }
 
-          try {
-            // Only fallback to LLM if vanilla explicitly returned [Fallback]
-            Logger.info('No vanilla handler matched, falling back to LLM');
-            process.stdout.write(`${COLORS.system}[Notice] Processing with LLM...${COLORS.reset}\n`);
-            
-            const llmResponse = await ai.nucleus.processLLMFallback(input);
-            Logger.llm(`LLM response: ${llmResponse}`);
-            console.log(`${COLORS.llm}${llmResponse.replace('[Fallback] ', '')}${COLORS.reset}`);
-          } catch (err) {
-            Logger.error(`LLM fallback error: ${err}`);
-            console.error(`${COLORS.system}[Error] LLM processing failed: ${err instanceof Error ? err.message : String(err)}${COLORS.reset}`);
+          Logger.info('No vanilla handler matched for input');
+          console.log(`${COLORS.system}[Notice] I don't have a handler for that yet. This interaction has been logged for future improvement.${COLORS.reset}`);
+          
+          // Track unhandled input
+          const existing = ai.unhandledInputs.find(u => u.input === input);
+          if (existing) {
+            existing.count++;
+            existing.timestamp = new Date();
+          } else {
+            ai.unhandledInputs.push({
+              input,
+              timestamp: new Date(),
+              count: 1
+            });
           }
         
         process.stdout.write('\n> ');

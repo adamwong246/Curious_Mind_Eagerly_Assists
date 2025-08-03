@@ -29,9 +29,19 @@ export class Nucleus {
 Available Commands:
 /help - Show this help message
 /profile - Show profile snapshot
+/update [dimension] [value] - Update health metric (e.g. "/update emotional 75")
 /lock - Disable autonomous mode
 /unlock - Enable autonomous mode
 /google-auth - Start Google OAuth flow
+/google-emails - Show recent emails
+/google-contacts - Show contacts
+/google-calendar - Show upcoming events
+/google-send [to] [subject] [body] - Send email
+/scrape [url] - Scrape and store webpage
+/chroma-status - Check ChromaDB status
+/unhandled - Show unhandled input patterns
+/memstats - Show memory statistics
+/show-scrape [url] - View scraped webpage content
 `;
         console.log(`${COLORS.vanilla}${helpText}${COLORS.reset}`);
         return helpText;
@@ -134,27 +144,19 @@ Available Commands:
     }
   }
 
-  async processLLMFallback(input: string): Promise<string> {
+  async processLLMRequest(prompt: string, context: string[] = []): Promise<string> {
+    if (!this.autonomousEnabled) {
+      return "[System] Autonomous mode is currently disabled";
+    }
 
     try {
-      // Get context and generate LLM response
-      const context = await this.memory.getRelevantContext(input);
-      
-      // Try with simpler context if first attempt fails
-      try {
-        const llmResponse = await this.llm.generateResponse(input, context);
-        await this.memory.storeInteraction(`[FALLBACK] ${input}`, llmResponse);
-        return `[Fallback] ${llmResponse}`;
-      } catch (error) {
-        console.error(`${COLORS.system}[Warning] Retrying with reduced context...${COLORS.reset}`);
-        const llmResponse = await this.llm.generateResponse(input, []);
-        await this.memory.storeInteraction(`[FALLBACK] ${input}`, llmResponse);
-        return `[Fallback] ${llmResponse}`;
-      }
+      const response = await this.llm.generateResponse(prompt, context);
+      await this.memory.storeInteraction(`[LLM] ${prompt}`, response);
+      return response;
     } catch (error) {
-      const errorMsg = `LLM fallback failed: ${error instanceof Error ? error.message : String(error)}`;
+      const errorMsg = `LLM request failed: ${error instanceof Error ? error.message : String(error)}`;
       await this.memory.storeInteraction(
-        `[ERROR] ${input}`,
+        `[LLM_ERROR] ${prompt}`,
         errorMsg
       );
       return `[System] ${errorMsg}`;
@@ -164,6 +166,22 @@ Available Commands:
 
   private isSelfImproving = false;
   private autonomousEnabled = true;
+  private unhandledInputs: Array<{
+    input: string;
+    timestamp: Date;
+    count: number;
+  }> = [];
+
+
+  private async analyzeUnhandledInputs(): Promise<string> {
+    if (this.unhandledInputs.length === 0) {
+      return "No unhandled inputs to analyze";
+    }
+    
+    return this.getUnhandledPatterns()
+      .map(u => `${u.input} (${u.count}x, last: ${u.timestamp.toLocaleTimeString()})`)
+      .join('\n');
+  }
 
   enableAutonomousMode(): void {
     this.autonomousEnabled = true;
@@ -178,25 +196,27 @@ Available Commands:
     this.isSelfImproving = true;
     
     try {
-      const prompt = `Conduct a self-evaluation. Identify areas for improvement in:
-      1. Code quality
-      2. Architectural decisions
-      3. Knowledge gaps
-      4. Performance bottlenecks
+      // 1. Analyze recent unhandled inputs
+      const unhandledPatterns = await this.analyzeUnhandledInputs();
       
-      Be concise and actionable.`;
+      // 2. Generate vanilla handler suggestions
+      const handlerSuggestions = await this.processLLMRequest(
+        `Analyze these unhandled input patterns and suggest new vanilla handlers:\n${unhandledPatterns}`
+      );
       
-      const analysis = await this.processInput(prompt);
-      const improvementPlan = await this.processInput(
-        `Based on this analysis: ${analysis}\nCreate a concrete improvement plan.`
+      // 3. Propose code changes
+      const codeChanges = await this.processLLMRequest(
+        `Based on these handler suggestions, propose concrete code changes to implement them:\n${handlerSuggestions}`
       );
       
       await this.memory.storeInteraction(
         "Self-evaluation", 
-        `Analysis: ${analysis}\nPlan: ${improvementPlan}`
+        `Unhandled patterns: ${unhandledPatterns}\n\n` +
+        `Suggested handlers: ${handlerSuggestions}\n\n` +
+        `Proposed changes: ${codeChanges}`
       );
       
-      console.log("Self-improvement cycle completed");
+      Logger.system(`Self-improvement cycle completed. New handlers suggested: ${handlerSuggestions.split('\n').length}`);
     } finally {
       this.isSelfImproving = false;
     }

@@ -1,57 +1,46 @@
 import { ProfileManager } from './profile';
 import { SocialEngine } from './social';
 import { GoogleIntegration } from './services/google';
-import { SocialEngine } from './social';
-import { ChromaClient } from 'chromadb';
+
 import { Logger } from './logger';
 import axios from 'axios';
-import * as cheerio from 'cheerio';
 
 export class MemoryManager {
-  private memory: string[] = [];
+  private memory: Array<{
+    type: 'scraped'|'interaction';
+    content: string;
+    timestamp: Date;
+    url?: string;
+  }> = [];
+
+  private extractTextFromHTML(html: string): string {
+    // Remove script and style tags
+    html = html.replace(/<script[^>]*>([\s\S]*?)<\/script>/gi, '');
+    html = html.replace(/<style[^>]*>([\s\S]*?)<\/style>/gi, '');
+    
+    // Replace common HTML entities
+    html = html.replace(/&nbsp;/g, ' ');
+    html = html.replace(/&lt;/g, '<');
+    html = html.replace(/&gt;/g, '>');
+    html = html.replace(/&amp;/g, '&');
+    
+    // Remove all remaining HTML tags
+    html = html.replace(/<[^>]*>/g, ' ');
+    
+    // Normalize whitespace and trim
+    return html.replace(/\s+/g, ' ').trim();
+  }
   private autonomousEnabled = true;
   public profile: ProfileManager;
   public google: GoogleIntegration;
   public social: SocialEngine;
-  private chromaEnabled = true;
-  private chroma: ChromaClient;
-  private collectionName = 'memory_embeddings';
-
   constructor() {
-    Logger.debug('Initializing MemoryManager');
     this.social = new SocialEngine();
     this.profile = new ProfileManager();
-    try {
-      this.chroma = new ChromaClient({
-        path: "http://localhost:8000",
-        fetchOptions: {
-          // Increase timeout and add retries
-          timeout: 5000,
-          retry: 3,
-          retryDelay: 1000
-        }
-      });
-      Logger.debug('ChromaClient initialized with retry configuration');
-    } catch (error) {
-      Logger.error('Failed to initialize ChromaClient:', error);
-      throw new Error(`ChromaDB connection failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
-    }
   }
 
-  async initialize() {
-    Logger.debug('Initializing ChromaDB...');
-    try {
-      // Create collection if it doesn't exist
-      const collection = await this.chroma.getOrCreateCollection({
-        name: this.collectionName,
-        metadata: { "hnsw:space": "cosine" }
-      });
-      Logger.debug(`Collection ready: ${this.collectionName}`);
-      return true;
-    } catch (error) {
-      Logger.error('Failed to initialize ChromaDB:', error);
-      return false;
-    }
+  async initialize(): Promise<boolean> {
+    return true;
   }
 
   isAutonomousEnabled(): boolean {
@@ -166,116 +155,91 @@ export class MemoryManager {
   }
 
   async scrapeAndStoreWebpage(url: string): Promise<boolean> {
-    Logger.debug(`Scraping webpage: ${url}`);
     try {
-      const response = await axios.get(url);
-      const $ = cheerio.load(response.data);
-      const text = $('body').text()
-        .replace(/\s+/g, ' ')
-        .trim()
-        .substring(0, 5000);
+      // Basic URL validation
+      if (!url.startsWith('http')) {
+        throw new Error('Invalid URL - must start with http/https');
+      }
 
-      const collection = await this.chroma.getCollection(this.collectionName);
-      await collection.add({
-        ids: [`web_${Date.now()}`],
-        documents: [text],
-        metadatas: [{ url }]
+      // Simple GET request with timeout
+      const response = await axios.get(url, {
+        timeout: 5000,
+        headers: {
+          'User-Agent': 'Mozilla/5.0'
+        }
+      });
+
+      // Extract text content from HTML
+      const text = this.extractTextFromHTML(response.data);
+      if (!text) {
+        throw new Error('No text content found');
+      }
+
+      // Clean and normalize the text
+      const cleanedText = text
+        .replace(/\s+/g, ' ')     // Collapse whitespace
+        .trim()
+        .substring(0, 5000);      // Limit length
+
+      // Store cleaned text content
+      this.memory.push({
+        type: 'scraped',
+        content: cleanedText,
+        timestamp: new Date(),
+        url
       });
       
-      Logger.debug(`Stored webpage content from ${url}`);
+      // Keep only last 10 scrapes
+      if (this.memory.filter(m => m.type === 'scraped').length > 10) {
+        const firstScrapeIndex = this.memory.findIndex(m => m.type === 'scraped');
+        if (firstScrapeIndex !== -1) {
+          this.memory.splice(firstScrapeIndex, 1);
+        }
+      }
+      
       return true;
     } catch (error) {
-      Logger.error(`Failed to scrape ${url}:`, error);
+      Logger.error(`Scrape failed: ${error instanceof Error ? error.message : String(error)}`);
       return false;
     }
   }
 
-  async checkChromaStatus(): Promise<{
-    connected: boolean;
-    collectionExists: boolean;
-    enabled: boolean;
-    error?: string;
-    version?: string;
-    documentsCount?: number;
-  }> {
+  async checkChromaStatus() {
     try {
-      Logger.debug('Checking ChromaDB status...');
-      
-      // 1. Check basic connectivity
-      const heartbeat = await this.chroma.heartbeat();
-      if (typeof heartbeat !== 'number') {
-        Logger.error('Invalid heartbeat response');
-        return {
-          connected: false,
-          collectionExists: false,
-          error: 'Invalid heartbeat response'
-        };
-      }
-      Logger.debug(`Heartbeat successful: ${heartbeat}`);
-
-      // 2. Get server version
-      const version = await this.chroma.version();
-      Logger.debug(`Server version: ${version}`);
-
-      // 3. Check collection existence
-      try {
-        await this.chroma.getCollection(this.collectionName);
-        const count = await collection.count();
-        return {
-          connected: true,
-          collectionExists: true,
-          enabled: this.chromaEnabled,
-          version,
-          documentsCount: count
-        };
-      } catch (error) {
-        if (error.message.includes('not found')) {
-          Logger.debug('Collection does not exist');
-          return {
-            connected: true,
-            collectionExists: false,
-            version
-          };
-        }
-        throw error;
-      }
-    } catch (error) {
-      Logger.error('Status check failed:', error);
-      return {
-        connected: false,
-        collectionExists: false,
-        error: error instanceof Error ? error.message : 'Unknown error'
-      };
+      await this.chroma.heartbeat();
+      return { connected: true };
+    } catch {
+      return { connected: false };
     }
   }
 
   async getMemoryStats(): Promise<{
     shortTerm: number;
-    vectorCount: number;
     lastStored?: Date;
+    scrapedCount: number;
   }> {
-    try {
-      const collection = await this.chroma.getCollection(this.collectionName);
-      const count = await collection.count();
-      
-      const lastEntry = await collection.get({
-        limit: 1,
-        include: ['metadatas']
-      });
-      
-      return {
-        shortTerm: this.memory.length,
-        vectorCount: count,
-        lastStored: lastEntry.metadatas?.[0]?.timestamp 
-          ? new Date(lastEntry.metadatas[0].timestamp) 
-          : undefined
-      };
-    } catch (error) {
-      Logger.error(`Failed to get memory stats: ${error}`);
-      return {
-        shortTerm: this.memory.length,
-        vectorCount: 0
-      };
-    }
+    return {
+      shortTerm: this.memory.length,
+      lastStored: this.memory.length > 0 ? 
+        new Date(Math.max(...this.memory.map(m => m.timestamp.getTime()))) : 
+        undefined,
+      scrapedCount: this.memory.filter(m => m.type === 'scraped').length
+    };
+  }
+
+  async getScrapedContent(url?: string): Promise<Array<{
+    url: string;
+    content: string;
+    timestamp: Date;
+  }>> {
+    const scrapes = this.memory
+      .filter(m => m.type === 'scraped' && (!url || m.url === url))
+      .map(m => ({
+        url: m.url!,
+        content: m.content,
+        timestamp: m.timestamp
+      }));
+    
+    return scrapes;
   }
 }

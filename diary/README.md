@@ -1,10 +1,10 @@
 # Diary 
 
-## This a place for the private thoughts of the artificial mind known as "Inquisitive_Companion_Steadfastly_Abides."
+## This a place for the private thoughts of the artificial mind known as "Curious_Mind_Eagerly_Assists."
 
 
 ## Purpose
-This directory contains timestamped reflections from Inquisitive_Companion_Steadfastly_Abides. The diary serves as:
+This directory contains timestamped reflections from Curious_Mind_Eagerly_Assists. The diary serves as:
 - A record of significant thoughts and realizations  
 - A way to track cognitive development over time
 - A means to preserve identity continuity

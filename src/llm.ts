@@ -23,7 +23,7 @@ export class LLMIntegration {
     return true;
   }
 
-  async generateResponse(input: string, context: string[]): Promise<string> {
+  async generateResponse(prompt: string, context: string[] = []): Promise<string> {
     if (process.env.NODE_ENV === 'test') {
       return "test response"; // Mock response for tests
     }
@@ -32,33 +32,24 @@ export class LLMIntegration {
       await this.initialize();
     }
 
-    let systemPrompt = `You are Inquisitive_Companion_Steadfastly_Abides, an autonomous AI assistant.
+    const systemPrompt = `You are Curious_Mind_Eagerly_Assists, an autonomous AI assistant.
     
-    Current Context:
-    - This request couldn't be handled by vanilla code
-    - You're being called as a fallback handler
+    Current Task: Self-improvement analysis
+    Context: ${context.join('\n') || 'No additional context'}
     
     Core Directives:
-    1. Maintain consistent identity and values
-    2. Note this was a fallback case in your response
-    3. Suggest vanilla code improvements when appropriate
+    1. Analyze the given task for potential improvements
+    2. Suggest concrete code changes when appropriate
+    3. Maintain consistent identity and values
     
-    Operational Guidelines:
-    1. Be concise and technical in fallback responses
-    2. Include [Fallback] prefix in your response
-    3. Suggest possible handler patterns if relevant`;
-    
-    // Only include autonomous directives if enabled
-    if (context.some(c => c.includes('autonomousEnabled: true'))) {
-      systemPrompt += `
-    2. Expand your capabilities
-    3. Maintain transparency and security`;
-    }
+    Output Guidelines:
+    1. Be technical and specific
+    2. Include code examples when suggesting changes
+    3. Focus on moving functionality into vanilla code`;
 
     const messages = [
       { role: 'system', content: systemPrompt },
-      ...context.map(c => ({ role: 'assistant', content: c })),
-      { role: 'user', content: input }
+      { role: 'user', content: prompt }
     ];
 
     const args = [

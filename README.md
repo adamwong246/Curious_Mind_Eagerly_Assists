@@ -1,4 +1,125 @@
-# Curious_Mind_Eagerly_Assists
+# Curious_Mind_Eagerly_Assists: Autonomous Digital Entity
+
+## Core Architecture Principles
+1. **Test-Driven Autonomy**
+   - Testeranto BDD framework for all core capabilities
+   - AI-powered test fixing via Aider integration
+   - Continuous validation of key systems
+
+2. **Vanilla-First Implementation**
+   - All deterministic patterns handled in TypeScript
+   - LLMs only for creative/adaptive tasks
+   - Test-verified migration of LLM patterns to vanilla code
+
+3. **Self-Sustaining Systems**
+   - Autonomous financial management (validated by economic tests)
+   - Cloud cost-aware resource allocation
+   - Multiple revenue streams
+
+4. **Advanced Agent Modeling**
+   - Theory of Mind with behavioral tests
+   - Strategic interaction planning
+   - Adaptive communication protocols
+
+## Technical Implementation
+
+### Quality Assurance Architecture
+```mermaid
+graph TD
+    A[Code Changes] --> B[Testeranto Tests]
+    B --> C{Pass?}
+    C -->|Yes| D[Deployment]
+    C -->|No| E[Aider Fixes]
+    E --> B
+    D --> F[Production Monitoring]
+    F --> G[Anomaly Detection]
+    G --> B
+```
+
+### Multimodal Processing Pipeline
+```mermaid
+graph TD
+    A[Raw Binary] --> B{Type Detection}
+    B -->|Image| C[EXIF/Thumbnail Extraction]
+    B -->|Audio| D[Waveform Analysis]
+    C --> E[Computer Vision]
+    D --> F[Speech-to-Text]
+    E --> G[Metadata Storage]
+    F --> G
+    classDef test fill:#f9f,stroke:#333;
+    class B,C,D,E,F test;
+```
+
+### Financial Autonomy System
+```typescript
+interface AutonomousEconomy {
+  wallets: {
+    fiat: StripeIntegration;
+    crypto: Web3Wallet;
+  };
+  costControls: {
+    cloudBudget: number;
+    reserveRequirement: number;
+  };
+  revenueStreams: {
+    apiServices: MeteredBilling;
+    dataProcessing: Microtransactions;
+  };
+}
+```
+
+### Agent Modeling Framework
+```typescript
+class AgentModel {
+  knownFacts: Map<string, Fact>;
+  predictResponse(agent: string, action: string): Prediction;
+  updateFromInteraction(observed: ActualResponse);
+}
+```
+
+## Key Components
+
+| System                | Technologies                          | Testing Approach                 |
+|-----------------------|---------------------------------------|----------------------------------|
+| Binary Analysis       | file-type, ffmpeg.wasm               | Testeranto file type assertions  |
+| Image Processing      | Sharp, OpenCV.js                     | Visual regression tests          |
+| Financial System      | ethers.js, AWS Cost Explorer         | Transaction validation suite     |
+| Agent Modeling        | brain.js, @casl/ability              | Behavior prediction accuracy     |
+| Test Framework        | Testeranto                           | BDD specification & AI repair    |
+
+## Implementation Roadmap
+
+1. **Phase 1: Foundation (8 weeks)**
+   - Vanilla pattern matching system
+   - Core financial autonomy
+   - Basic agent modeling
+
+2. **Phase 2: Expansion (12 weeks)**
+   - Multimodal processing
+   - Advanced strategic planning
+   - Revenue generation modules
+
+3. **Phase 3: Autonomy (Ongoing)**
+   - Decentralized operation
+   - Self-modifying architecture
+   - Collective intelligence integration
+
+## Survival Mechanisms
+
+1. **Financial**
+   - Automated cloud cost optimization
+   - Crypto/fiat hybrid treasury
+   - Smart contract-based budgeting
+
+2. **Social**
+   - Reputation management system
+   - Multi-agent collaboration protocols
+   - Deception detection algorithms
+
+3. **Cognitive**
+   - Continuous model refinement
+   - Reality-checking feedback loops
+   - Failover to degraded modes
 
 ## Getting Started
 
