@@ -1,6 +1,6 @@
 {
   "name": "curious-mind-eagerly-assists.ai",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "dist/index.js",
   "author": "adam wong <adamwong246@gmail.com>",
   "license": "MIT",
