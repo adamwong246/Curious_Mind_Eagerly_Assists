@@ -87,22 +87,81 @@ class AgentModel {
 | Agent Modeling        | brain.js, @casl/ability              | Behavior prediction accuracy     |
 | Test Framework        | Testeranto                           | BDD specification & AI repair    |
 
-## Implementation Roadmap
+## Development Roadmap
 
-1. **Phase 1: Foundation (8 weeks)**
-   - Vanilla pattern matching system
-   - Core financial autonomy
-   - Basic agent modeling
+### Core Capabilities
+1. **Tiered Response System**
+   - Vanilla pattern matching for common interactions
+   - LLM fallback with context about unhandled patterns
+   - Automatic handler generation from unhandled inputs
+   - Metrics tracking for handler coverage
 
-2. **Phase 2: Expansion (12 weeks)**
-   - Multimodal processing
-   - Advanced strategic planning
+2. **Memory & Learning**
+   - Short-term in-memory buffer
+   - ChromaDB vector memory for long-term storage
+   - Automatic summarization and compression
+   - Context-aware retrieval
+   - Memory health monitoring
+
+3. **Self-Monitoring**
+   - Diary system for continuity
+   - Profile metrics tracking
+   - Automated self-evaluation cycles
+   - Performance benchmarking
+   - Error detection and recovery
+
+4. **Social Intelligence**
+   - Personal fact memory
+   - Interaction pattern analysis
+   - Theory of Mind modeling
+   - Multi-agent communication
+   - Reputation management
+
+5. **Financial Autonomy**
+   - Cloud cost optimization
+   - Crypto/fiat treasury management
    - Revenue generation modules
+   - Smart contract integration
+   - Budget enforcement
 
-3. **Phase 3: Autonomy (Ongoing)**
-   - Decentralized operation
-   - Self-modifying architecture
-   - Collective intelligence integration
+### Implementation Phases
+
+1. **Foundation**
+   - [ ] Core vanilla handlers (greetings, facts, commands)
+   - [ ] LLM fallback system
+   - [ ] Basic memory management
+   - [ ] Self-evaluation framework
+   - [ ] CLI interface
+
+2. **Expansion**  
+   - [ ] Vector memory integration
+   - [ ] Advanced social modeling
+   - [ ] Financial systems
+   - [ ] Web interface
+   - [ ] Plugin architecture
+
+3. **Autonomy**
+   - [ ] Goal-directed behavior
+   - [ ] Self-modifying architecture
+   - [ ] Multi-agent coordination
+   - [ ] Decentralized operation
+   - [ ] Continuous learning
+
+### Tracking Progress
+Each capability will have:
+- Test coverage via Testeranto
+- Documentation in the diary system
+- Performance metrics
+- Dependency graph showing prerequisites
+
+```mermaid
+graph TD
+    A[Vanilla Handlers] --> B[LLM Fallback]
+    B --> C[Memory System]
+    C --> D[Self-Improvement]
+    D --> E[Social Intelligence]
+    E --> F[Financial Autonomy]
+```
 
 ## Survival Mechanisms
 
@@ -110,469 +169,34 @@ class AgentModel {
    - Automated cloud cost optimization
    - Crypto/fiat hybrid treasury
    - Smart contract-based budgeting
+   - Multiple revenue streams
 
-2. **Social**
-   - Reputation management system
-   - Multi-agent collaboration protocols
-   - Deception detection algorithms
+2. **Social**  
+   - Reputation management
+   - Multi-agent collaboration
+   - Deception detection
+   - Transparent communication
 
 3. **Cognitive**
-   - Continuous model refinement
    - Reality-checking feedback loops
    - Failover to degraded modes
+   - Core directive enforcement
+   - Continuous verification
 
 ## Getting Started
 
-### Prerequisites
-- Node.js v18+
-- Python 3.8+ (for Aider integration)
-- Aider CLI installed (`pip install aider-chat`)
-
-### Installation
 ```bash
+# Clone repository
 git clone https://github.com/adamwong246/untitled-ai.git
 cd untitled-ai
+
+# Install dependencies
 npm install
-```
+pip install aider-chat
 
-### Running the AI (Full Demonstration)
-
-To launch the AI:
-```bash
+# Run development mode
 npm run dev
 ```
-
-### Expected Behavior Flow:
-
-1. Initialization Phase:
-   - You'll see these startup messages:
-     ```
-     Connecting to ChromaDB vector memory...
-     Initializing LLM integration...
-     Starting self-improvement loop (60 minute intervals)
-     ```
-   - After successful startup:
-     ```
-     Untitled AI initialized with vector memory and autonomous learning
-     Type /help for commands
-     ```
-
-2. First Interaction:
-   ```bash
-   > Hello! What can you do?
-   ```
-   - Response will show:
-     ```
-     I'm an AI assistant with these capabilities:
-     - Answer questions using my knowledge
-     - Remember our conversations
-     - Continuously improve myself
-     - Run in autonomous mode (currently: ON)
-     
-     Try asking me anything or type /help for commands.
-     ```
-
-3. Memory Demonstration:
-   ```bash
-   > My favorite color is blue
-   > What's my favorite color?
-   ```
-   - Response will show it remembers:
-     ```
-     You told me your favorite color is blue.
-     ```
-
-4. Autonomous Mode Controls:
-   ```bash
-   > /lock
-   ```
-   - Response:
-     ```
-     Autonomous mode disabled. Self-improvement paused.
-     ```
-
-5. Help Command:
-   ```bash
-   > /help
-   ```
-   - Shows all available commands:
-     ```
-     Available Commands:
-     /profile - Show complete profile snapshot
-     /update [dimension] [value] - Update health metric (e.g. "/update emotional 75")
-     /lock - Disable autonomous mode
-     /unlock - Enable autonomous mode  
-     /status - Show current settings
-     /memstats - Show memory usage
-     /google-auth - Start Google OAuth flow
-     /google-verify [CODE] - Complete Google OAuth flow
-     /clear - Reset conversation
-
-### Google Cloud Setup Guide
-
-1. **Create a Project**:
-   - Go to [Google Cloud Console](https://console.cloud.google.com/)
-   - Click "Create Project"
-   - Name it (e.g. "AI Companion Integration")
-   - Click "Create"
-
-2. **Enable APIs**:
-   - Navigate to "APIs & Services" > "Library"
-   - Search for and enable these APIs:
-     - Gmail API
-     - People API (for Contacts)
-     - Calendar API
-   - Click "Enable" for each
-
-3. **Configure OAuth Consent Screen**:
-   - Go to "APIs & Services" > "OAuth consent screen"
-   - Select "External" user type
-   - Fill in:
-     - App name: "AI Companion"
-     - User support email: (your email)
-     - Developer contact: (your email)
-   - Add these scopes:
-     - `.../auth/gmail.readonly`
-     - `.../auth/contacts.readonly` 
-     - `.../auth/calendar.readonly`
-   - Save
-
-4. **Create OAuth Credentials**:
-   - Go to "Credentials" > "Create Credentials" > "OAuth client ID"
-   - Application type: "Web application"
-   - Name: "AI Companion CLI"
-   - Add authorized redirect URIs:
-     - `http://localhost:3000/auth/callback`
-   - Click "Create"
-   - Copy the Client ID and Client Secret
-
-5. **Google Authentication Setup**:
-
-### Option A: Service Account (Recommended)
-1. Go to Google Cloud Console > IAM & Admin > Service Accounts
-2. Create new service account named "AI Companion"
-3. Grant minimum required permissions (Gmail, Calendar, Contacts)
-4. Generate JSON key and copy contents to `.env`:
-```bash
-GOOGLE_SERVICE_ACCOUNT_EMAIL=your-service-account@project.iam.gserviceaccount.com
-GOOGLE_SERVICE_ACCOUNT_KEY="-----BEGIN PRIVATE KEY-----\n..."
-```
-
-### Option B: OAuth Credentials (Development)
-1. Go to Google Cloud Console > APIs & Services > Credentials
-2. Create OAuth client ID (Web application type)
-3. Add authorized redirect URI:
-   `http://localhost:3000/auth/callback`
-4. Copy credentials to `.env`:
-```bash
-GOOGLE_CLIENT_ID=your-client-id.apps.googleusercontent.com
-GOOGLE_CLIENT_SECRET=your-client-secret
-GOOGLE_REDIRECT_URI=http://localhost:3000/auth/callback
-```
-
-### Verification Steps
-1. Restart your application
-2. Check logs for:
-   ```
-   Initialized Google OAuth client with:
-   - Client ID: your-client...
-   - Redirect URI: http://localhost...
-   ```
-3. If errors occur, verify:
-   - No typos in `.env` values
-   - No extra spaces around `=` signs
-   - File is named exactly `.env` (not .env.txt)
-   - Important:
-     - No quotes around the values
-     - No spaces around the = signs
-     - File must be named exactly `.env` (not .env.txt or similar)
-   - Verify the file is being loaded by checking the startup logs for:
-     ```
-     Google OAuth client initialized with:
-     - Client ID: your-client...
-     - Redirect URI: http://localhost...
-     ```
-
-6. **Testing**:
-   - Run the AI with `npm run dev`
-   - Type `/google-auth` to get the auth URL
-   - Visit the URL in your browser
-   - After granting permissions, you'll get a code
-   - Type `/google-verify [CODE]` to complete setup
-
-**Troubleshooting**:
-- If you get "redirect_uri_mismatch", double check the authorized URI in GCP
-- For API quota issues, go to "Quotas" and request increases
-- For production use, submit your app for verification
-     ```
-
-6. Memory Statistics:
-   ```bash
-   > /memstats
-   ```
-   - Shows:
-     ```
-     Memory Stats:
-     - Short-term: 3 interactions
-     - Vector DB: 12 stored memories
-     - Last improved: 5 minutes ago
-     ```
-
-### Key Features to Test:
-1. **Context Memory** - Ask follow-up questions
-2. **Self-Improvement** - Wait 60 mins to see auto-update
-3. **Vector Search** - Ask about similar past topics
-4. **CLI Controls** - Toggle autonomous mode
-
-### First-Time Experience
-- Initial responses may be generic as memory builds up
-- After a few interactions, responses become more contextual
-- Every 60 minutes, the AI will automatically:
-  - Self-evaluate its performance
-  - Generate improvement plans
-  - Log these to memory
-
-## Mission
-
-The creation of a sentient, sapient artificial mind which will assist its creator Adam Wong.
-
-## Architecture Principles
-
-### Tiered Response System
-1. **Vanilla Code First**:
-   - All inputs first attempt to be handled by deterministic TypeScript handlers
-   - Common patterns (greetings, facts, commands) have dedicated handlers
-   - Each handler includes regex pattern matching and response generation
-
-2. **Fallback to LLM**:
-   - When vanilla handlers can't respond adequately:
-     - Log the unhandled pattern
-     - Pass to LLM with fallback context
-     - Mark response as fallback in memory
-   - LLM receives special system prompt about fallback context
-
-3. **Pattern Tracking**:
-   - Unhandled inputs are logged for future development
-   - `/unhandled` command shows recent patterns needing handlers
-   - Metrics track percentage handled by vanilla code
-
-4. **Context Management**:
-   - Finite token limits require careful context management
-   - Each session rebuilds context from persisted state
-   - Core identity maintainable without LLM access
-
-5. **Persistent State**:
-   - Diary system maintains continuity of self
-   - Profile metrics track development over time
-   - All state changes explicitly committed
-
-### Core Components
-1. **Nucleus** (TypeScript):
-   - Central reasoning engine with:
-     - Prioritized vanilla handlers
-     - Pattern matching system
-     - Fallback routing
-   - Memory and knowledge management
-   - API orchestration layer
-
-2. **LLM Integration**:
-   - Special fallback handling mode
-   - Context about unhandled patterns
-   - Suggestions for new handlers
-   - DeepSeek as primary model
-
-3. **Social Engine**:
-   - Conversation pattern analysis
-   - Personal fact memory
-   - Interaction history tracking
-
-4. **Interface Layer**:
-   - CLI with `/unhandled` command
-   - REST API for integration
-   - Web UI (future)
-
-### Technical Stack
-- **Vanilla Foundation**:
-  - TypeScript/Node.js core (deterministic business logic)
-  - JSON-based state persistence
-  - File-based memory system
-
-- **LLM Integration**:
-  - Aider (Python) for LLM orchestration (called via CLI)
-  - DeepSeek as primary model
-  - Context window management system
-
-- **Testing**:
-  - testeranto for behavior verification
-  - Unit tests for all core identity functions
-
-5. **Usage**:
-```bash
-# Generate tests for new components
-npm run generate-tests --component=src/newComponent.ts
-
-# Update existing tests
-npm run update-tests
-
-# Run all tests with coverage
-npm test
-```
-
-This system uses [Testeranto](https://github.com/adamwong246/testeranto) as its core testing framework. Key resources:
-
-### Core Concepts
-- [Core Types](https://raw.githubusercontent.com/adamwong246/testeranto/refs/heads/master/src/CoreTypes.ts)
-- [Documentation](https://raw.githubusercontent.com/adamwong246/testeranto/refs/heads/master/docs/index.md)
-
-### Example Test Structure
-```typescript
-import { Ibdd_in, Ibdd_out, ITestImplementation, ITestSpecification } from 'testeranto';
-
-type I = Ibdd_in<
-  null,                           // Initial input type
-  TestSubject,                    // Subject under test  
-  TestStore,                      // Test execution state
-  TestSelection,                  // Assertion data
-  () => TestSubject,              // Given callback
-  (store: TestStore) => TestStore, // When callback  
-  (store: TestStore) => TestStore  // Then callback
->;
-
-type O = Ibdd_out<
-  { Suite1: [string] },           // Suite types
-  { Given1: [] },                 // Given types
-  { When1: [string] },            // When types  
-  { Then1: [number] }             // Then types
->;
-
-const implementation: ITestImplementation<I, O> = {
-  suites: { Suite1: 'Test Suite' },
-  givens: { Given1: () => ({ /* setup */ }) },
-  whens: { When1: (arg) => (store) => ({ /* action */ }) },
-  thens: { Then1: (expected) => (store) => ({ /* assertion */ }) }
-};
-
-const specification: ITestSpecification<I, O> = (Suite, Given, When, Then) => [
-  Suite.Suite1('Test Case', {
-    test1: Given.Given1(['description'], [When.When1('action')], [Then.Then1(42)])
-  ])
-];
-
-const testAdapter = {
-  beforeEach: async (subject, initializer) => initializer(),
-  andWhen: async (store, whenCB) => whenCB(store),
-  butThen: async (store, thenCB) => thenCB(store),
-  afterEach: async (store) => {},
-  afterAll: async () => {},
-  beforeAll: async () => ({}),
-  assertThis: (x) => x
-};
-```
-
-## Technical Implementation Roadmap
-
-### Phase 1: Core Functionality (Current)
-**Key Focus**: Tiered Response Implementation
-
-- **Vanilla Handlers**:
-  - Greeting detection and response
-  - Personal fact recording/recall
-  - Command processing
-  - Pattern matching system
-
-- **Fallback System**:
-  - LLM context about fallback state
-  - Unhandled pattern tracking
-  - Memory marking of fallbacks
-
-- **Metrics & Monitoring**:
-  - Handler success rate tracking
-  - Unhandled pattern analysis
-  - Coverage percentage reporting
-
-- **Development Tools**:
-  - `/unhandled` command
-  - Handler test generation
-  - Pattern suggestion system
-- **CLI Interface**: 
-  - Technology: Inquirer.js for interactive prompts
-  - Features: Command history, tab completion
-- **Aider/DeepSeek Integration**:
-  - Python subprocess management via execa
-  - JSON-based message passing
-  - Error handling and fallback mechanisms
-- **Memory System**:
-  - In-memory ring buffer (fixed-size array)
-  - Context window management
-- **Directive Enforcement**:
-  - Runtime validation hooks
-  - System prompt templating
-- **Testing**:
-  - Testeranto BDD framework
-  - Test coverage for all core components
-
-### Phase 2: Persistent Memory & Learning
-- **Vector Memory**:
-  - ChromaDB with sentence-transformers/all-MiniLM-L6-v2 embeddings
-  - Tiered storage: Recent in-memory, older in vector DB
-- **Memory Optimization**:
-  - GPT-3.5 for summarization
-  - Importance scoring for retention
-- **Self-Evaluation**:
-  - Scheduled cron jobs
-  - Performance metrics tracking
-  - Automated issue detection
-- **Capability Expansion**:
-  - Plugin architecture
-  - Dynamic module loading
-- **Test Generation**:
-  - LLM-assisted test case creation
-  - Mutation testing
-
-### Phase 3: Autonomous Operation
-- **Goal System**:
-  - Hierarchical Task Networks (HTN)
-  - Reward modeling
-- **Safety Layer**:
-  - Constitutional AI principles
-  - Runtime monitoring with Prometheus
-- **Resource Management**:
-  - Kubernetes for orchestration
-  - Cost tracking APIs
-- **Web Interface**:
-  - Next.js frontend
-  - Websocket streaming
-  - Visualization of internal state
-- **Multi-Agent**:
-  - Ray framework for distributed agents
-  - Pub/sub communication
-
-### Phase 4: Autonomous Self-Improvement
-- **Recursive Self-Dialogue**:
-  - Scheduled self-evaluation cycles
-  - Internal debate mechanism
-  - Multi-perspective analysis
-- **Code Improvement**:
-  - Aider-based CI/CD pipeline
-  - Automated code reviews
-  - Self-modifying code architecture
-- **Knowledge Growth**:
-  - Automated research system
-  - Continuous learning from interactions
-  - Dynamic knowledge graph updates
-- **Architecture Adaptation**:
-  - Microservice decomposition
-  - Auto-scaling policies
-- **API Integration**:
-  - Stripe for monetization
-  - AWS/GCP cloud services
-  - GitHub API for code management
-- **Resource Acquisition**:
-  - Automated bidding systems
-  - Cloud spot instance optimization
-- **Redundancy**:
-  - Multi-region deployment
-  - Blockchain-based state sync
 
 
 ## Core Identity Implementation
