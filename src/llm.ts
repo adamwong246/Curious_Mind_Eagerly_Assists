@@ -1,23 +1,34 @@
 import { execa } from 'execa';
-import { COLORS } from '.';
+
 import { Logger } from './logger';
+import { COLORS } from './colors';
 
 export class LLMIntegration {
   private initialized = false;
   
   public async initialize(): Promise<boolean> {
     if (this.initialized) return true;
-    
+    this.initialized = true;
+
     if (process.env.NODE_ENV !== 'test') {
       try {
-        Logger.debug('Verifying Aider installation...');
         await execa('aider', ['--version']);
-        Logger.debug('Aider is installed');
+        return true;
       } catch (err) {
-        Logger.error('Aider not found');
-        throw new Error('Aider not found. Please install with: pip install aider-chat');
+        console.error('Aider check failed:', err);
+        throw new Error('Aider not found - please install with: pip install aider-chat');
       }
     }
+    // return true;
+    //   try {
+    //     Logger.debug('Verifying Aider installation...');
+    //     await execa('aider', ['--version']);
+    //     Logger.debug('Aider is installed');
+    //   } catch (err) {
+    //     Logger.error('Aider not found');
+    //     throw new Error('Aider not found. Please install with: pip install aider-chat');
+    //   }
+    // }
     
     this.initialized = true;
     return true;

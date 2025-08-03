@@ -1,25 +1,6026 @@
 {
-  "errors": [
-    {
-      "id": "",
-      "location": {
-        "column": 23,
-        "file": "src/services/google.ts",
-        "length": 12,
-        "line": 1,
-        "lineText": "import { google } from 'googleapis';",
-        "namespace": "",
-        "suggestion": ""
+  "errors": [],
+  "warnings": [],
+  "metafile": {
+    "inputs": {
+      "../testeranto/dist/cjs-shim.js": {
+        "bytes": 502,
+        "imports": [
+          {
+            "path": "node:module",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:url",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
       },
-      "notes": [
-        {
-          "location": null,
-          "text": "You can mark the path \"googleapis\" as external to exclude it from the bundle, which will remove this error."
-        }
-      ],
-      "pluginName": "",
-      "text": "Could not resolve \"googleapis\""
+      "test/specs/llm.spec.ts": {
+        "bytes": 1446,
+        "imports": [
+          {
+            "path": "testeranto/src/CoreTypes",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "testeranto/src/CoreTypes",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "../testeranto/src/lib/index.ts": {
+        "bytes": 3568,
+        "imports": [
+          {
+            "path": "../PM/pure.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "../PM/node.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "../PM/web.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "../Types.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "./abstractBase.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "./types.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "./BaseSuite.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "../testeranto/src/lib/pmProxy.ts": {
+        "bytes": 4933,
+        "imports": [
+          {
+            "path": "./types",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "../testeranto/src/lib/abstractBase.ts": {
+        "bytes": 7520,
+        "imports": [
+          {
+            "path": ".",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "./types.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "../testeranto/src/lib/pmProxy.ts",
+            "kind": "import-statement",
+            "original": "./pmProxy.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "../testeranto/src/lib/basebuilder.ts": {
+        "bytes": 4916,
+        "imports": [
+          {
+            "path": "stream",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": ".",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "./types.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "./abstractBase.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "./BaseSuite",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "../testeranto/src/lib/classBuilder.ts": {
+        "bytes": 3030,
+        "imports": [
+          {
+            "path": "type-fest",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "../testeranto/src/lib/basebuilder.ts",
+            "kind": "import-statement",
+            "original": "./basebuilder.js"
+          },
+          {
+            "path": "./types.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "./index.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "../testeranto/src/lib/BaseSuite.ts": {
+        "bytes": 3863,
+        "imports": [
+          {
+            "path": ".",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "../CoreTypes",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "./abstractBase",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "../testeranto/src/lib/pmProxy.ts",
+            "kind": "import-statement",
+            "original": "./pmProxy"
+          },
+          {
+            "path": "./types",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "../testeranto/src/lib/core.ts": {
+        "bytes": 3530,
+        "imports": [
+          {
+            "path": "../testeranto/src/lib/index.ts",
+            "kind": "import-statement",
+            "original": "./index.js"
+          },
+          {
+            "path": "../testeranto/src/lib/abstractBase.ts",
+            "kind": "import-statement",
+            "original": "./abstractBase.js"
+          },
+          {
+            "path": "../testeranto/src/lib/classBuilder.ts",
+            "kind": "import-statement",
+            "original": "./classBuilder.js"
+          },
+          {
+            "path": "./types",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "../testeranto/src/lib/BaseSuite.ts",
+            "kind": "import-statement",
+            "original": "./BaseSuite.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "../testeranto/src/PM/index.ts": {
+        "bytes": 1837,
+        "imports": [
+          {
+            "path": "puppeteer-core",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "puppeteer-core/lib/esm/puppeteer",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "../lib",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "../testeranto/src/PM/node.ts": {
+        "bytes": 6959,
+        "imports": [
+          {
+            "path": "net",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "fs",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "puppeteer-core",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "stream",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "../lib",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "../testeranto/src/PM/index.ts",
+            "kind": "import-statement",
+            "original": "."
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "../testeranto/src/Node.ts": {
+        "bytes": 2309,
+        "imports": [
+          {
+            "path": "../testeranto/src/lib/core.ts",
+            "kind": "import-statement",
+            "original": "./lib/core.js"
+          },
+          {
+            "path": "../testeranto/src/lib/index.ts",
+            "kind": "import-statement",
+            "original": "./lib/index.js"
+          },
+          {
+            "path": "../testeranto/src/PM/node.ts",
+            "kind": "import-statement",
+            "original": "./PM/node.js"
+          },
+          {
+            "path": "./CoreTypes.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/isexe/windows.js": {
+        "bytes": 890,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "fs",
+            "kind": "require-call",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/isexe/mode.js": {
+        "bytes": 909,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "fs",
+            "kind": "require-call",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/isexe/index.js": {
+        "bytes": 1192,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "fs",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "node_modules/isexe/windows.js",
+            "kind": "require-call",
+            "original": "./windows.js"
+          },
+          {
+            "path": "node_modules/isexe/mode.js",
+            "kind": "require-call",
+            "original": "./mode.js"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/which/which.js": {
+        "bytes": 3163,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "path",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "node_modules/isexe/index.js",
+            "kind": "require-call",
+            "original": "isexe"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/path-key/index.js": {
+        "bytes": 415,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/cross-spawn/lib/util/resolveCommand.js": {
+        "bytes": 1557,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "path",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "node_modules/which/which.js",
+            "kind": "require-call",
+            "original": "which"
+          },
+          {
+            "path": "node_modules/path-key/index.js",
+            "kind": "require-call",
+            "original": "path-key"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/cross-spawn/lib/util/escape.js": {
+        "bytes": 1383,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/shebang-regex/index.js": {
+        "bytes": 42,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/shebang-command/index.js": {
+        "bytes": 387,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/shebang-regex/index.js",
+            "kind": "require-call",
+            "original": "shebang-regex"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/cross-spawn/lib/util/readShebang.js": {
+        "bytes": 549,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "fs",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "node_modules/shebang-command/index.js",
+            "kind": "require-call",
+            "original": "shebang-command"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/cross-spawn/lib/parse.js": {
+        "bytes": 3065,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "path",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "node_modules/cross-spawn/lib/util/resolveCommand.js",
+            "kind": "require-call",
+            "original": "./util/resolveCommand"
+          },
+          {
+            "path": "node_modules/cross-spawn/lib/util/escape.js",
+            "kind": "require-call",
+            "original": "./util/escape"
+          },
+          {
+            "path": "node_modules/cross-spawn/lib/util/readShebang.js",
+            "kind": "require-call",
+            "original": "./util/readShebang"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/cross-spawn/lib/enoent.js": {
+        "bytes": 1471,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/cross-spawn/index.js": {
+        "bytes": 1192,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "child_process",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "node_modules/cross-spawn/lib/parse.js",
+            "kind": "require-call",
+            "original": "./lib/parse"
+          },
+          {
+            "path": "node_modules/cross-spawn/lib/enoent.js",
+            "kind": "require-call",
+            "original": "./lib/enoent"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/strip-final-newline/index.js": {
+        "bytes": 347,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/npm-run-path/node_modules/path-key/index.js": {
+        "bytes": 263,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/npm-run-path/index.js": {
+        "bytes": 1316,
+        "imports": [
+          {
+            "path": "node:process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:url",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/npm-run-path/node_modules/path-key/index.js",
+            "kind": "import-statement",
+            "original": "path-key"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/mimic-fn/index.js": {
+        "bytes": 2903,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/onetime/index.js": {
+        "bytes": 1022,
+        "imports": [
+          {
+            "path": "node_modules/mimic-fn/index.js",
+            "kind": "import-statement",
+            "original": "mimic-fn"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/human-signals/build/src/realtime.js": {
+        "bytes": 352,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/human-signals/build/src/core.js": {
+        "bytes": 4126,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/human-signals/build/src/signals.js": {
+        "bytes": 601,
+        "imports": [
+          {
+            "path": "node:os",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/human-signals/build/src/core.js",
+            "kind": "import-statement",
+            "original": "./core.js"
+          },
+          {
+            "path": "node_modules/human-signals/build/src/realtime.js",
+            "kind": "import-statement",
+            "original": "./realtime.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/human-signals/build/src/main.js": {
+        "bytes": 1208,
+        "imports": [
+          {
+            "path": "node:os",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/human-signals/build/src/realtime.js",
+            "kind": "import-statement",
+            "original": "./realtime.js"
+          },
+          {
+            "path": "node_modules/human-signals/build/src/signals.js",
+            "kind": "import-statement",
+            "original": "./signals.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/execa/lib/error.js": {
+        "bytes": 2204,
+        "imports": [
+          {
+            "path": "node:process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/human-signals/build/src/main.js",
+            "kind": "import-statement",
+            "original": "human-signals"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/execa/lib/stdio.js": {
+        "bytes": 1157,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/signal-exit/dist/mjs/signals.js": {
+        "bytes": 1438,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/signal-exit/dist/mjs/index.js": {
+        "bytes": 9090,
+        "imports": [
+          {
+            "path": "node_modules/signal-exit/dist/mjs/signals.js",
+            "kind": "import-statement",
+            "original": "./signals.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/execa/lib/kill.js": {
+        "bytes": 2985,
+        "imports": [
+          {
+            "path": "node:os",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/signal-exit/dist/mjs/index.js",
+            "kind": "import-statement",
+            "original": "signal-exit"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/is-stream/index.js": {
+        "bytes": 746,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/execa/lib/pipe.js": {
+        "bytes": 1194,
+        "imports": [
+          {
+            "path": "node:fs",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:child_process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/is-stream/index.js",
+            "kind": "import-statement",
+            "original": "is-stream"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/execa/node_modules/get-stream/source/contents.js": {
+        "bytes": 2789,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/execa/node_modules/get-stream/source/utils.js": {
+        "bytes": 335,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/execa/node_modules/get-stream/source/array.js": {
+        "bytes": 725,
+        "imports": [
+          {
+            "path": "node_modules/execa/node_modules/get-stream/source/contents.js",
+            "kind": "import-statement",
+            "original": "./contents.js"
+          },
+          {
+            "path": "node_modules/execa/node_modules/get-stream/source/utils.js",
+            "kind": "import-statement",
+            "original": "./utils.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/execa/node_modules/get-stream/source/array-buffer.js": {
+        "bytes": 3325,
+        "imports": [
+          {
+            "path": "node_modules/execa/node_modules/get-stream/source/contents.js",
+            "kind": "import-statement",
+            "original": "./contents.js"
+          },
+          {
+            "path": "node_modules/execa/node_modules/get-stream/source/utils.js",
+            "kind": "import-statement",
+            "original": "./utils.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/execa/node_modules/get-stream/source/buffer.js": {
+        "bytes": 606,
+        "imports": [
+          {
+            "path": "node_modules/execa/node_modules/get-stream/source/array-buffer.js",
+            "kind": "import-statement",
+            "original": "./array-buffer.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/execa/node_modules/get-stream/source/string.js": {
+        "bytes": 1139,
+        "imports": [
+          {
+            "path": "node_modules/execa/node_modules/get-stream/source/contents.js",
+            "kind": "import-statement",
+            "original": "./contents.js"
+          },
+          {
+            "path": "node_modules/execa/node_modules/get-stream/source/utils.js",
+            "kind": "import-statement",
+            "original": "./utils.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/execa/node_modules/get-stream/source/index.js": {
+        "bytes": 254,
+        "imports": [
+          {
+            "path": "node_modules/execa/node_modules/get-stream/source/array.js",
+            "kind": "import-statement",
+            "original": "./array.js"
+          },
+          {
+            "path": "node_modules/execa/node_modules/get-stream/source/array-buffer.js",
+            "kind": "import-statement",
+            "original": "./array-buffer.js"
+          },
+          {
+            "path": "node_modules/execa/node_modules/get-stream/source/buffer.js",
+            "kind": "import-statement",
+            "original": "./buffer.js"
+          },
+          {
+            "path": "node_modules/execa/node_modules/get-stream/source/string.js",
+            "kind": "import-statement",
+            "original": "./string.js"
+          },
+          {
+            "path": "node_modules/execa/node_modules/get-stream/source/contents.js",
+            "kind": "import-statement",
+            "original": "./contents.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/merge-stream/index.js": {
+        "bytes": 885,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "stream",
+            "kind": "require-call",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/execa/lib/stream.js": {
+        "bytes": 3501,
+        "imports": [
+          {
+            "path": "node:fs",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:timers/promises",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/is-stream/index.js",
+            "kind": "import-statement",
+            "original": "is-stream"
+          },
+          {
+            "path": "node_modules/execa/node_modules/get-stream/source/index.js",
+            "kind": "import-statement",
+            "original": "get-stream"
+          },
+          {
+            "path": "node_modules/merge-stream/index.js",
+            "kind": "import-statement",
+            "original": "merge-stream"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/execa/lib/promise.js": {
+        "bytes": 1109,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/execa/lib/command.js": {
+        "bytes": 2998,
+        "imports": [
+          {
+            "path": "node:buffer",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:child_process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/execa/lib/verbose.js": {
+        "bytes": 575,
+        "imports": [
+          {
+            "path": "node:util",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/execa/index.js": {
+        "bytes": 7897,
+        "imports": [
+          {
+            "path": "node:buffer",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:child_process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/cross-spawn/index.js",
+            "kind": "import-statement",
+            "original": "cross-spawn"
+          },
+          {
+            "path": "node_modules/strip-final-newline/index.js",
+            "kind": "import-statement",
+            "original": "strip-final-newline"
+          },
+          {
+            "path": "node_modules/npm-run-path/index.js",
+            "kind": "import-statement",
+            "original": "npm-run-path"
+          },
+          {
+            "path": "node_modules/onetime/index.js",
+            "kind": "import-statement",
+            "original": "onetime"
+          },
+          {
+            "path": "node_modules/execa/lib/error.js",
+            "kind": "import-statement",
+            "original": "./lib/error.js"
+          },
+          {
+            "path": "node_modules/execa/lib/stdio.js",
+            "kind": "import-statement",
+            "original": "./lib/stdio.js"
+          },
+          {
+            "path": "node_modules/execa/lib/kill.js",
+            "kind": "import-statement",
+            "original": "./lib/kill.js"
+          },
+          {
+            "path": "node_modules/execa/lib/pipe.js",
+            "kind": "import-statement",
+            "original": "./lib/pipe.js"
+          },
+          {
+            "path": "node_modules/execa/lib/stream.js",
+            "kind": "import-statement",
+            "original": "./lib/stream.js"
+          },
+          {
+            "path": "node_modules/execa/lib/promise.js",
+            "kind": "import-statement",
+            "original": "./lib/promise.js"
+          },
+          {
+            "path": "node_modules/execa/lib/command.js",
+            "kind": "import-statement",
+            "original": "./lib/command.js"
+          },
+          {
+            "path": "node_modules/execa/lib/verbose.js",
+            "kind": "import-statement",
+            "original": "./lib/verbose.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "src/logger.ts": {
+        "bytes": 1169,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "src/colors.ts": {
+        "bytes": 158,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "src/llm.ts": {
+        "bytes": 3896,
+        "imports": [
+          {
+            "path": "node_modules/execa/index.js",
+            "kind": "import-statement",
+            "original": "execa"
+          },
+          {
+            "path": "src/logger.ts",
+            "kind": "import-statement",
+            "original": "./logger"
+          },
+          {
+            "path": "src/colors.ts",
+            "kind": "import-statement",
+            "original": "./colors"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "test/llm.test.ts": {
+        "bytes": 3763,
+        "imports": [
+          {
+            "path": "test/specs/llm.spec.ts",
+            "kind": "import-statement",
+            "original": "./specs/llm.spec"
+          },
+          {
+            "path": "../testeranto/src/Node.ts",
+            "kind": "import-statement",
+            "original": "testeranto/src/Node"
+          },
+          {
+            "path": "testeranto/src/CoreTypes",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "src/llm.ts",
+            "kind": "import-statement",
+            "original": "../src/llm"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "test/specs/memory.spec.ts": {
+        "bytes": 1770,
+        "imports": [
+          {
+            "path": "testeranto/src/CoreTypes",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "testeranto/src/CoreTypes",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/bind.js": {
+        "bytes": 134,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/utils.js": {
+        "bytes": 19158,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/helpers/bind.js",
+            "kind": "import-statement",
+            "original": "./helpers/bind.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/core/AxiosError.js": {
+        "bytes": 2546,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "../utils.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/delayed-stream/lib/delayed_stream.js": {
+        "bytes": 2319,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "stream",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "util",
+            "kind": "require-call",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/combined-stream/lib/combined_stream.js": {
+        "bytes": 4687,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "util",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "stream",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "node_modules/delayed-stream/lib/delayed_stream.js",
+            "kind": "require-call",
+            "original": "delayed-stream"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/mime-db/db.json": {
+        "bytes": 185882,
+        "imports": []
+      },
+      "node_modules/mime-db/index.js": {
+        "bytes": 189,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/mime-db/db.json",
+            "kind": "require-call",
+            "original": "./db.json"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/mime-types/index.js": {
+        "bytes": 3663,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/mime-db/index.js",
+            "kind": "require-call",
+            "original": "mime-db"
+          },
+          {
+            "path": "path",
+            "kind": "require-call",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/asynckit/lib/defer.js": {
+        "bytes": 441,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/asynckit/lib/async.js": {
+        "bytes": 599,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/asynckit/lib/defer.js",
+            "kind": "require-call",
+            "original": "./defer.js"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/asynckit/lib/abort.js": {
+        "bytes": 497,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/asynckit/lib/iterate.js": {
+        "bytes": 1794,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/asynckit/lib/async.js",
+            "kind": "require-call",
+            "original": "./async.js"
+          },
+          {
+            "path": "node_modules/asynckit/lib/abort.js",
+            "kind": "require-call",
+            "original": "./abort.js"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/asynckit/lib/state.js": {
+        "bytes": 941,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/asynckit/lib/terminator.js": {
+        "bytes": 533,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/asynckit/lib/abort.js",
+            "kind": "require-call",
+            "original": "./abort.js"
+          },
+          {
+            "path": "node_modules/asynckit/lib/async.js",
+            "kind": "require-call",
+            "original": "./async.js"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/asynckit/parallel.js": {
+        "bytes": 1017,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/asynckit/lib/iterate.js",
+            "kind": "require-call",
+            "original": "./lib/iterate.js"
+          },
+          {
+            "path": "node_modules/asynckit/lib/state.js",
+            "kind": "require-call",
+            "original": "./lib/state.js"
+          },
+          {
+            "path": "node_modules/asynckit/lib/terminator.js",
+            "kind": "require-call",
+            "original": "./lib/terminator.js"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/asynckit/serialOrdered.js": {
+        "bytes": 1751,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/asynckit/lib/iterate.js",
+            "kind": "require-call",
+            "original": "./lib/iterate.js"
+          },
+          {
+            "path": "node_modules/asynckit/lib/state.js",
+            "kind": "require-call",
+            "original": "./lib/state.js"
+          },
+          {
+            "path": "node_modules/asynckit/lib/terminator.js",
+            "kind": "require-call",
+            "original": "./lib/terminator.js"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/asynckit/serial.js": {
+        "bytes": 501,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/asynckit/serialOrdered.js",
+            "kind": "require-call",
+            "original": "./serialOrdered.js"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/asynckit/index.js": {
+        "bytes": 156,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/asynckit/parallel.js",
+            "kind": "require-call",
+            "original": "./parallel.js"
+          },
+          {
+            "path": "node_modules/asynckit/serial.js",
+            "kind": "require-call",
+            "original": "./serial.js"
+          },
+          {
+            "path": "node_modules/asynckit/serialOrdered.js",
+            "kind": "require-call",
+            "original": "./serialOrdered.js"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/es-object-atoms/index.js": {
+        "bytes": 67,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/es-errors/index.js": {
+        "bytes": 66,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/es-errors/eval.js": {
+        "bytes": 75,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/es-errors/range.js": {
+        "bytes": 77,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/es-errors/ref.js": {
+        "bytes": 79,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/es-errors/syntax.js": {
+        "bytes": 79,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/es-errors/type.js": {
+        "bytes": 75,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/es-errors/uri.js": {
+        "bytes": 73,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/math-intrinsics/abs.js": {
+        "bytes": 73,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/math-intrinsics/floor.js": {
+        "bytes": 77,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/math-intrinsics/max.js": {
+        "bytes": 73,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/math-intrinsics/min.js": {
+        "bytes": 73,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/math-intrinsics/pow.js": {
+        "bytes": 73,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/math-intrinsics/round.js": {
+        "bytes": 77,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/math-intrinsics/isNaN.js": {
+        "bytes": 121,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/math-intrinsics/sign.js": {
+        "bytes": 214,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/math-intrinsics/isNaN.js",
+            "kind": "require-call",
+            "original": "./isNaN"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/gopd/gOPD.js": {
+        "bytes": 97,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/gopd/index.js": {
+        "bytes": 206,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/gopd/gOPD.js",
+            "kind": "require-call",
+            "original": "./gOPD"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/es-define-property/index.js": {
+        "bytes": 288,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/has-symbols/shams.js": {
+        "bytes": 1922,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/has-symbols/index.js": {
+        "bytes": 447,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/has-symbols/shams.js",
+            "kind": "require-call",
+            "original": "./shams"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/get-proto/Reflect.getPrototypeOf.js": {
+        "bytes": 150,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/get-proto/Object.getPrototypeOf.js": {
+        "bytes": 156,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/es-object-atoms/index.js",
+            "kind": "require-call",
+            "original": "es-object-atoms"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/function-bind/implementation.js": {
+        "bytes": 2043,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/function-bind/index.js": {
+        "bytes": 126,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/function-bind/implementation.js",
+            "kind": "require-call",
+            "original": "./implementation"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/call-bind-apply-helpers/functionCall.js": {
+        "bytes": 97,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/call-bind-apply-helpers/functionApply.js": {
+        "bytes": 99,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/call-bind-apply-helpers/reflectApply.js": {
+        "bytes": 132,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/call-bind-apply-helpers/actualApply.js": {
+        "bytes": 280,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/function-bind/index.js",
+            "kind": "require-call",
+            "original": "function-bind"
+          },
+          {
+            "path": "node_modules/call-bind-apply-helpers/functionApply.js",
+            "kind": "require-call",
+            "original": "./functionApply"
+          },
+          {
+            "path": "node_modules/call-bind-apply-helpers/functionCall.js",
+            "kind": "require-call",
+            "original": "./functionCall"
+          },
+          {
+            "path": "node_modules/call-bind-apply-helpers/reflectApply.js",
+            "kind": "require-call",
+            "original": "./reflectApply"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/call-bind-apply-helpers/index.js": {
+        "bytes": 511,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/function-bind/index.js",
+            "kind": "require-call",
+            "original": "function-bind"
+          },
+          {
+            "path": "node_modules/es-errors/type.js",
+            "kind": "require-call",
+            "original": "es-errors/type"
+          },
+          {
+            "path": "node_modules/call-bind-apply-helpers/functionCall.js",
+            "kind": "require-call",
+            "original": "./functionCall"
+          },
+          {
+            "path": "node_modules/call-bind-apply-helpers/actualApply.js",
+            "kind": "require-call",
+            "original": "./actualApply"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/dunder-proto/get.js": {
+        "bytes": 980,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/call-bind-apply-helpers/index.js",
+            "kind": "require-call",
+            "original": "call-bind-apply-helpers"
+          },
+          {
+            "path": "node_modules/gopd/index.js",
+            "kind": "require-call",
+            "original": "gopd"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/get-proto/index.js": {
+        "bytes": 821,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/get-proto/Reflect.getPrototypeOf.js",
+            "kind": "require-call",
+            "original": "./Reflect.getPrototypeOf"
+          },
+          {
+            "path": "node_modules/get-proto/Object.getPrototypeOf.js",
+            "kind": "require-call",
+            "original": "./Object.getPrototypeOf"
+          },
+          {
+            "path": "node_modules/dunder-proto/get.js",
+            "kind": "require-call",
+            "original": "dunder-proto/get"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/hasown/index.js": {
+        "bytes": 206,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/function-bind/index.js",
+            "kind": "require-call",
+            "original": "function-bind"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/get-intrinsic/index.js": {
+        "bytes": 14439,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/es-object-atoms/index.js",
+            "kind": "require-call",
+            "original": "es-object-atoms"
+          },
+          {
+            "path": "node_modules/es-errors/index.js",
+            "kind": "require-call",
+            "original": "es-errors"
+          },
+          {
+            "path": "node_modules/es-errors/eval.js",
+            "kind": "require-call",
+            "original": "es-errors/eval"
+          },
+          {
+            "path": "node_modules/es-errors/range.js",
+            "kind": "require-call",
+            "original": "es-errors/range"
+          },
+          {
+            "path": "node_modules/es-errors/ref.js",
+            "kind": "require-call",
+            "original": "es-errors/ref"
+          },
+          {
+            "path": "node_modules/es-errors/syntax.js",
+            "kind": "require-call",
+            "original": "es-errors/syntax"
+          },
+          {
+            "path": "node_modules/es-errors/type.js",
+            "kind": "require-call",
+            "original": "es-errors/type"
+          },
+          {
+            "path": "node_modules/es-errors/uri.js",
+            "kind": "require-call",
+            "original": "es-errors/uri"
+          },
+          {
+            "path": "node_modules/math-intrinsics/abs.js",
+            "kind": "require-call",
+            "original": "math-intrinsics/abs"
+          },
+          {
+            "path": "node_modules/math-intrinsics/floor.js",
+            "kind": "require-call",
+            "original": "math-intrinsics/floor"
+          },
+          {
+            "path": "node_modules/math-intrinsics/max.js",
+            "kind": "require-call",
+            "original": "math-intrinsics/max"
+          },
+          {
+            "path": "node_modules/math-intrinsics/min.js",
+            "kind": "require-call",
+            "original": "math-intrinsics/min"
+          },
+          {
+            "path": "node_modules/math-intrinsics/pow.js",
+            "kind": "require-call",
+            "original": "math-intrinsics/pow"
+          },
+          {
+            "path": "node_modules/math-intrinsics/round.js",
+            "kind": "require-call",
+            "original": "math-intrinsics/round"
+          },
+          {
+            "path": "node_modules/math-intrinsics/sign.js",
+            "kind": "require-call",
+            "original": "math-intrinsics/sign"
+          },
+          {
+            "path": "node_modules/gopd/index.js",
+            "kind": "require-call",
+            "original": "gopd"
+          },
+          {
+            "path": "node_modules/es-define-property/index.js",
+            "kind": "require-call",
+            "original": "es-define-property"
+          },
+          {
+            "path": "node_modules/has-symbols/index.js",
+            "kind": "require-call",
+            "original": "has-symbols"
+          },
+          {
+            "path": "node_modules/get-proto/index.js",
+            "kind": "require-call",
+            "original": "get-proto"
+          },
+          {
+            "path": "node_modules/get-proto/Object.getPrototypeOf.js",
+            "kind": "require-call",
+            "original": "get-proto/Object.getPrototypeOf"
+          },
+          {
+            "path": "node_modules/get-proto/Reflect.getPrototypeOf.js",
+            "kind": "require-call",
+            "original": "get-proto/Reflect.getPrototypeOf"
+          },
+          {
+            "path": "node_modules/call-bind-apply-helpers/functionApply.js",
+            "kind": "require-call",
+            "original": "call-bind-apply-helpers/functionApply"
+          },
+          {
+            "path": "node_modules/call-bind-apply-helpers/functionCall.js",
+            "kind": "require-call",
+            "original": "call-bind-apply-helpers/functionCall"
+          },
+          {
+            "path": "node_modules/function-bind/index.js",
+            "kind": "require-call",
+            "original": "function-bind"
+          },
+          {
+            "path": "node_modules/hasown/index.js",
+            "kind": "require-call",
+            "original": "hasown"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/has-tostringtag/shams.js": {
+        "bytes": 189,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/has-symbols/shams.js",
+            "kind": "require-call",
+            "original": "has-symbols/shams"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/es-set-tostringtag/index.js": {
+        "bytes": 1213,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/get-intrinsic/index.js",
+            "kind": "require-call",
+            "original": "get-intrinsic"
+          },
+          {
+            "path": "node_modules/has-tostringtag/shams.js",
+            "kind": "require-call",
+            "original": "has-tostringtag/shams"
+          },
+          {
+            "path": "node_modules/hasown/index.js",
+            "kind": "require-call",
+            "original": "hasown"
+          },
+          {
+            "path": "node_modules/es-errors/type.js",
+            "kind": "require-call",
+            "original": "es-errors/type"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/form-data/lib/populate.js": {
+        "bytes": 232,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/form-data/lib/form_data.js": {
+        "bytes": 14606,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/combined-stream/lib/combined_stream.js",
+            "kind": "require-call",
+            "original": "combined-stream"
+          },
+          {
+            "path": "util",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "path",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "http",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "https",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "url",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "fs",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "stream",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "crypto",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "node_modules/mime-types/index.js",
+            "kind": "require-call",
+            "original": "mime-types"
+          },
+          {
+            "path": "node_modules/asynckit/index.js",
+            "kind": "require-call",
+            "original": "asynckit"
+          },
+          {
+            "path": "node_modules/es-set-tostringtag/index.js",
+            "kind": "require-call",
+            "original": "es-set-tostringtag"
+          },
+          {
+            "path": "node_modules/hasown/index.js",
+            "kind": "require-call",
+            "original": "hasown"
+          },
+          {
+            "path": "node_modules/form-data/lib/populate.js",
+            "kind": "require-call",
+            "original": "./populate.js"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/axios/lib/platform/node/classes/FormData.js": {
+        "bytes": 60,
+        "imports": [
+          {
+            "path": "node_modules/form-data/lib/form_data.js",
+            "kind": "import-statement",
+            "original": "form-data"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/toFormData.js": {
+        "bytes": 6116,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "../utils.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/AxiosError.js",
+            "kind": "import-statement",
+            "original": "../core/AxiosError.js"
+          },
+          {
+            "path": "node_modules/axios/lib/platform/node/classes/FormData.js",
+            "kind": "import-statement",
+            "original": "../platform/node/classes/FormData.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/AxiosURLSearchParams.js": {
+        "bytes": 1439,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/helpers/toFormData.js",
+            "kind": "import-statement",
+            "original": "./toFormData.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/buildURL.js": {
+        "bytes": 1659,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "../utils.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/AxiosURLSearchParams.js",
+            "kind": "import-statement",
+            "original": "../helpers/AxiosURLSearchParams.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/core/InterceptorManager.js": {
+        "bytes": 1569,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "./../utils.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/defaults/transitional.js": {
+        "bytes": 118,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/platform/node/classes/URLSearchParams.js": {
+        "bytes": 74,
+        "imports": [
+          {
+            "path": "url",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/platform/node/index.js": {
+        "bytes": 828,
+        "imports": [
+          {
+            "path": "crypto",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/axios/lib/platform/node/classes/URLSearchParams.js",
+            "kind": "import-statement",
+            "original": "./classes/URLSearchParams.js"
+          },
+          {
+            "path": "node_modules/axios/lib/platform/node/classes/FormData.js",
+            "kind": "import-statement",
+            "original": "./classes/FormData.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/platform/common/utils.js": {
+        "bytes": 1595,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/platform/index.js": {
+        "bytes": 130,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/platform/node/index.js",
+            "kind": "import-statement",
+            "original": "./node/index.js"
+          },
+          {
+            "path": "node_modules/axios/lib/platform/common/utils.js",
+            "kind": "import-statement",
+            "original": "./common/utils.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/toURLEncodedForm.js": {
+        "bytes": 540,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "../utils.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/toFormData.js",
+            "kind": "import-statement",
+            "original": "./toFormData.js"
+          },
+          {
+            "path": "node_modules/axios/lib/platform/index.js",
+            "kind": "import-statement",
+            "original": "../platform/index.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/formDataToJSON.js": {
+        "bytes": 2164,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "../utils.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/defaults/index.js": {
+        "bytes": 4479,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "../utils.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/AxiosError.js",
+            "kind": "import-statement",
+            "original": "../core/AxiosError.js"
+          },
+          {
+            "path": "node_modules/axios/lib/defaults/transitional.js",
+            "kind": "import-statement",
+            "original": "./transitional.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/toFormData.js",
+            "kind": "import-statement",
+            "original": "../helpers/toFormData.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/toURLEncodedForm.js",
+            "kind": "import-statement",
+            "original": "../helpers/toURLEncodedForm.js"
+          },
+          {
+            "path": "node_modules/axios/lib/platform/index.js",
+            "kind": "import-statement",
+            "original": "../platform/index.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/formDataToJSON.js",
+            "kind": "import-statement",
+            "original": "../helpers/formDataToJSON.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/parseHeaders.js": {
+        "bytes": 1382,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "./../utils.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/core/AxiosHeaders.js": {
+        "bytes": 7395,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "../utils.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/parseHeaders.js",
+            "kind": "import-statement",
+            "original": "../helpers/parseHeaders.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/core/transformData.js": {
+        "bytes": 778,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "./../utils.js"
+          },
+          {
+            "path": "node_modules/axios/lib/defaults/index.js",
+            "kind": "import-statement",
+            "original": "../defaults/index.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/AxiosHeaders.js",
+            "kind": "import-statement",
+            "original": "../core/AxiosHeaders.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/cancel/isCancel.js": {
+        "bytes": 99,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/cancel/CanceledError.js": {
+        "bytes": 697,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/core/AxiosError.js",
+            "kind": "import-statement",
+            "original": "../core/AxiosError.js"
+          },
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "../utils.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/core/settle.js": {
+        "bytes": 836,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/core/AxiosError.js",
+            "kind": "import-statement",
+            "original": "./AxiosError.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/isAbsoluteURL.js": {
+        "bytes": 561,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/combineURLs.js": {
+        "bytes": 382,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/core/buildFullPath.js": {
+        "bytes": 783,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/helpers/isAbsoluteURL.js",
+            "kind": "import-statement",
+            "original": "../helpers/isAbsoluteURL.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/combineURLs.js",
+            "kind": "import-statement",
+            "original": "../helpers/combineURLs.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/proxy-from-env/index.js": {
+        "bytes": 3348,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "url",
+            "kind": "require-call",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/ms/index.js": {
+        "bytes": 3024,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/debug/src/common.js": {
+        "bytes": 6915,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/ms/index.js",
+            "kind": "require-call",
+            "original": "ms"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/debug/src/browser.js": {
+        "bytes": 6103,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/debug/src/common.js",
+            "kind": "require-call",
+            "original": "./common"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/has-flag/index.js": {
+        "bytes": 330,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/supports-color/index.js": {
+        "bytes": 2748,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "os",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "tty",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "node_modules/has-flag/index.js",
+            "kind": "require-call",
+            "original": "has-flag"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/debug/src/node.js": {
+        "bytes": 4728,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "tty",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "util",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "node_modules/supports-color/index.js",
+            "kind": "require-call",
+            "original": "supports-color"
+          },
+          {
+            "path": "node_modules/debug/src/common.js",
+            "kind": "require-call",
+            "original": "./common"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/debug/src/index.js": {
+        "bytes": 314,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/debug/src/browser.js",
+            "kind": "require-call",
+            "original": "./browser.js"
+          },
+          {
+            "path": "node_modules/debug/src/node.js",
+            "kind": "require-call",
+            "original": "./node.js"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/follow-redirects/debug.js": {
+        "bytes": 315,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/debug/src/index.js",
+            "kind": "require-call",
+            "original": "debug"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/follow-redirects/index.js": {
+        "bytes": 20647,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "url",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "http",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "https",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "stream",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "assert",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "node_modules/follow-redirects/debug.js",
+            "kind": "require-call",
+            "original": "./debug"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/axios/lib/env/data.js": {
+        "bytes": 32,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/parseProtocol.js": {
+        "bytes": 151,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/fromDataURI.js": {
+        "bytes": 1365,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/core/AxiosError.js",
+            "kind": "import-statement",
+            "original": "../core/AxiosError.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/parseProtocol.js",
+            "kind": "import-statement",
+            "original": "./parseProtocol.js"
+          },
+          {
+            "path": "node_modules/axios/lib/platform/index.js",
+            "kind": "import-statement",
+            "original": "../platform/index.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/AxiosTransformStream.js": {
+        "bytes": 3680,
+        "imports": [
+          {
+            "path": "stream",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "../utils.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/readBlob.js": {
+        "bytes": 318,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/formDataToStream.js": {
+        "bytes": 2965,
+        "imports": [
+          {
+            "path": "util",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "stream",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "../utils.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/readBlob.js",
+            "kind": "import-statement",
+            "original": "./readBlob.js"
+          },
+          {
+            "path": "node_modules/axios/lib/platform/index.js",
+            "kind": "import-statement",
+            "original": "../platform/index.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/ZlibHeaderTransformStream.js": {
+        "bytes": 681,
+        "imports": [
+          {
+            "path": "stream",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/callbackify.js": {
+        "bytes": 372,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "../utils.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/speedometer.js": {
+        "bytes": 1092,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/throttle.js": {
+        "bytes": 852,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/progressEventReducer.js": {
+        "bytes": 1235,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/helpers/speedometer.js",
+            "kind": "import-statement",
+            "original": "./speedometer.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/throttle.js",
+            "kind": "import-statement",
+            "original": "./throttle.js"
+          },
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "../utils.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/adapters/http.js": {
+        "bytes": 22550,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "./../utils.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/settle.js",
+            "kind": "import-statement",
+            "original": "./../core/settle.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/buildFullPath.js",
+            "kind": "import-statement",
+            "original": "../core/buildFullPath.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/buildURL.js",
+            "kind": "import-statement",
+            "original": "./../helpers/buildURL.js"
+          },
+          {
+            "path": "node_modules/proxy-from-env/index.js",
+            "kind": "import-statement",
+            "original": "proxy-from-env"
+          },
+          {
+            "path": "http",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "https",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "util",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/follow-redirects/index.js",
+            "kind": "import-statement",
+            "original": "follow-redirects"
+          },
+          {
+            "path": "zlib",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/axios/lib/env/data.js",
+            "kind": "import-statement",
+            "original": "../env/data.js"
+          },
+          {
+            "path": "node_modules/axios/lib/defaults/transitional.js",
+            "kind": "import-statement",
+            "original": "../defaults/transitional.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/AxiosError.js",
+            "kind": "import-statement",
+            "original": "../core/AxiosError.js"
+          },
+          {
+            "path": "node_modules/axios/lib/cancel/CanceledError.js",
+            "kind": "import-statement",
+            "original": "../cancel/CanceledError.js"
+          },
+          {
+            "path": "node_modules/axios/lib/platform/index.js",
+            "kind": "import-statement",
+            "original": "../platform/index.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/fromDataURI.js",
+            "kind": "import-statement",
+            "original": "../helpers/fromDataURI.js"
+          },
+          {
+            "path": "stream",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/axios/lib/core/AxiosHeaders.js",
+            "kind": "import-statement",
+            "original": "../core/AxiosHeaders.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/AxiosTransformStream.js",
+            "kind": "import-statement",
+            "original": "../helpers/AxiosTransformStream.js"
+          },
+          {
+            "path": "events",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/formDataToStream.js",
+            "kind": "import-statement",
+            "original": "../helpers/formDataToStream.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/readBlob.js",
+            "kind": "import-statement",
+            "original": "../helpers/readBlob.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/ZlibHeaderTransformStream.js",
+            "kind": "import-statement",
+            "original": "../helpers/ZlibHeaderTransformStream.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/callbackify.js",
+            "kind": "import-statement",
+            "original": "../helpers/callbackify.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/progressEventReducer.js",
+            "kind": "import-statement",
+            "original": "../helpers/progressEventReducer.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/isURLSameOrigin.js": {
+        "bytes": 420,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/platform/index.js",
+            "kind": "import-statement",
+            "original": "../platform/index.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/cookies.js": {
+        "bytes": 1045,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "./../utils.js"
+          },
+          {
+            "path": "node_modules/axios/lib/platform/index.js",
+            "kind": "import-statement",
+            "original": "../platform/index.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/core/mergeConfig.js": {
+        "bytes": 3404,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "../utils.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/AxiosHeaders.js",
+            "kind": "import-statement",
+            "original": "./AxiosHeaders.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/resolveConfig.js": {
+        "bytes": 2125,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/platform/index.js",
+            "kind": "import-statement",
+            "original": "../platform/index.js"
+          },
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "../utils.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/isURLSameOrigin.js",
+            "kind": "import-statement",
+            "original": "./isURLSameOrigin.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/cookies.js",
+            "kind": "import-statement",
+            "original": "./cookies.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/buildFullPath.js",
+            "kind": "import-statement",
+            "original": "../core/buildFullPath.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/mergeConfig.js",
+            "kind": "import-statement",
+            "original": "../core/mergeConfig.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/AxiosHeaders.js",
+            "kind": "import-statement",
+            "original": "../core/AxiosHeaders.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/buildURL.js",
+            "kind": "import-statement",
+            "original": "./buildURL.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/adapters/xhr.js": {
+        "bytes": 6623,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "./../utils.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/settle.js",
+            "kind": "import-statement",
+            "original": "./../core/settle.js"
+          },
+          {
+            "path": "node_modules/axios/lib/defaults/transitional.js",
+            "kind": "import-statement",
+            "original": "../defaults/transitional.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/AxiosError.js",
+            "kind": "import-statement",
+            "original": "../core/AxiosError.js"
+          },
+          {
+            "path": "node_modules/axios/lib/cancel/CanceledError.js",
+            "kind": "import-statement",
+            "original": "../cancel/CanceledError.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/parseProtocol.js",
+            "kind": "import-statement",
+            "original": "../helpers/parseProtocol.js"
+          },
+          {
+            "path": "node_modules/axios/lib/platform/index.js",
+            "kind": "import-statement",
+            "original": "../platform/index.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/AxiosHeaders.js",
+            "kind": "import-statement",
+            "original": "../core/AxiosHeaders.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/progressEventReducer.js",
+            "kind": "import-statement",
+            "original": "../helpers/progressEventReducer.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/resolveConfig.js",
+            "kind": "import-statement",
+            "original": "../helpers/resolveConfig.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/composeSignals.js": {
+        "bytes": 1364,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/cancel/CanceledError.js",
+            "kind": "import-statement",
+            "original": "../cancel/CanceledError.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/AxiosError.js",
+            "kind": "import-statement",
+            "original": "../core/AxiosError.js"
+          },
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "../utils.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/trackStream.js": {
+        "bytes": 1686,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/adapters/fetch.js": {
+        "bytes": 6663,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/platform/index.js",
+            "kind": "import-statement",
+            "original": "../platform/index.js"
+          },
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "../utils.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/AxiosError.js",
+            "kind": "import-statement",
+            "original": "../core/AxiosError.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/composeSignals.js",
+            "kind": "import-statement",
+            "original": "../helpers/composeSignals.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/trackStream.js",
+            "kind": "import-statement",
+            "original": "../helpers/trackStream.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/AxiosHeaders.js",
+            "kind": "import-statement",
+            "original": "../core/AxiosHeaders.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/progressEventReducer.js",
+            "kind": "import-statement",
+            "original": "../helpers/progressEventReducer.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/resolveConfig.js",
+            "kind": "import-statement",
+            "original": "../helpers/resolveConfig.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/settle.js",
+            "kind": "import-statement",
+            "original": "../core/settle.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/adapters/adapters.js": {
+        "bytes": 1970,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "../utils.js"
+          },
+          {
+            "path": "node_modules/axios/lib/adapters/http.js",
+            "kind": "import-statement",
+            "original": "./http.js"
+          },
+          {
+            "path": "node_modules/axios/lib/adapters/xhr.js",
+            "kind": "import-statement",
+            "original": "./xhr.js"
+          },
+          {
+            "path": "node_modules/axios/lib/adapters/fetch.js",
+            "kind": "import-statement",
+            "original": "./fetch.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/AxiosError.js",
+            "kind": "import-statement",
+            "original": "../core/AxiosError.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/core/dispatchRequest.js": {
+        "bytes": 2187,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/core/transformData.js",
+            "kind": "import-statement",
+            "original": "./transformData.js"
+          },
+          {
+            "path": "node_modules/axios/lib/cancel/isCancel.js",
+            "kind": "import-statement",
+            "original": "../cancel/isCancel.js"
+          },
+          {
+            "path": "node_modules/axios/lib/defaults/index.js",
+            "kind": "import-statement",
+            "original": "../defaults/index.js"
+          },
+          {
+            "path": "node_modules/axios/lib/cancel/CanceledError.js",
+            "kind": "import-statement",
+            "original": "../cancel/CanceledError.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/AxiosHeaders.js",
+            "kind": "import-statement",
+            "original": "../core/AxiosHeaders.js"
+          },
+          {
+            "path": "node_modules/axios/lib/adapters/adapters.js",
+            "kind": "import-statement",
+            "original": "../adapters/adapters.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/validator.js": {
+        "bytes": 2785,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/env/data.js",
+            "kind": "import-statement",
+            "original": "../env/data.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/AxiosError.js",
+            "kind": "import-statement",
+            "original": "../core/AxiosError.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/core/Axios.js": {
+        "bytes": 6848,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "./../utils.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/buildURL.js",
+            "kind": "import-statement",
+            "original": "../helpers/buildURL.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/InterceptorManager.js",
+            "kind": "import-statement",
+            "original": "./InterceptorManager.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/dispatchRequest.js",
+            "kind": "import-statement",
+            "original": "./dispatchRequest.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/mergeConfig.js",
+            "kind": "import-statement",
+            "original": "./mergeConfig.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/buildFullPath.js",
+            "kind": "import-statement",
+            "original": "./buildFullPath.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/validator.js",
+            "kind": "import-statement",
+            "original": "../helpers/validator.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/AxiosHeaders.js",
+            "kind": "import-statement",
+            "original": "./AxiosHeaders.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/cancel/CancelToken.js": {
+        "bytes": 2789,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/cancel/CanceledError.js",
+            "kind": "import-statement",
+            "original": "./CanceledError.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/spread.js": {
+        "bytes": 564,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/isAxiosError.js": {
+        "bytes": 373,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "./../utils.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/helpers/HttpStatusCode.js": {
+        "bytes": 1600,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/lib/axios.js": {
+        "bytes": 2549,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/utils.js",
+            "kind": "import-statement",
+            "original": "./utils.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/bind.js",
+            "kind": "import-statement",
+            "original": "./helpers/bind.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/Axios.js",
+            "kind": "import-statement",
+            "original": "./core/Axios.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/mergeConfig.js",
+            "kind": "import-statement",
+            "original": "./core/mergeConfig.js"
+          },
+          {
+            "path": "node_modules/axios/lib/defaults/index.js",
+            "kind": "import-statement",
+            "original": "./defaults/index.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/formDataToJSON.js",
+            "kind": "import-statement",
+            "original": "./helpers/formDataToJSON.js"
+          },
+          {
+            "path": "node_modules/axios/lib/cancel/CanceledError.js",
+            "kind": "import-statement",
+            "original": "./cancel/CanceledError.js"
+          },
+          {
+            "path": "node_modules/axios/lib/cancel/CancelToken.js",
+            "kind": "import-statement",
+            "original": "./cancel/CancelToken.js"
+          },
+          {
+            "path": "node_modules/axios/lib/cancel/isCancel.js",
+            "kind": "import-statement",
+            "original": "./cancel/isCancel.js"
+          },
+          {
+            "path": "node_modules/axios/lib/env/data.js",
+            "kind": "import-statement",
+            "original": "./env/data.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/toFormData.js",
+            "kind": "import-statement",
+            "original": "./helpers/toFormData.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/AxiosError.js",
+            "kind": "import-statement",
+            "original": "./core/AxiosError.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/spread.js",
+            "kind": "import-statement",
+            "original": "./helpers/spread.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/isAxiosError.js",
+            "kind": "import-statement",
+            "original": "./helpers/isAxiosError.js"
+          },
+          {
+            "path": "node_modules/axios/lib/core/AxiosHeaders.js",
+            "kind": "import-statement",
+            "original": "./core/AxiosHeaders.js"
+          },
+          {
+            "path": "node_modules/axios/lib/adapters/adapters.js",
+            "kind": "import-statement",
+            "original": "./adapters/adapters.js"
+          },
+          {
+            "path": "node_modules/axios/lib/helpers/HttpStatusCode.js",
+            "kind": "import-statement",
+            "original": "./helpers/HttpStatusCode.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/axios/index.js": {
+        "bytes": 681,
+        "imports": [
+          {
+            "path": "node_modules/axios/lib/axios.js",
+            "kind": "import-statement",
+            "original": "./lib/axios.js"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "src/profile.ts": {
+        "bytes": 652,
+        "imports": [
+          {
+            "path": "./types/core",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "src/social.ts": {
+        "bytes": 3655,
+        "imports": [
+          {
+            "path": "./profile",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "src/memory.ts": {
+        "bytes": 7623,
+        "imports": [
+          {
+            "path": "src/logger.ts",
+            "kind": "import-statement",
+            "original": "./logger"
+          },
+          {
+            "path": "node_modules/axios/index.js",
+            "kind": "import-statement",
+            "original": "axios"
+          },
+          {
+            "path": "src/profile.ts",
+            "kind": "import-statement",
+            "original": "./profile"
+          },
+          {
+            "path": "src/social.ts",
+            "kind": "import-statement",
+            "original": "./social"
+          },
+          {
+            "path": "./services/google",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "test/memory.test.ts": {
+        "bytes": 3874,
+        "imports": [
+          {
+            "path": "test/specs/memory.spec.ts",
+            "kind": "import-statement",
+            "original": "./specs/memory.spec"
+          },
+          {
+            "path": "../testeranto/src/Node.ts",
+            "kind": "import-statement",
+            "original": "testeranto/src/Node"
+          },
+          {
+            "path": "testeranto/src/CoreTypes",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "src/memory.ts",
+            "kind": "import-statement",
+            "original": "../src/memory"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "test/specs/nucleus.spec.ts": {
+        "bytes": 2203,
+        "imports": [
+          {
+            "path": "testeranto/src/CoreTypes",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "testeranto/src/CoreTypes",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "src/nucleus.ts": {
+        "bytes": 13734,
+        "imports": [
+          {
+            "path": "./llm",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "./memory",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "test/nucleus.test.ts": {
+        "bytes": 5236,
+        "imports": [
+          {
+            "path": "test/specs/nucleus.spec.ts",
+            "kind": "import-statement",
+            "original": "./specs/nucleus.spec"
+          },
+          {
+            "path": "../testeranto/src/Node.ts",
+            "kind": "import-statement",
+            "original": "testeranto/src/Node"
+          },
+          {
+            "path": "testeranto/src/CoreTypes",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "src/nucleus.ts",
+            "kind": "import-statement",
+            "original": "../src/nucleus"
+          },
+          {
+            "path": "src/llm.ts",
+            "kind": "import-statement",
+            "original": "../src/llm"
+          },
+          {
+            "path": "src/memory.ts",
+            "kind": "import-statement",
+            "original": "../src/memory"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "src/changeValidationProtocol.ts": {
+        "bytes": 4089,
+        "imports": [
+          {
+            "path": "./coreIdentityCalculus",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "./economicVerifier",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/z3-solver/build/z3-built.js": {
+        "bytes": 342659,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "worker_threads",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "fs",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "path",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "crypto",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "worker_threads",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "<runtime>",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/tslib/tslib.es6.mjs": {
+        "bytes": 17648,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "node_modules/async-mutex/lib/errors.js": {
+        "bytes": 362,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/async-mutex/lib/Semaphore.js": {
+        "bytes": 4008,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/tslib/tslib.es6.mjs",
+            "kind": "require-call",
+            "original": "tslib"
+          },
+          {
+            "path": "node_modules/async-mutex/lib/errors.js",
+            "kind": "require-call",
+            "original": "./errors"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/async-mutex/lib/Mutex.js": {
+        "bytes": 1489,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/tslib/tslib.es6.mjs",
+            "kind": "require-call",
+            "original": "tslib"
+          },
+          {
+            "path": "node_modules/async-mutex/lib/Semaphore.js",
+            "kind": "require-call",
+            "original": "./Semaphore"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/async-mutex/lib/withTimeout.js": {
+        "bytes": 4006,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/tslib/tslib.es6.mjs",
+            "kind": "require-call",
+            "original": "tslib"
+          },
+          {
+            "path": "node_modules/async-mutex/lib/errors.js",
+            "kind": "require-call",
+            "original": "./errors"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/async-mutex/lib/tryAcquire.js": {
+        "bytes": 588,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/async-mutex/lib/errors.js",
+            "kind": "require-call",
+            "original": "./errors"
+          },
+          {
+            "path": "node_modules/async-mutex/lib/withTimeout.js",
+            "kind": "require-call",
+            "original": "./withTimeout"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/async-mutex/lib/index.js": {
+        "bytes": 892,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/tslib/tslib.es6.mjs",
+            "kind": "require-call",
+            "original": "tslib"
+          },
+          {
+            "path": "node_modules/async-mutex/lib/Mutex.js",
+            "kind": "require-call",
+            "original": "./Mutex"
+          },
+          {
+            "path": "node_modules/async-mutex/lib/Semaphore.js",
+            "kind": "require-call",
+            "original": "./Semaphore"
+          },
+          {
+            "path": "node_modules/async-mutex/lib/withTimeout.js",
+            "kind": "require-call",
+            "original": "./withTimeout"
+          },
+          {
+            "path": "node_modules/async-mutex/lib/tryAcquire.js",
+            "kind": "require-call",
+            "original": "./tryAcquire"
+          },
+          {
+            "path": "node_modules/async-mutex/lib/errors.js",
+            "kind": "require-call",
+            "original": "./errors"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/z3-solver/build/low-level/types.__GENERATED__.js": {
+        "bytes": 28508,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/z3-solver/build/low-level/wrapper.__GENERATED__.js": {
+        "bytes": 104246,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/z3-solver/build/low-level/index.js": {
+        "bytes": 873,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/z3-solver/build/low-level/types.__GENERATED__.js",
+            "kind": "require-call",
+            "original": "./types.__GENERATED__"
+          },
+          {
+            "path": "node_modules/z3-solver/build/low-level/wrapper.__GENERATED__.js",
+            "kind": "require-call",
+            "original": "./wrapper.__GENERATED__"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/z3-solver/build/high-level/types.js": {
+        "bytes": 557,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/z3-solver/build/high-level/utils.js": {
+        "bytes": 1631,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/z3-solver/build/high-level/types.js",
+            "kind": "require-call",
+            "original": "./types"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/z3-solver/build/high-level/high-level.js": {
+        "bytes": 90028,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/async-mutex/lib/index.js",
+            "kind": "require-call",
+            "original": "async-mutex"
+          },
+          {
+            "path": "node_modules/z3-solver/build/low-level/index.js",
+            "kind": "require-call",
+            "original": "../low-level"
+          },
+          {
+            "path": "node_modules/z3-solver/build/high-level/types.js",
+            "kind": "require-call",
+            "original": "./types"
+          },
+          {
+            "path": "node_modules/z3-solver/build/high-level/utils.js",
+            "kind": "require-call",
+            "original": "./utils"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/z3-solver/build/high-level/index.js": {
+        "bytes": 848,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/z3-solver/build/high-level/high-level.js",
+            "kind": "require-call",
+            "original": "./high-level"
+          },
+          {
+            "path": "node_modules/z3-solver/build/high-level/types.js",
+            "kind": "require-call",
+            "original": "./types"
+          }
+        ],
+        "format": "cjs"
+      },
+      "node_modules/z3-solver/build/node.js": {
+        "bytes": 1835,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node_modules/z3-solver/build/z3-built.js",
+            "kind": "require-call",
+            "original": "./z3-built"
+          },
+          {
+            "path": "node_modules/z3-solver/build/high-level/index.js",
+            "kind": "require-call",
+            "original": "./high-level"
+          },
+          {
+            "path": "node_modules/z3-solver/build/low-level/index.js",
+            "kind": "require-call",
+            "original": "./low-level"
+          },
+          {
+            "path": "node_modules/z3-solver/build/high-level/types.js",
+            "kind": "require-call",
+            "original": "./high-level/types"
+          },
+          {
+            "path": "node_modules/z3-solver/build/low-level/types.__GENERATED__.js",
+            "kind": "require-call",
+            "original": "./low-level/types.__GENERATED__"
+          }
+        ],
+        "format": "cjs"
+      },
+      "src/coreIdentityCalculus.ts": {
+        "bytes": 10924,
+        "imports": [
+          {
+            "path": "crypto",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "./wasm-verifier",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "src/logger.ts",
+            "kind": "import-statement",
+            "original": "./logger"
+          },
+          {
+            "path": "node_modules/z3-solver/build/node.js",
+            "kind": "import-statement",
+            "original": "z3-solver"
+          },
+          {
+            "path": "./types/verification",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "test/changeValidator.test.ts": {
+        "bytes": 3173,
+        "imports": [
+          {
+            "path": "../testeranto/src/Node.ts",
+            "kind": "import-statement",
+            "original": "testeranto/src/Node"
+          },
+          {
+            "path": "src/changeValidationProtocol.ts",
+            "kind": "import-statement",
+            "original": "../src/changeValidationProtocol"
+          },
+          {
+            "path": "src/coreIdentityCalculus.ts",
+            "kind": "import-statement",
+            "original": "../src/coreIdentityCalculus"
+          },
+          {
+            "path": "testeranto/src/CoreTypes",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "./specs/changeValidator.spec",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "src/economicVerifier.ts": {
+        "bytes": 4038,
+        "imports": [
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "test/specs/economicVerifier.spec.ts": {
+        "bytes": 2189,
+        "imports": [
+          {
+            "path": "testeranto/src/CoreTypes",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "testeranto/src/CoreTypes",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "test/economicVerifier.test.ts": {
+        "bytes": 2202,
+        "imports": [
+          {
+            "path": "../testeranto/src/Node.ts",
+            "kind": "import-statement",
+            "original": "testeranto/src/Node"
+          },
+          {
+            "path": "src/economicVerifier.ts",
+            "kind": "import-statement",
+            "original": "../src/economicVerifier"
+          },
+          {
+            "path": "testeranto/src/CoreTypes",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "test/specs/economicVerifier.spec.ts",
+            "kind": "import-statement",
+            "original": "./specs/economicVerifier.spec"
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "test/specs/identityEngine.spec.ts": {
+        "bytes": 2782,
+        "imports": [
+          {
+            "path": "testeranto/src/CoreTypes",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "testeranto/src/CoreTypes",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "../../src/types/verification",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "test/identityEngine.test.ts": {
+        "bytes": 3455,
+        "imports": [
+          {
+            "path": "test/specs/identityEngine.spec.ts",
+            "kind": "import-statement",
+            "original": "./specs/identityEngine.spec"
+          },
+          {
+            "path": "../testeranto/src/Node.ts",
+            "kind": "import-statement",
+            "original": "testeranto/src/Node"
+          },
+          {
+            "path": "src/coreIdentityCalculus.ts",
+            "kind": "import-statement",
+            "original": "../src/coreIdentityCalculus"
+          },
+          {
+            "path": "testeranto/src/CoreTypes",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "test/specs/goalEngine.spec.ts": {
+        "bytes": 5212,
+        "imports": [
+          {
+            "path": "testeranto/src/CoreTypes",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "testeranto/src/CoreTypes",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "../../src/types/autonomy",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "../../src/types/domain",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "src/goalEngine.ts": {
+        "bytes": 2489,
+        "imports": [
+          {
+            "path": "./coreIdentityCalculus",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "./economicVerifier",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "./logger",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "./types/core",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      },
+      "test/goalEngine.test.ts": {
+        "bytes": 3731,
+        "imports": [
+          {
+            "path": "test/specs/goalEngine.spec.ts",
+            "kind": "import-statement",
+            "original": "./specs/goalEngine.spec"
+          },
+          {
+            "path": "../testeranto/src/Node.ts",
+            "kind": "import-statement",
+            "original": "testeranto/src/Node"
+          },
+          {
+            "path": "src/goalEngine.ts",
+            "kind": "import-statement",
+            "original": "../src/goalEngine"
+          },
+          {
+            "path": "src/coreIdentityCalculus.ts",
+            "kind": "import-statement",
+            "original": "../src/coreIdentityCalculus"
+          },
+          {
+            "path": "src/economicVerifier.ts",
+            "kind": "import-statement",
+            "original": "../src/economicVerifier"
+          },
+          {
+            "path": "testeranto/src/CoreTypes",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "/Users/adam/Code/testeranto/dist/cjs-shim.js",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "format": "esm"
+      }
+    },
+    "outputs": {
+      "testeranto/bundles/node/core/test/llm.test.mjs": {
+        "imports": [
+          {
+            "path": "testeranto/bundles/node/core/chunk-VLEWZBUB.mjs",
+            "kind": "import-statement"
+          },
+          {
+            "path": "testeranto/bundles/node/core/chunk-X2NKHCUU.mjs",
+            "kind": "import-statement"
+          },
+          {
+            "path": "testeranto/bundles/node/core/chunk-LFLTOQ4W.mjs",
+            "kind": "import-statement"
+          }
+        ],
+        "exports": [
+          "default"
+        ],
+        "entryPoint": "test/llm.test.ts",
+        "inputs": {
+          "test/llm.test.ts": {
+            "bytesInOutput": 2655
+          },
+          "test/specs/llm.spec.ts": {
+            "bytesInOutput": 957
+          }
+        },
+        "bytes": 3973
+      },
+      "testeranto/bundles/node/core/test/memory.test.mjs": {
+        "imports": [
+          {
+            "path": "testeranto/bundles/node/core/chunk-FNDFDSAX.mjs",
+            "kind": "import-statement"
+          },
+          {
+            "path": "testeranto/bundles/node/core/chunk-X2NKHCUU.mjs",
+            "kind": "import-statement"
+          },
+          {
+            "path": "testeranto/bundles/node/core/chunk-LFLTOQ4W.mjs",
+            "kind": "import-statement"
+          }
+        ],
+        "exports": [
+          "default"
+        ],
+        "entryPoint": "test/memory.test.ts",
+        "inputs": {
+          "test/memory.test.ts": {
+            "bytesInOutput": 2719
+          },
+          "test/specs/memory.spec.ts": {
+            "bytesInOutput": 1240
+          }
+        },
+        "bytes": 4331
+      },
+      "testeranto/bundles/node/core/test/nucleus.test.mjs": {
+        "imports": [
+          {
+            "path": "testeranto/bundles/node/core/chunk-VLEWZBUB.mjs",
+            "kind": "import-statement"
+          },
+          {
+            "path": "testeranto/bundles/node/core/chunk-FNDFDSAX.mjs",
+            "kind": "import-statement"
+          },
+          {
+            "path": "testeranto/bundles/node/core/chunk-X2NKHCUU.mjs",
+            "kind": "import-statement"
+          },
+          {
+            "path": "testeranto/bundles/node/core/chunk-LFLTOQ4W.mjs",
+            "kind": "import-statement"
+          }
+        ],
+        "exports": [
+          "default"
+        ],
+        "entryPoint": "test/nucleus.test.ts",
+        "inputs": {
+          "test/nucleus.test.ts": {
+            "bytesInOutput": 2699
+          },
+          "test/specs/nucleus.spec.ts": {
+            "bytesInOutput": 1414
+          },
+          "src/nucleus.ts": {
+            "bytesInOutput": 12444
+          }
+        },
+        "bytes": 17010
+      },
+      "testeranto/bundles/node/core/chunk-VLEWZBUB.mjs": {
+        "imports": [
+          {
+            "path": "testeranto/bundles/node/core/chunk-X2NKHCUU.mjs",
+            "kind": "import-statement"
+          },
+          {
+            "path": "testeranto/bundles/node/core/chunk-LFLTOQ4W.mjs",
+            "kind": "import-statement"
+          },
+          {
+            "path": "fs",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "fs",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "fs",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "path",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "path",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "fs",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "path",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "child_process",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "stream",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "node:buffer",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:child_process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:url",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:os",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:os",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:os",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:child_process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:fs",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:timers/promises",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:buffer",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:child_process",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:util",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:process",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "exports": [
+          "LLMIntegration"
+        ],
+        "inputs": {
+          "node_modules/isexe/windows.js": {
+            "bytesInOutput": 1151
+          },
+          "node_modules/isexe/mode.js": {
+            "bytesInOutput": 1104
+          },
+          "node_modules/isexe/index.js": {
+            "bytesInOutput": 1395
+          },
+          "node_modules/which/which.js": {
+            "bytesInOutput": 3462
+          },
+          "node_modules/path-key/index.js": {
+            "bytesInOutput": 536
+          },
+          "node_modules/cross-spawn/lib/util/resolveCommand.js": {
+            "bytesInOutput": 1323
+          },
+          "node_modules/cross-spawn/lib/util/escape.js": {
+            "bytesInOutput": 776
+          },
+          "node_modules/shebang-regex/index.js": {
+            "bytesInOutput": 179
+          },
+          "node_modules/shebang-command/index.js": {
+            "bytesInOutput": 582
+          },
+          "node_modules/cross-spawn/lib/util/readShebang.js": {
+            "bytesInOutput": 594
+          },
+          "node_modules/cross-spawn/lib/parse.js": {
+            "bytesInOutput": 2111
+          },
+          "node_modules/cross-spawn/lib/enoent.js": {
+            "bytesInOutput": 1401
+          },
+          "node_modules/cross-spawn/index.js": {
+            "bytesInOutput": 966
+          },
+          "node_modules/merge-stream/index.js": {
+            "bytesInOutput": 1159
+          },
+          "src/llm.ts": {
+            "bytesInOutput": 3308
+          },
+          "node_modules/execa/index.js": {
+            "bytesInOutput": 6537
+          },
+          "node_modules/strip-final-newline/index.js": {
+            "bytesInOutput": 369
+          },
+          "node_modules/npm-run-path/index.js": {
+            "bytesInOutput": 1270
+          },
+          "node_modules/npm-run-path/node_modules/path-key/index.js": {
+            "bytesInOutput": 276
+          },
+          "node_modules/onetime/index.js": {
+            "bytesInOutput": 1051
+          },
+          "node_modules/mimic-fn/index.js": {
+            "bytesInOutput": 2006
+          },
+          "node_modules/execa/lib/error.js": {
+            "bytesInOutput": 2089
+          },
+          "node_modules/human-signals/build/src/main.js": {
+            "bytesInOutput": 1336
+          },
+          "node_modules/human-signals/build/src/realtime.js": {
+            "bytesInOutput": 391
+          },
+          "node_modules/human-signals/build/src/signals.js": {
+            "bytesInOutput": 598
+          },
+          "node_modules/human-signals/build/src/core.js": {
+            "bytesInOutput": 5250
+          },
+          "node_modules/execa/lib/stdio.js": {
+            "bytesInOutput": 823
+          },
+          "node_modules/execa/lib/kill.js": {
+            "bytesInOutput": 2600
+          },
+          "node_modules/signal-exit/dist/mjs/index.js": {
+            "bytesInOutput": 6263
+          },
+          "node_modules/signal-exit/dist/mjs/signals.js": {
+            "bytesInOutput": 479
+          },
+          "node_modules/execa/lib/pipe.js": {
+            "bytesInOutput": 1174
+          },
+          "node_modules/is-stream/index.js": {
+            "bytesInOutput": 318
+          },
+          "node_modules/execa/lib/stream.js": {
+            "bytesInOutput": 2998
+          },
+          "node_modules/execa/node_modules/get-stream/source/index.js": {
+            "bytesInOutput": 17
+          },
+          "node_modules/execa/node_modules/get-stream/source/array.js": {
+            "bytesInOutput": 17
+          },
+          "node_modules/execa/node_modules/get-stream/source/contents.js": {
+            "bytesInOutput": 2798
+          },
+          "node_modules/execa/node_modules/get-stream/source/utils.js": {
+            "bytesInOutput": 309
+          },
+          "node_modules/execa/node_modules/get-stream/source/array-buffer.js": {
+            "bytesInOutput": 2221
+          },
+          "node_modules/execa/node_modules/get-stream/source/buffer.js": {
+            "bytesInOutput": 518
+          },
+          "node_modules/execa/node_modules/get-stream/source/string.js": {
+            "bytesInOutput": 1021
+          },
+          "node_modules/execa/lib/promise.js": {
+            "bytesInOutput": 885
+          },
+          "node_modules/execa/lib/command.js": {
+            "bytesInOutput": 2551
+          },
+          "node_modules/execa/lib/verbose.js": {
+            "bytesInOutput": 593
+          },
+          "src/colors.ts": {
+            "bytesInOutput": 153
+          }
+        },
+        "bytes": 69555
+      },
+      "testeranto/bundles/node/core/chunk-FNDFDSAX.mjs": {
+        "imports": [
+          {
+            "path": "testeranto/bundles/node/core/chunk-X2NKHCUU.mjs",
+            "kind": "import-statement"
+          },
+          {
+            "path": "testeranto/bundles/node/core/chunk-LFLTOQ4W.mjs",
+            "kind": "import-statement"
+          },
+          {
+            "path": "stream",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "util",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "util",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "stream",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "path",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "util",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "path",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "http",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "https",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "url",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "fs",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "stream",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "crypto",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "url",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "os",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "tty",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "tty",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "util",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "url",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "http",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "https",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "stream",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "assert",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "crypto",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "url",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "http",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "https",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "util",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "zlib",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "stream",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "stream",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "events",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "util",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "stream",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "stream",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "exports": [
+          "MemoryManager"
+        ],
+        "inputs": {
+          "node_modules/delayed-stream/lib/delayed_stream.js": {
+            "bytesInOutput": 2787
+          },
+          "node_modules/combined-stream/lib/combined_stream.js": {
+            "bytesInOutput": 5464
+          },
+          "node_modules/mime-db/db.json": {
+            "bytesInOutput": 212407
+          },
+          "node_modules/mime-db/index.js": {
+            "bytesInOutput": 152
+          },
+          "node_modules/mime-types/index.js": {
+            "bytesInOutput": 2925
+          },
+          "node_modules/asynckit/lib/defer.js": {
+            "bytesInOutput": 440
+          },
+          "node_modules/asynckit/lib/async.js": {
+            "bytesInOutput": 544
+          },
+          "node_modules/asynckit/lib/abort.js": {
+            "bytesInOutput": 378
+          },
+          "node_modules/asynckit/lib/iterate.js": {
+            "bytesInOutput": 976
+          },
+          "node_modules/asynckit/lib/state.js": {
+            "bytesInOutput": 670
+          },
+          "node_modules/asynckit/lib/terminator.js": {
+            "bytesInOutput": 431
+          },
+          "node_modules/asynckit/parallel.js": {
+            "bytesInOutput": 805
+          },
+          "node_modules/asynckit/serialOrdered.js": {
+            "bytesInOutput": 1079
+          },
+          "node_modules/asynckit/serial.js": {
+            "bytesInOutput": 312
+          },
+          "node_modules/asynckit/index.js": {
+            "bytesInOutput": 262
+          },
+          "node_modules/es-object-atoms/index.js": {
+            "bytesInOutput": 180
+          },
+          "node_modules/es-errors/index.js": {
+            "bytesInOutput": 167
+          },
+          "node_modules/es-errors/eval.js": {
+            "bytesInOutput": 165
+          },
+          "node_modules/es-errors/range.js": {
+            "bytesInOutput": 168
+          },
+          "node_modules/es-errors/ref.js": {
+            "bytesInOutput": 168
+          },
+          "node_modules/es-errors/syntax.js": {
+            "bytesInOutput": 171
+          },
+          "node_modules/es-errors/type.js": {
+            "bytesInOutput": 165
+          },
+          "node_modules/es-errors/uri.js": {
+            "bytesInOutput": 162
+          },
+          "node_modules/math-intrinsics/abs.js": {
+            "bytesInOutput": 168
+          },
+          "node_modules/math-intrinsics/floor.js": {
+            "bytesInOutput": 174
+          },
+          "node_modules/math-intrinsics/max.js": {
+            "bytesInOutput": 168
+          },
+          "node_modules/math-intrinsics/min.js": {
+            "bytesInOutput": 168
+          },
+          "node_modules/math-intrinsics/pow.js": {
+            "bytesInOutput": 168
+          },
+          "node_modules/math-intrinsics/round.js": {
+            "bytesInOutput": 174
+          },
+          "node_modules/math-intrinsics/isNaN.js": {
+            "bytesInOutput": 228
+          },
+          "node_modules/math-intrinsics/sign.js": {
+            "bytesInOutput": 334
+          },
+          "node_modules/gopd/gOPD.js": {
+            "bytesInOutput": 182
+          },
+          "node_modules/gopd/index.js": {
+            "bytesInOutput": 303
+          },
+          "node_modules/es-define-property/index.js": {
+            "bytesInOutput": 407
+          },
+          "node_modules/has-symbols/shams.js": {
+            "bytesInOutput": 1672
+          },
+          "node_modules/has-symbols/index.js": {
+            "bytesInOutput": 640
+          },
+          "node_modules/get-proto/Reflect.getPrototypeOf.js": {
+            "bytesInOutput": 256
+          },
+          "node_modules/get-proto/Object.getPrototypeOf.js": {
+            "bytesInOutput": 265
+          },
+          "node_modules/function-bind/implementation.js": {
+            "bytesInOutput": 2229
+          },
+          "node_modules/function-bind/index.js": {
+            "bytesInOutput": 262
+          },
+          "node_modules/call-bind-apply-helpers/functionCall.js": {
+            "bytesInOutput": 209
+          },
+          "node_modules/call-bind-apply-helpers/functionApply.js": {
+            "bytesInOutput": 212
+          },
+          "node_modules/call-bind-apply-helpers/reflectApply.js": {
+            "bytesInOutput": 244
+          },
+          "node_modules/call-bind-apply-helpers/actualApply.js": {
+            "bytesInOutput": 397
+          },
+          "node_modules/call-bind-apply-helpers/index.js": {
+            "bytesInOutput": 563
+          },
+          "node_modules/dunder-proto/get.js": {
+            "bytesInOutput": 1035
+          },
+          "node_modules/get-proto/index.js": {
+            "bytesInOutput": 704
+          },
+          "node_modules/hasown/index.js": {
+            "bytesInOutput": 313
+          },
+          "node_modules/get-intrinsic/index.js": {
+            "bytesInOutput": 15049
+          },
+          "node_modules/has-tostringtag/shams.js": {
+            "bytesInOutput": 292
+          },
+          "node_modules/es-set-tostringtag/index.js": {
+            "bytesInOutput": 1380
+          },
+          "node_modules/form-data/lib/populate.js": {
+            "bytesInOutput": 314
+          },
+          "node_modules/form-data/lib/form_data.js": {
+            "bytesInOutput": 11527
+          },
+          "node_modules/proxy-from-env/index.js": {
+            "bytesInOutput": 2423
+          },
+          "node_modules/ms/index.js": {
+            "bytesInOutput": 2902
+          },
+          "node_modules/debug/src/common.js": {
+            "bytesInOutput": 5954
+          },
+          "node_modules/debug/src/browser.js": {
+            "bytesInOutput": 4712
+          },
+          "node_modules/has-flag/index.js": {
+            "bytesInOutput": 478
+          },
+          "node_modules/supports-color/index.js": {
+            "bytesInOutput": 3159
+          },
+          "node_modules/debug/src/node.js": {
+            "bytesInOutput": 4346
+          },
+          "node_modules/debug/src/index.js": {
+            "bytesInOutput": 334
+          },
+          "node_modules/follow-redirects/debug.js": {
+            "bytesInOutput": 444
+          },
+          "node_modules/follow-redirects/index.js": {
+            "bytesInOutput": 17692
+          },
+          "src/memory.ts": {
+            "bytesInOutput": 5237
+          },
+          "node_modules/axios/index.js": {
+            "bytesInOutput": 414
+          },
+          "node_modules/axios/lib/axios.js": {
+            "bytesInOutput": 1284
+          },
+          "node_modules/axios/lib/utils.js": {
+            "bytesInOutput": 11472
+          },
+          "node_modules/axios/lib/helpers/bind.js": {
+            "bytesInOutput": 121
+          },
+          "node_modules/axios/lib/core/Axios.js": {
+            "bytesInOutput": 5903
+          },
+          "node_modules/axios/lib/helpers/buildURL.js": {
+            "bytesInOutput": 1002
+          },
+          "node_modules/axios/lib/helpers/AxiosURLSearchParams.js": {
+            "bytesInOutput": 903
+          },
+          "node_modules/axios/lib/helpers/toFormData.js": {
+            "bytesInOutput": 4006
+          },
+          "node_modules/axios/lib/core/AxiosError.js": {
+            "bytesInOutput": 2114
+          },
+          "node_modules/axios/lib/platform/node/classes/FormData.js": {
+            "bytesInOutput": 122
+          },
+          "node_modules/axios/lib/core/InterceptorManager.js": {
+            "bytesInOutput": 1563
+          },
+          "node_modules/axios/lib/core/dispatchRequest.js": {
+            "bytesInOutput": 1451
+          },
+          "node_modules/axios/lib/core/transformData.js": {
+            "bytesInOutput": 419
+          },
+          "node_modules/axios/lib/defaults/index.js": {
+            "bytesInOutput": 3858
+          },
+          "node_modules/axios/lib/defaults/transitional.js": {
+            "bytesInOutput": 132
+          },
+          "node_modules/axios/lib/helpers/toURLEncodedForm.js": {
+            "bytesInOutput": 437
+          },
+          "node_modules/axios/lib/platform/index.js": {
+            "bytesInOutput": 83
+          },
+          "node_modules/axios/lib/platform/node/index.js": {
+            "bytesInOutput": 776
+          },
+          "node_modules/axios/lib/platform/node/classes/URLSearchParams.js": {
+            "bytesInOutput": 91
+          },
+          "node_modules/axios/lib/platform/common/utils.js": {
+            "bytesInOutput": 876
+          },
+          "node_modules/axios/lib/helpers/formDataToJSON.js": {
+            "bytesInOutput": 1558
+          },
+          "node_modules/axios/lib/core/AxiosHeaders.js": {
+            "bytesInOutput": 7450
+          },
+          "node_modules/axios/lib/helpers/parseHeaders.js": {
+            "bytesInOutput": 967
+          },
+          "node_modules/axios/lib/cancel/isCancel.js": {
+            "bytesInOutput": 86
+          },
+          "node_modules/axios/lib/cancel/CanceledError.js": {
+            "bytesInOutput": 350
+          },
+          "node_modules/axios/lib/adapters/adapters.js": {
+            "bytesInOutput": 1754
+          },
+          "node_modules/axios/lib/adapters/http.js": {
+            "bytesInOutput": 18500
+          },
+          "node_modules/axios/lib/core/settle.js": {
+            "bytesInOutput": 527
+          },
+          "node_modules/axios/lib/core/buildFullPath.js": {
+            "bytesInOutput": 278
+          },
+          "node_modules/axios/lib/helpers/isAbsoluteURL.js": {
+            "bytesInOutput": 101
+          },
+          "node_modules/axios/lib/helpers/combineURLs.js": {
+            "bytesInOutput": 168
+          },
+          "node_modules/axios/lib/env/data.js": {
+            "bytesInOutput": 41
+          },
+          "node_modules/axios/lib/helpers/fromDataURI.js": {
+            "bytesInOutput": 1061
+          },
+          "node_modules/axios/lib/helpers/parseProtocol.js": {
+            "bytesInOutput": 140
+          },
+          "node_modules/axios/lib/helpers/AxiosTransformStream.js": {
+            "bytesInOutput": 3631
+          },
+          "node_modules/axios/lib/helpers/formDataToStream.js": {
+            "bytesInOutput": 2890
+          },
+          "node_modules/axios/lib/helpers/readBlob.js": {
+            "bytesInOutput": 342
+          },
+          "node_modules/axios/lib/helpers/ZlibHeaderTransformStream.js": {
+            "bytesInOutput": 606
+          },
+          "node_modules/axios/lib/helpers/callbackify.js": {
+            "bytesInOutput": 371
+          },
+          "node_modules/axios/lib/helpers/progressEventReducer.js": {
+            "bytesInOutput": 1116
+          },
+          "node_modules/axios/lib/helpers/speedometer.js": {
+            "bytesInOutput": 958
+          },
+          "node_modules/axios/lib/helpers/throttle.js": {
+            "bytesInOutput": 773
+          },
+          "node_modules/axios/lib/adapters/xhr.js": {
+            "bytesInOutput": 4899
+          },
+          "node_modules/axios/lib/helpers/resolveConfig.js": {
+            "bytesInOutput": 1535
+          },
+          "node_modules/axios/lib/helpers/isURLSameOrigin.js": {
+            "bytesInOutput": 437
+          },
+          "node_modules/axios/lib/helpers/cookies.js": {
+            "bytesInOutput": 1020
+          },
+          "node_modules/axios/lib/core/mergeConfig.js": {
+            "bytesInOutput": 2899
+          },
+          "node_modules/axios/lib/adapters/fetch.js": {
+            "bytesInOutput": 6120
+          },
+          "node_modules/axios/lib/helpers/composeSignals.js": {
+            "bytesInOutput": 1299
+          },
+          "node_modules/axios/lib/helpers/trackStream.js": {
+            "bytesInOutput": 1692
+          },
+          "node_modules/axios/lib/helpers/validator.js": {
+            "bytesInOutput": 2122
+          },
+          "node_modules/axios/lib/cancel/CancelToken.js": {
+            "bytesInOutput": 2393
+          },
+          "node_modules/axios/lib/helpers/spread.js": {
+            "bytesInOutput": 120
+          },
+          "node_modules/axios/lib/helpers/isAxiosError.js": {
+            "bytesInOutput": 127
+          },
+          "node_modules/axios/lib/helpers/HttpStatusCode.js": {
+            "bytesInOutput": 1626
+          },
+          "src/profile.ts": {
+            "bytesInOutput": 84
+          },
+          "src/social.ts": {
+            "bytesInOutput": 2934
+          }
+        },
+        "bytes": 435893
+      },
+      "testeranto/bundles/node/core/test/changeValidator.test.mjs": {
+        "imports": [
+          {
+            "path": "testeranto/bundles/node/core/chunk-PSV4E2N2.mjs",
+            "kind": "import-statement"
+          },
+          {
+            "path": "testeranto/bundles/node/core/chunk-X2NKHCUU.mjs",
+            "kind": "import-statement"
+          },
+          {
+            "path": "testeranto/bundles/node/core/chunk-LFLTOQ4W.mjs",
+            "kind": "import-statement"
+          }
+        ],
+        "exports": [
+          "default"
+        ],
+        "entryPoint": "test/changeValidator.test.ts",
+        "inputs": {
+          "test/changeValidator.test.ts": {
+            "bytesInOutput": 2055
+          },
+          "src/changeValidationProtocol.ts": {
+            "bytesInOutput": 2888
+          }
+        },
+        "bytes": 5349
+      },
+      "testeranto/bundles/node/core/test/economicVerifier.test.mjs": {
+        "imports": [
+          {
+            "path": "testeranto/bundles/node/core/chunk-26K32GGO.mjs",
+            "kind": "import-statement"
+          },
+          {
+            "path": "testeranto/bundles/node/core/chunk-LFLTOQ4W.mjs",
+            "kind": "import-statement"
+          }
+        ],
+        "exports": [
+          "default"
+        ],
+        "entryPoint": "test/economicVerifier.test.ts",
+        "inputs": {
+          "test/economicVerifier.test.ts": {
+            "bytesInOutput": 1274
+          },
+          "test/specs/economicVerifier.spec.ts": {
+            "bytesInOutput": 1849
+          }
+        },
+        "bytes": 3506
+      },
+      "testeranto/bundles/node/core/test/identityEngine.test.mjs": {
+        "imports": [
+          {
+            "path": "testeranto/bundles/node/core/chunk-PSV4E2N2.mjs",
+            "kind": "import-statement"
+          },
+          {
+            "path": "testeranto/bundles/node/core/chunk-X2NKHCUU.mjs",
+            "kind": "import-statement"
+          },
+          {
+            "path": "testeranto/bundles/node/core/chunk-LFLTOQ4W.mjs",
+            "kind": "import-statement"
+          }
+        ],
+        "exports": [
+          "default"
+        ],
+        "entryPoint": "test/identityEngine.test.ts",
+        "inputs": {
+          "test/identityEngine.test.ts": {
+            "bytesInOutput": 2139
+          },
+          "test/specs/identityEngine.spec.ts": {
+            "bytesInOutput": 2090
+          }
+        },
+        "bytes": 4634
+      },
+      "testeranto/bundles/node/core/test/goalEngine.test.mjs": {
+        "imports": [
+          {
+            "path": "testeranto/bundles/node/core/chunk-26K32GGO.mjs",
+            "kind": "import-statement"
+          },
+          {
+            "path": "testeranto/bundles/node/core/chunk-PSV4E2N2.mjs",
+            "kind": "import-statement"
+          },
+          {
+            "path": "testeranto/bundles/node/core/chunk-X2NKHCUU.mjs",
+            "kind": "import-statement"
+          },
+          {
+            "path": "testeranto/bundles/node/core/chunk-LFLTOQ4W.mjs",
+            "kind": "import-statement"
+          }
+        ],
+        "exports": [
+          "default"
+        ],
+        "entryPoint": "test/goalEngine.test.ts",
+        "inputs": {
+          "test/goalEngine.test.ts": {
+            "bytesInOutput": 2723
+          },
+          "test/specs/goalEngine.spec.ts": {
+            "bytesInOutput": 3788
+          },
+          "src/goalEngine.ts": {
+            "bytesInOutput": 1707
+          }
+        },
+        "bytes": 8689
+      },
+      "testeranto/bundles/node/core/chunk-26K32GGO.mjs": {
+        "imports": [
+          {
+            "path": "testeranto/bundles/node/core/chunk-LFLTOQ4W.mjs",
+            "kind": "import-statement"
+          }
+        ],
+        "exports": [
+          "EconomicVerifier"
+        ],
+        "inputs": {
+          "src/economicVerifier.ts": {
+            "bytesInOutput": 3063
+          }
+        },
+        "bytes": 3266
+      },
+      "testeranto/bundles/node/core/chunk-PSV4E2N2.mjs": {
+        "imports": [
+          {
+            "path": "testeranto/bundles/node/core/chunk-X2NKHCUU.mjs",
+            "kind": "import-statement"
+          },
+          {
+            "path": "testeranto/bundles/node/core/chunk-LFLTOQ4W.mjs",
+            "kind": "import-statement"
+          },
+          {
+            "path": "worker_threads",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "fs",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "path",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "crypto",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "worker_threads",
+            "kind": "require-call",
+            "external": true
+          },
+          {
+            "path": "crypto",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "exports": [
+          "IdentityEngine"
+        ],
+        "inputs": {
+          "node_modules/z3-solver/build/z3-built.js": {
+            "bytesInOutput": 335125
+          },
+          "node_modules/tslib/tslib.es6.mjs": {
+            "bytesInOutput": 19457
+          },
+          "node_modules/async-mutex/lib/errors.js": {
+            "bytesInOutput": 503
+          },
+          "node_modules/async-mutex/lib/Semaphore.js": {
+            "bytesInOutput": 4363
+          },
+          "node_modules/async-mutex/lib/Mutex.js": {
+            "bytesInOutput": 1657
+          },
+          "node_modules/async-mutex/lib/withTimeout.js": {
+            "bytesInOutput": 3918
+          },
+          "node_modules/async-mutex/lib/tryAcquire.js": {
+            "bytesInOutput": 611
+          },
+          "node_modules/async-mutex/lib/index.js": {
+            "bytesInOutput": 1113
+          },
+          "node_modules/z3-solver/build/low-level/types.__GENERATED__.js": {
+            "bytesInOutput": 30079
+          },
+          "node_modules/z3-solver/build/low-level/wrapper.__GENERATED__.js": {
+            "bytesInOutput": 96572
+          },
+          "node_modules/z3-solver/build/low-level/index.js": {
+            "bytesInOutput": 1100
+          },
+          "node_modules/z3-solver/build/high-level/types.js": {
+            "bytesInOutput": 453
+          },
+          "node_modules/z3-solver/build/high-level/utils.js": {
+            "bytesInOutput": 911
+          },
+          "node_modules/z3-solver/build/high-level/high-level.js": {
+            "bytesInOutput": 81932
+          },
+          "node_modules/z3-solver/build/high-level/index.js": {
+            "bytesInOutput": 1086
+          },
+          "node_modules/z3-solver/build/node.js": {
+            "bytesInOutput": 1435
+          },
+          "src/coreIdentityCalculus.ts": {
+            "bytesInOutput": 8937
+          }
+        },
+        "bytes": 590375
+      },
+      "testeranto/bundles/node/core/chunk-X2NKHCUU.mjs": {
+        "imports": [
+          {
+            "path": "testeranto/bundles/node/core/chunk-LFLTOQ4W.mjs",
+            "kind": "import-statement"
+          }
+        ],
+        "exports": [
+          "Logger"
+        ],
+        "inputs": {
+          "src/logger.ts": {
+            "bytesInOutput": 1121
+          }
+        },
+        "bytes": 1304
+      },
+      "testeranto/bundles/node/core/chunk-LFLTOQ4W.mjs": {
+        "imports": [
+          {
+            "path": "node:path",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "node:url",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "net",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "fs",
+            "kind": "import-statement",
+            "external": true
+          },
+          {
+            "path": "path",
+            "kind": "import-statement",
+            "external": true
+          }
+        ],
+        "exports": [
+          "Node_default",
+          "__commonJS",
+          "__esm",
+          "__export",
+          "__require",
+          "__toCommonJS",
+          "__toESM",
+          "init_cjs_shim"
+        ],
+        "inputs": {
+          "../testeranto/dist/cjs-shim.js": {
+            "bytesInOutput": 250
+          },
+          "../testeranto/src/Node.ts": {
+            "bytesInOutput": 1389
+          },
+          "../testeranto/src/lib/core.ts": {
+            "bytesInOutput": 1844
+          },
+          "../testeranto/src/lib/index.ts": {
+            "bytesInOutput": 673
+          },
+          "../testeranto/src/lib/abstractBase.ts": {
+            "bytesInOutput": 4993
+          },
+          "../testeranto/src/lib/pmProxy.ts": {
+            "bytesInOutput": 3773
+          },
+          "../testeranto/src/lib/classBuilder.ts": {
+            "bytesInOutput": 1867
+          },
+          "../testeranto/src/lib/basebuilder.ts": {
+            "bytesInOutput": 2398
+          },
+          "../testeranto/src/lib/BaseSuite.ts": {
+            "bytesInOutput": 2501
+          },
+          "../testeranto/src/PM/node.ts": {
+            "bytesInOutput": 5251
+          },
+          "../testeranto/src/PM/index.ts": {
+            "bytesInOutput": 37
+          }
+        },
+        "bytes": 27799
+      }
     }
-  ],
-  "warnings": []
+  }
 }

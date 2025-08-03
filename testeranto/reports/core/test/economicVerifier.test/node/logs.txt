@@ -1,0 +1,271 @@
+stdout > [DEBUG] BaseSuite constructor - name: Cost Analysis index: 0
+[DEBUG] BaseSuite initialized: Cost Analysis 0
+[DEBUG] BaseSuite givens: validTest,budgetEdgeTest,complexTest,apiTest,mlTest,expensiveTest
+stdout > receiveTestResourceConfig {"name":"test/economicVerifier.test.ts","ports":[],"fs":"testeranto/reports/core/test/economicVerifier.test/node","browserWSEndpoint":"ws://127.0.0.1:3234/devtools/browser/db9c3128-cfda-4fe7-8bdd-d341b30de8e8"}
+stdout > [Given] Setting currentStep for beforeEach: Default
+[DEBUG] Executing When step: analyzeCode: // Simple code change
+[When] Setting currentStep for andWhen: analyzeCode: // Simple code change
+[DEBUG] When step completed: analyzeCode: // Simple code change
+[Then] Setting currentStep for butThen: verifyAnalysis: [object Object]
+stdout > [Given] Setting currentStep for beforeEach: Default
+stdout > [DEBUG] Executing When step: analyzeCode: // Large but valid change
+x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;
+[When] Setting currentStep for andWhen: analyzeCode: // Large but valid change
+x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;
+stdout > [DEBUG] When step completed: analyzeCode: // Large but valid change
+x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;
+[Then] Setting currentStep for butThen: verifyAnalysis: [object Object]
+stdout > [Given] Setting currentStep for beforeEach: Default
+[DEBUG] Executing When step: analyzeCode: if (x) { while(y) { z++; } }
+[When] Setting currentStep for andWhen: analyzeCode: if (x) { while(y) { z++; } }
+stdout > [DEBUG] When step completed: analyzeCode: if (x) { while(y) { z++; } }
+[Then] Setting currentStep for butThen: verifyAnalysis: [object Object]
+stdout > [Given] Setting currentStep for beforeEach: Default
+[DEBUG] Executing When step: analyzeCode: api.fetchData()
+[When] Setting currentStep for andWhen: analyzeCode: api.fetchData()
+[DEBUG] When step completed: analyzeCode: api.fetchData()
+[Then] Setting currentStep for butThen: verifyAnalysis: [object Object]
+[Given] Setting currentStep for beforeEach: Default
+[DEBUG] Executing When step: analyzeCode: model.predict(input)
+[When] Setting currentStep for andWhen: analyzeCode: model.predict(input)
+[DEBUG] When step completed: analyzeCode: model.predict(input)
+[Then] Setting currentStep for butThen: verifyAnalysis: [object Object]
+stdout > [Given] Setting currentStep for beforeEach: Default
+[DEBUG] Executing When step: analyzeCode: 
+        // Complex ML-heavy code
+        api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+
+        model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+
+        while(true) { processData(); }
+      
+[When] Setting currentStep for andWhen: analyzeCode: 
+        // Complex ML-heavy code
+        api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+
+        model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+
+        while(true) { processData(); }
+      
+[DEBUG] When step completed: analyzeCode: 
+        // Complex ML-heavy code
+        api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+api.callExternal()
+
+        model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+model.predict(x)
+
+        while(true) { processData(); }
+      
+[Then] Setting currentStep for butThen: verifyAnalysis: [object Object]
+stdout > toObj error undefined
+stdout > toObj error undefined
+toObj error undefined
+toObj error undefined
+toObj error undefined
+stdout > toObj error undefined
+[DEBUG] Features extracted: Should accept low-cost changes,Should warn near budget threshold,Should account for complexity,Should detect API calls,Should detect ML operations,Should reject expensive changes
+stdout > [DEBUG] Features extracted: Should accept low-cost changes,Should warn near budget threshold,Should account for complexity,Should detect API calls,Should detect ML operations,Should reject expensive changes
+stderr > goodbye node with failures 0

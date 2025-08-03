@@ -1,4 +1,7 @@
+import { ProfileManager } from "./profile";
+
 export class SocialEngine {
+  constructor(private profile?: ProfileManager) {}
   private personalFacts: Map<string, string> = new Map();
   private interactionHistory: Array<{
     timestamp: Date;

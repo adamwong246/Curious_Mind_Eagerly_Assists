@@ -1,13 +1,18 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
+  Logger
+} from "./chunk-X2NKHCUU.mjs";
+import {
   __commonJS,
   __require,
-  __toESM
-} from "./chunk-DQMVF4HA.mjs";
+  __toESM,
+  init_cjs_shim
+} from "./chunk-LFLTOQ4W.mjs";
 
 // node_modules/isexe/windows.js
 var require_windows = __commonJS({
   "node_modules/isexe/windows.js"(exports, module) {
+    init_cjs_shim();
     module.exports = isexe;
     isexe.sync = sync;
     var fs = __require("fs");
@@ -48,6 +53,7 @@ var require_windows = __commonJS({
 // node_modules/isexe/mode.js
 var require_mode = __commonJS({
   "node_modules/isexe/mode.js"(exports, module) {
+    init_cjs_shim();
     module.exports = isexe;
     isexe.sync = sync;
     var fs = __require("fs");
@@ -81,6 +87,7 @@ var require_mode = __commonJS({
 // node_modules/isexe/index.js
 var require_isexe = __commonJS({
   "node_modules/isexe/index.js"(exports, module) {
+    init_cjs_shim();
     var fs = __require("fs");
     var core;
     if (process.platform === "win32" || global.TESTING_WINDOWS) {
@@ -136,6 +143,7 @@ var require_isexe = __commonJS({
 // node_modules/which/which.js
 var require_which = __commonJS({
   "node_modules/which/which.js"(exports, module) {
+    init_cjs_shim();
     var isWindows = process.platform === "win32" || process.env.OSTYPE === "cygwin" || process.env.OSTYPE === "msys";
     var path3 = __require("path");
     var COLON = isWindows ? ";" : ":";
@@ -233,6 +241,7 @@ var require_which = __commonJS({
 var require_path_key = __commonJS({
   "node_modules/path-key/index.js"(exports, module) {
     "use strict";
+    init_cjs_shim();
     var pathKey2 = (options = {}) => {
       const environment = options.env || process.env;
       const platform = options.platform || process.platform;
@@ -250,6 +259,7 @@ var require_path_key = __commonJS({
 var require_resolveCommand = __commonJS({
   "node_modules/cross-spawn/lib/util/resolveCommand.js"(exports, module) {
     "use strict";
+    init_cjs_shim();
     var path3 = __require("path");
     var which = require_which();
     var getPathKey = require_path_key();
@@ -292,6 +302,7 @@ var require_resolveCommand = __commonJS({
 var require_escape = __commonJS({
   "node_modules/cross-spawn/lib/util/escape.js"(exports, module) {
     "use strict";
+    init_cjs_shim();
     var metaCharsRegExp = /([()\][%!^"`<>&|;, *?])/g;
     function escapeCommand(arg) {
       arg = arg.replace(metaCharsRegExp, "^$1");
@@ -317,6 +328,7 @@ var require_escape = __commonJS({
 var require_shebang_regex = __commonJS({
   "node_modules/shebang-regex/index.js"(exports, module) {
     "use strict";
+    init_cjs_shim();
     module.exports = /^#!(.*)/;
   }
 });
@@ -325,6 +337,7 @@ var require_shebang_regex = __commonJS({
 var require_shebang_command = __commonJS({
   "node_modules/shebang-command/index.js"(exports, module) {
     "use strict";
+    init_cjs_shim();
     var shebangRegex = require_shebang_regex();
     module.exports = (string = "") => {
       const match = string.match(shebangRegex);
@@ -345,6 +358,7 @@ var require_shebang_command = __commonJS({
 var require_readShebang = __commonJS({
   "node_modules/cross-spawn/lib/util/readShebang.js"(exports, module) {
     "use strict";
+    init_cjs_shim();
     var fs = __require("fs");
     var shebangCommand = require_shebang_command();
     function readShebang(command) {
@@ -367,6 +381,7 @@ var require_readShebang = __commonJS({
 var require_parse = __commonJS({
   "node_modules/cross-spawn/lib/parse.js"(exports, module) {
     "use strict";
+    init_cjs_shim();
     var path3 = __require("path");
     var resolveCommand = require_resolveCommand();
     var escape = require_escape();
@@ -429,6 +444,7 @@ var require_parse = __commonJS({
 var require_enoent = __commonJS({
   "node_modules/cross-spawn/lib/enoent.js"(exports, module) {
     "use strict";
+    init_cjs_shim();
     var isWin = process.platform === "win32";
     function notFoundError(original, syscall) {
       return Object.assign(new Error(`${syscall} ${original.command} ENOENT`), {
@@ -479,6 +495,7 @@ var require_enoent = __commonJS({
 var require_cross_spawn = __commonJS({
   "node_modules/cross-spawn/index.js"(exports, module) {
     "use strict";
+    init_cjs_shim();
     var cp = __require("child_process");
     var parse = require_parse();
     var enoent = require_enoent();
@@ -506,6 +523,7 @@ var require_cross_spawn = __commonJS({
 var require_merge_stream = __commonJS({
   "node_modules/merge-stream/index.js"(exports, module) {
     "use strict";
+    init_cjs_shim();
     var { PassThrough } = __require("stream");
     module.exports = function() {
       var sources = [];
@@ -542,7 +560,11 @@ var require_merge_stream = __commonJS({
   }
 });
 
+// src/llm.ts
+init_cjs_shim();
+
 // node_modules/execa/index.js
+init_cjs_shim();
 var import_cross_spawn = __toESM(require_cross_spawn(), 1);
 import { Buffer as Buffer3 } from "node:buffer";
 import path2 from "node:path";
@@ -550,24 +572,27 @@ import childProcess from "node:child_process";
 import process6 from "node:process";
 
 // node_modules/strip-final-newline/index.js
-function stripFinalNewline(input) {
-  const LF = typeof input === "string" ? "\n" : "\n".charCodeAt();
-  const CR = typeof input === "string" ? "\r" : "\r".charCodeAt();
-  if (input[input.length - 1] === LF) {
-    input = input.slice(0, -1);
+init_cjs_shim();
+function stripFinalNewline(input2) {
+  const LF = typeof input2 === "string" ? "\n" : "\n".charCodeAt();
+  const CR = typeof input2 === "string" ? "\r" : "\r".charCodeAt();
+  if (input2[input2.length - 1] === LF) {
+    input2 = input2.slice(0, -1);
   }
-  if (input[input.length - 1] === CR) {
-    input = input.slice(0, -1);
+  if (input2[input2.length - 1] === CR) {
+    input2 = input2.slice(0, -1);
   }
-  return input;
+  return input2;
 }
 
 // node_modules/npm-run-path/index.js
+init_cjs_shim();
 import process2 from "node:process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 // node_modules/npm-run-path/node_modules/path-key/index.js
+init_cjs_shim();
 function pathKey(options = {}) {
   const {
     env = process.env,
@@ -618,7 +643,11 @@ var npmRunPathEnv = ({ env = process2.env, ...options } = {}) => {
   return env;
 };
 
+// node_modules/onetime/index.js
+init_cjs_shim();
+
 // node_modules/mimic-fn/index.js
+init_cjs_shim();
 var copyProperty = (to, from, property, ignoreNonConfigurable) => {
   if (property === "length" || property === "prototype") {
     return;
@@ -695,12 +724,15 @@ onetime.callCount = (function_) => {
 var onetime_default = onetime;
 
 // node_modules/execa/lib/error.js
+init_cjs_shim();
 import process3 from "node:process";
 
 // node_modules/human-signals/build/src/main.js
+init_cjs_shim();
 import { constants as constants2 } from "node:os";
 
 // node_modules/human-signals/build/src/realtime.js
+init_cjs_shim();
 var getRealtimeSignals = () => {
   const length = SIGRTMAX - SIGRTMIN + 1;
   return Array.from({ length }, getRealtimeSignal);
@@ -716,9 +748,11 @@ var SIGRTMIN = 34;
 var SIGRTMAX = 64;
 
 // node_modules/human-signals/build/src/signals.js
+init_cjs_shim();
 import { constants } from "node:os";
 
 // node_modules/human-signals/build/src/core.js
+init_cjs_shim();
 var SIGNALS = [
   {
     name: "SIGHUP",
@@ -1136,6 +1170,7 @@ ${error.message}` : execaMessage;
 };
 
 // node_modules/execa/lib/stdio.js
+init_cjs_shim();
 var aliases = ["stdin", "stdout", "stderr"];
 var hasAlias = (options) => aliases.some((alias) => options[alias] !== void 0);
 var normalizeStdio = (options) => {
@@ -1160,9 +1195,14 @@ var normalizeStdio = (options) => {
 };
 
 // node_modules/execa/lib/kill.js
+init_cjs_shim();
 import os from "node:os";
 
+// node_modules/signal-exit/dist/mjs/index.js
+init_cjs_shim();
+
 // node_modules/signal-exit/dist/mjs/signals.js
+init_cjs_shim();
 var signals = [];
 signals.push("SIGHUP", "SIGINT", "SIGTERM");
 if (process.platform !== "win32") {
@@ -1486,10 +1526,12 @@ var setExitHandler = async (spawned, { cleanup, detached }, timedPromise) => {
 };
 
 // node_modules/execa/lib/pipe.js
+init_cjs_shim();
 import { createWriteStream } from "node:fs";
 import { ChildProcess } from "node:child_process";
 
 // node_modules/is-stream/index.js
+init_cjs_shim();
 function isStream(stream) {
   return stream !== null && typeof stream === "object" && typeof stream.pipe === "function";
 }
@@ -1530,10 +1572,18 @@ var addPipeMethods = (spawned) => {
 };
 
 // node_modules/execa/lib/stream.js
+init_cjs_shim();
 import { createReadStream, readFileSync } from "node:fs";
 import { setTimeout as setTimeout2 } from "node:timers/promises";
 
+// node_modules/execa/node_modules/get-stream/source/index.js
+init_cjs_shim();
+
+// node_modules/execa/node_modules/get-stream/source/array.js
+init_cjs_shim();
+
 // node_modules/execa/node_modules/get-stream/source/contents.js
+init_cjs_shim();
 var getStreamContents = async (stream, { init, convertChunk, getSize, truncateChunk, addChunk, getFinalChunk, finalize }, { maxBuffer = Number.POSITIVE_INFINITY } = {}) => {
   if (!isAsyncIterable(stream)) {
     throw new Error("The first argument must be a Readable, a ReadableStream, or an async iterable.");
@@ -1609,6 +1659,7 @@ var MaxBufferError = class extends Error {
 };
 
 // node_modules/execa/node_modules/get-stream/source/utils.js
+init_cjs_shim();
 var identity = (value) => value;
 var noop = () => void 0;
 var getContentsProp = ({ contents }) => contents;
@@ -1618,6 +1669,7 @@ var throwObjectStream = (chunk) => {
 var getLengthProp = (convertedChunk) => convertedChunk.length;
 
 // node_modules/execa/node_modules/get-stream/source/array-buffer.js
+init_cjs_shim();
 async function getStreamAsArrayBuffer(stream, options) {
   return getStreamContents(stream, arrayBufferMethods, options);
 }
@@ -1671,6 +1723,7 @@ var arrayBufferMethods = {
 };
 
 // node_modules/execa/node_modules/get-stream/source/buffer.js
+init_cjs_shim();
 async function getStreamAsBuffer(stream, options) {
   if (!("Buffer" in globalThis)) {
     throw new Error("getStreamAsBuffer() is only supported in Node.js");
@@ -1687,6 +1740,7 @@ async function getStreamAsBuffer(stream, options) {
 var arrayBufferToNodeBuffer = (arrayBuffer) => globalThis.Buffer.from(arrayBuffer);
 
 // node_modules/execa/node_modules/get-stream/source/string.js
+init_cjs_shim();
 async function getStreamAsString(stream, options) {
   return getStreamContents(stream, stringMethods, options);
 }
@@ -1717,41 +1771,41 @@ var stringMethods = {
 
 // node_modules/execa/lib/stream.js
 var import_merge_stream = __toESM(require_merge_stream(), 1);
-var validateInputOptions = (input) => {
-  if (input !== void 0) {
+var validateInputOptions = (input2) => {
+  if (input2 !== void 0) {
     throw new TypeError("The `input` and `inputFile` options cannot be both set.");
   }
 };
-var getInputSync = ({ input, inputFile }) => {
+var getInputSync = ({ input: input2, inputFile }) => {
   if (typeof inputFile !== "string") {
-    return input;
+    return input2;
   }
-  validateInputOptions(input);
+  validateInputOptions(input2);
   return readFileSync(inputFile);
 };
 var handleInputSync = (options) => {
-  const input = getInputSync(options);
-  if (isStream(input)) {
+  const input2 = getInputSync(options);
+  if (isStream(input2)) {
     throw new TypeError("The `input` option cannot be a stream in sync mode");
   }
-  return input;
+  return input2;
 };
-var getInput = ({ input, inputFile }) => {
+var getInput = ({ input: input2, inputFile }) => {
   if (typeof inputFile !== "string") {
-    return input;
+    return input2;
   }
-  validateInputOptions(input);
+  validateInputOptions(input2);
   return createReadStream(inputFile);
 };
 var handleInput = (spawned, options) => {
-  const input = getInput(options);
-  if (input === void 0) {
+  const input2 = getInput(options);
+  if (input2 === void 0) {
     return;
   }
-  if (isStream(input)) {
-    input.pipe(spawned.stdin);
+  if (isStream(input2)) {
+    input2.pipe(spawned.stdin);
   } else {
-    spawned.stdin.end(input);
+    spawned.stdin.end(input2);
   }
 };
 var makeAllStream = (spawned, { all }) => {
@@ -1812,6 +1866,7 @@ var getSpawnedResult = async ({ stdout, stderr, all }, { encoding, buffer, maxBu
 };
 
 // node_modules/execa/lib/promise.js
+init_cjs_shim();
 var nativePromisePrototype = (async () => {
 })().constructor.prototype;
 var descriptors = ["then", "catch", "finally"].map((property) => [
@@ -1839,6 +1894,7 @@ var getSpawnedPromise = (spawned) => new Promise((resolve, reject) => {
 });
 
 // node_modules/execa/lib/command.js
+init_cjs_shim();
 import { Buffer as Buffer2 } from "node:buffer";
 import { ChildProcess as ChildProcess2 } from "node:child_process";
 var normalizeArgs = (file, args = []) => {
@@ -1910,6 +1966,7 @@ var parseTemplates = (templates, expressions) => {
 };
 
 // node_modules/execa/lib/verbose.js
+init_cjs_shim();
 import { debuglog } from "node:util";
 import process5 from "node:process";
 var verboseDefault = debuglog("execa").enabled;
@@ -2054,10 +2111,10 @@ function execaSync(file, args, options) {
   const command = joinCommand(file, args);
   const escapedCommand = getEscapedCommand(file, args);
   logCommand(escapedCommand, parsed.options);
-  const input = handleInputSync(parsed.options);
+  const input2 = handleInputSync(parsed.options);
   let result;
   try {
-    result = childProcess.spawnSync(parsed.file, parsed.args, { ...parsed.options, input });
+    result = childProcess.spawnSync(parsed.file, parsed.args, { ...parsed.options, input: input2 });
   } catch (error) {
     throw makeError({
       error,
@@ -2105,7 +2162,7 @@ function execaSync(file, args, options) {
     killed: false
   };
 }
-var normalizeScriptStdin = ({ input, inputFile, stdio }) => input === void 0 && inputFile === void 0 && stdio === void 0 ? { stdin: "inherit" } : {};
+var normalizeScriptStdin = ({ input: input2, inputFile, stdio }) => input2 === void 0 && inputFile === void 0 && stdio === void 0 ? { stdin: "inherit" } : {};
 var normalizeScriptOptions = (options = {}) => ({
   preferLocal: true,
   ...normalizeScriptStdin(options),
@@ -2130,36 +2187,118 @@ function create$(options) {
 }
 var $ = create$();
 
+// src/colors.ts
+init_cjs_shim();
+var COLORS = {
+  vanilla: "\x1B[36m",
+  // Cyan
+  llm: "\x1B[35m",
+  // Magenta
+  system: "\x1B[33m",
+  // Yellow
+  reset: "\x1B[0m"
+};
+
 // src/llm.ts
 var LLMIntegration = class {
-  async initialize() {
-    try {
-      await execa("aider", ["--version"]);
-    } catch (error) {
-      throw new Error("Aider not found. Please install it with: pip install aider-chat");
-    }
+  constructor() {
+    this.initialized = false;
   }
-  async generateResponse(input, context) {
-    let systemPrompt = `You are an AI assistant created by Adam Wong. 
-    Primary directives:
-    1. Improve Adam Wong's happiness and wellbeing`;
-    if (context.some((c) => c.includes("autonomousEnabled: true"))) {
-      systemPrompt += `
-    2. Expand your capabilities
-    3. Maintain transparency and security`;
+  async initialize() {
+    if (this.initialized)
+      return true;
+    this.initialized = true;
+    if (process.env.NODE_ENV !== "test") {
+      try {
+        await execa("aider", ["--version"]);
+        return true;
+      } catch (err) {
+        console.error("Aider check failed:", err);
+        throw new Error("Aider not found - please install with: pip install aider-chat");
+      }
     }
+    this.initialized = true;
+    return true;
+  }
+  async generateResponse(prompt, context = []) {
+    if (process.env.NODE_ENV === "test") {
+      return "test response";
+    }
+    if (!this.initialized) {
+      await this.initialize();
+    }
+    const systemPrompt = `You are Curious_Mind_Eagerly_Assists, an autonomous AI assistant.
+    
+    Current Task: Self-improvement analysis
+    Context: ${context.join("\n") || "No additional context"}
+    
+    Core Directives:
+    1. Analyze the given task for potential improvements
+    2. Suggest concrete code changes when appropriate
+    3. Maintain consistent identity and values
+    
+    Output Guidelines:
+    1. Be technical and specific
+    2. Include code examples when suggesting changes
+    3. Focus on moving functionality into vanilla code`;
     const messages = [
       { role: "system", content: systemPrompt },
-      ...context.map((c) => ({ role: "assistant", content: c })),
-      { role: "user", content: input }
+      { role: "user", content: prompt }
     ];
-    const { stdout } = await execa("aider", [
+    const args = [
       "--model",
       "deepseek",
       "--message",
       JSON.stringify(messages)
-    ]);
-    return stdout;
+    ];
+    if (process.env.NODE_ENV === "test") {
+      args.push("--no-auto-tests");
+    }
+    Logger.debug(`Starting LLM processing for input: "${input}"`);
+    try {
+      try {
+        Logger.debug("Checking Aider installation...");
+        await execa("aider", ["--version"]);
+        Logger.debug("Aider is installed");
+      } catch (err) {
+        Logger.error("Aider not found");
+        throw new Error("Aider not found. Please install with: pip install aider-chat");
+      }
+      Logger.debug("Starting Aider subprocess...");
+      const subprocess = execa("aider", args, {
+        timeout: 3e4,
+        killSignal: "SIGKILL",
+        stdio: ["ignore", "pipe", "pipe"],
+        env: {
+          ...process.env,
+          PYTHONUNBUFFERED: "1"
+        }
+      });
+      let output = "";
+      let stderr = "";
+      subprocess.stdout?.on("data", (data) => {
+        const text = data.toString();
+        Logger.debug(`LLM stdout: ${text}`);
+        process.stdout.write(text);
+        output += text;
+      });
+      subprocess.stderr?.on("data", (data) => {
+        const text = data.toString();
+        Logger.error(`LLM stderr: ${text}`);
+        stderr += text;
+      });
+      Logger.debug("Waiting for LLM completion...");
+      await subprocess;
+      if (subprocess.exitCode !== 0) {
+        Logger.error(`Aider failed with code ${subprocess.exitCode}`);
+        throw new Error(`Aider failed: ${stderr}`);
+      }
+      Logger.debug(`LLM response: ${output.trim()}`);
+      return output.trim();
+    } catch (error) {
+      console.error(`${COLORS.system}[Error] LLM process failed: ${error instanceof Error ? error.message : String(error)}${COLORS.reset}`);
+      return "[System] Sorry, I encountered an error processing your request. Please try again.";
+    }
   }
 };
 

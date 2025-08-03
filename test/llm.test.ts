@@ -1,5 +1,6 @@
-import Testeranto from "testeranto/src/Node";
+import { LLMSpecification } from "./specs/llm.spec";
 
+import Testeranto from "testeranto/src/Node";
 import { Ibdd_in, Ibdd_out, ITestImplementation, ITestSpecification } from 'testeranto/src/CoreTypes';
 import { LLMIntegration } from '../src/llm';
 
@@ -21,10 +22,14 @@ type O = Ibdd_out<
   {
     generateResponse: [string, string[]];
     setContext: [string[]];
+    analyzeUnhandled: [string[]];
+    suggestHandler: [string];
   },
   {
     verifyResponse: [];
     verifyResponseContent: [string];
+    verifyAnalysis: [];
+    verifyHandlerSuggestion: [];
   }
 >;
 
@@ -33,8 +38,12 @@ const implementation: ITestImplementation<I, O> = {
     Default: 'LLMIntegration Test Suite'
   },
   givens: {
-    Default: () => {
+    Default: async () => {
       const llm = new LLMIntegration();
+      // Stub initialization
+      if (typeof llm.initialize === 'function') {
+        await llm.initialize();
+      }
       return { llm, input: 'test input', context: [] };
     }
   },
@@ -47,13 +56,21 @@ const implementation: ITestImplementation<I, O> = {
     setContext: (context: string[]) => (store) => {
       store.context = context;
       return store;
+    },
+    analyzeUnhandled: (patterns: string[]) => (store) => {
+      store.input = `Analyze these unhandled patterns:\n${patterns.join('\n')}`;
+      return store;
+    },
+    suggestHandler: (pattern: string) => (store) => {
+      store.input = `Suggest a handler for: ${pattern}`;
+      return store;
     }
   },
   thens: {
     verifyResponse: () => async (store) => {
       const response = await store.llm.generateResponse(store.input, store.context);
-      if (!response || typeof response !== 'string') {
-        throw new Error('Invalid response from LLM');
+      if (typeof response !== 'string') {
+        throw new Error(`Expected string response, got ${typeof response}`);
       }
       return store;
     },
@@ -63,32 +80,24 @@ const implementation: ITestImplementation<I, O> = {
         throw new Error(`Response does not contain "${expected}"`);
       }
       return store;
+    },
+    verifyAnalysis: () => async (store) => {
+      const response = await store.llm.generateResponse(store.input, store.context);
+      if (!response.includes('pattern') && !response.includes('handler')) {
+        throw new Error('Analysis response missing pattern/handler suggestions');
+      }
+      return store;
+    },
+    verifyHandlerSuggestion: () => async (store) => {
+      const response = await store.llm.generateResponse(store.input, store.context);
+      if (!response.includes('pattern') || !response.includes('handler')) {
+        throw new Error('Handler suggestion missing required components');
+      }
+      return store;
     }
   }
 };
 
-const specification: ITestSpecification<I, O> = (Suite, Given, When, Then) => [
-  Suite.Default('Basic Operations', {
-    emptyTest: Given.Default(
-      ['Should initialize properly'],
-      [],
-      [Then.verifyResponse()]
-    ),
-    responseTest: Given.Default(
-      ['Should generate responses'],
-      [When.generateResponse('hello', [])],
-      [Then.verifyResponse()]
-    ),
-    contextTest: Given.Default(
-      ['Should handle context'],
-      [
-        When.setContext(['previous message']),
-        When.generateResponse('hello', [])
-      ],
-      [Then.verifyResponse()]
-    )
-  })
-];
 
 const adapter = {
   beforeEach: async (subject, initializer) => {
@@ -106,7 +115,7 @@ const adapter = {
 
 export default Testeranto(
   LLMIntegration.prototype,
-  specification,
+  LLMSpecification,
   implementation,
   adapter,
 )

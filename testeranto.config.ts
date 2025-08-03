@@ -1,5 +1,9 @@
 import { IProject } from "testeranto/src/Types";
 
+// import esbuildPluginFileloc from "esbuild-plugin-fileloc/dist";
+// const esbuildPluginFileloc = require('esbuild-plugin-fileloc');
+import esbuildPluginFileloc from "esbuild-plugin-fileloc/dist/index.esm";
+
 const config: IProject = {
   projects: {
     
@@ -9,6 +13,10 @@ const config: IProject = {
         ["test/llm.test.ts", "node", { ports: 0 }, []],
         ["test/memory.test.ts", "node", { ports: 0 }, []],
         ["test/nucleus.test.ts", "node", { ports: 0 }, []],
+        ["test/changeValidator.test.ts", "node", { ports: 0 }, []],
+        ["test/economicVerifier.test.ts", "node", { ports: 0 }, []],
+        ["test/identityEngine.test.ts", "node", { ports: 0 }, []],
+        ["test/goalEngine.test.ts", "node", { ports: 0 }, []],
       ],
 
       ports: ["3001"],
@@ -18,7 +26,9 @@ const config: IProject = {
       clearScreen: false,
       externals: [],
       importPlugins: [],
-      nodePlugins: [],
+      nodePlugins: [
+        // esbuildPluginFileloc
+      ],
       webPlugins: [],
       
       featureIngestor: async function (s: string): Promise<string> {

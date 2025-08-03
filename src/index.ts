@@ -1,19 +1,18 @@
 import * as dotenv from 'dotenv';
 import express from 'express';
-
-// ANSI color codes
-export const COLORS = {
-  vanilla: '\x1b[36m', // Cyan
-  llm: '\x1b[35m', // Magenta
-  system: '\x1b[33m', // Yellow
-  reset: '\x1b[0m'
-};
-dotenv.config();
-
 import { Nucleus } from './nucleus';
 import { MemoryManager } from './memory';
-import { LLMIntegration } from './llm';
+// import { LLMIntegration } from './services';
+
 import { Logger } from './logger';
+import assert from 'assert';
+import { LLMIntegration } from './llm';
+import { COLORS } from './colors';
+
+
+dotenv.config();
+
+
 
 const app = express();
 app.use(express.json());
@@ -32,8 +31,16 @@ class UntitledAI {
 
   constructor() {
     this.memory = new MemoryManager();
+    console.log("LLMIntegration: ", LLMIntegration);
+
     this.llm = new LLMIntegration();
+    
+    // This is very strange. Nucleus should be defined
+    console.log("Nucleus 2: ", Nucleus);
+    assert(Nucleus)
     this.nucleus = new Nucleus(this.memory, this.llm);
+
+    console.log('Nucleus instance created:', this.nucleus);
     this.server = express();
     this.serverPort = parseInt(process.env.PORT || '3000');
     
@@ -232,7 +239,7 @@ async function main() {
         const { connected } = await ai.memory.checkChromaStatus();
         console.log(`ChromaDB: ${connected ? '✅ Connected' : '❌ Not connected'}`);
       } else if (input === '/unhandled') {
-        const patterns = ai.unhandledInputs.sort((a, b) => b.count - a.count);
+        const patterns = ai.nucleus.getUnhandledInputs().sort((a, b) => b.count - a.count);
         if (patterns.length === 0) {
           console.log('No unhandled patterns recorded');
         } else {
@@ -240,8 +247,22 @@ async function main() {
           patterns.forEach((p, i) => {
             console.log(`${i+1}. "${p.input}"`);
             console.log(`   Count: ${p.count}, Last: ${p.timestamp.toLocaleString()}`);
+            if (p.suggestedHandler) {
+              console.log(`   Suggested handler: ${p.suggestedHandler}`);
+            }
           });
         }
+      } else if (input === '/coverage') {
+        const stats = await ai.nucleus.getHandlerCoverageStats();
+        console.log(`Handler Coverage:
+- Total handlers: ${stats.totalHandlers}
+- Active handlers: ${stats.activeHandlers}
+- Coverage: ${stats.coveragePercentage}%
+- Unhandled inputs: ${stats.unhandledCount}
+- Top handlers:
+  1. ${stats.topHandlers[0]?.name || 'None'}: ${stats.topHandlers[0]?.usageCount || 0} uses
+  2. ${stats.topHandlers[1]?.name || 'None'}: ${stats.topHandlers[1]?.usageCount || 0} uses
+  3. ${stats.topHandlers[2]?.name || 'None'}: ${stats.topHandlers[2]?.usageCount || 0} uses`);
       } else if (input === '/memstats') {
         const { shortTerm, lastStored, scrapedCount } = await ai.memory.getMemoryStats();
         console.log(`Memory Stats:

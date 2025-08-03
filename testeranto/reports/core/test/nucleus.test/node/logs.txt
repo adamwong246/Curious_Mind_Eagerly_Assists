@@ -1,16 +1,12 @@
-stdout > [DEBUG] BaseSuite constructor - name: Initialization index: 0
-stdout > [DEBUG] BaseSuite initialized: Initialization 0
-stdout > [DEBUG] BaseSuite givens: basicTest
-stdout > receiveTestResourceConfig {"name":"test/nucleus.test.ts","ports":[],"fs":"testeranto/reports/core/test/nucleus.test/node","browserWSEndpoint":"ws://127.0.0.1:3234/devtools/browser/b5d4fd79-17a3-479d-8276-332db2798b1e"}
-stdout > [Given] Setting currentStep for beforeEach: Default
-stderr > Given failure:  Error: Memory manager connect method missing
-stderr > goodbye node with caught error Error: Memory manager connect method missing
-    at Default (file:///Users/adam/Code/untitledAiProject0/testeranto/bundles/node/core/test/nucleus.test.mjs:74:15)
-    at Object.beforeEach (file:///Users/adam/Code/untitledAiProject0/testeranto/bundles/node/core/test/nucleus.test.mjs:121:35)
-    at Given.givenThat (file:///Users/adam/Code/untitledAiProject0/testeranto/bundles/node/core/chunk-ONFOCOPL.mjs:746:30)
-    at Given.give (file:///Users/adam/Code/untitledAiProject0/testeranto/bundles/node/core/chunk-ONFOCOPL.mjs:311:31)
-    at TesterantoCore.uberCatcher.run (file:///Users/adam/Code/untitledAiProject0/testeranto/bundles/node/core/chunk-ONFOCOPL.mjs:691:32)
-    at async file:///Users/adam/Code/untitledAiProject0/testeranto/bundles/node/core/chunk-ONFOCOPL.mjs:482:19
-    at async Object.receiveTestResourceConfig (file:///Users/adam/Code/untitledAiProject0/testeranto/bundles/node/core/chunk-ONFOCOPL.mjs:506:29)
-    at async NodeTesteranto.receiveTestResourceConfig (file:///Users/adam/Code/untitledAiProject0/testeranto/bundles/node/core/chunk-ONFOCOPL.mjs:1002:12)
-    at async testeranto (file:///Users/adam/Code/untitledAiProject0/testeranto/bundles/node/core/chunk-ONFOCOPL.mjs:1018:15)
+stdout > Nucleus [class Nucleus]
+stderr > goodbye node with caught error TypeError: Then.verifyContextUsed is not a function
+    at NucleusSpecification (file:///Users/adam/Code/untitledAiProject0/testeranto/bundles/node/core/test/nucleus.test.mjs:34:13)
+    at new BaseBuilder (file:///Users/adam/Code/untitledAiProject0/testeranto/bundles/node/core/chunk-LFLTOQ4W.mjs:479:18)
+    at new ClassBuilder (file:///Users/adam/Code/untitledAiProject0/testeranto/bundles/node/core/chunk-LFLTOQ4W.mjs:613:5)
+    at new TesterantoCore (file:///Users/adam/Code/untitledAiProject0/testeranto/bundles/node/core/chunk-LFLTOQ4W.mjs:722:5)
+    at new NodeTesteranto (file:///Users/adam/Code/untitledAiProject0/testeranto/bundles/node/core/chunk-LFLTOQ4W.mjs:987:5)
+    at testeranto (file:///Users/adam/Code/untitledAiProject0/testeranto/bundles/node/core/chunk-LFLTOQ4W.mjs:1006:15)
+    at file:///Users/adam/Code/untitledAiProject0/testeranto/bundles/node/core/test/nucleus.test.mjs:482:28
+    at ModuleJob.run (node:internal/modules/esm/module_job:192:25)
+    at async DefaultModuleLoader.import (node:internal/modules/esm/loader:228:24)
+    at async loadESM (node:internal/process/esm_loader:40:7)

@@ -1,4 +1,14 @@
-import { COLORS } from '.';
+const COLORS = {
+  reset: '\x1b[0m',
+  error: '\x1b[31m', // red
+  warn: '\x1b[33m', // yellow
+  info: '\x1b[36m', // cyan
+  debug: '\x1b[35m', // magenta
+  verbose: '\x1b[32m', // green
+  system: '\x1b[34m', // blue
+  llm: '\x1b[38;5;208m', // orange
+  vanilla: '\x1b[38;5;99m' // purple
+};
 
 export class Logger {
   private static log(level: string, message: string, color: string = COLORS.reset) {

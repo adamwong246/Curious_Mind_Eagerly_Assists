@@ -1,17 +1,15 @@
+// import { GoogleIntegration } from './services';
+// import { ProfileManager } from './profileManager';
+// import { SocialEngine } from './socialEngine';
+
+import { Logger } from './logger';
+import axios from 'axios';
 import { ProfileManager } from './profile';
 import { SocialEngine } from './social';
 import { GoogleIntegration } from './services/google';
 
-import { Logger } from './logger';
-import axios from 'axios';
-
 export class MemoryManager {
-  private memory: Array<{
-    type: 'scraped'|'interaction';
-    content: string;
-    timestamp: Date;
-    url?: string;
-  }> = [];
+  private memory: MemoryItem[] = [];
 
   private extractTextFromHTML(html: string): string {
     // Remove script and style tags
@@ -39,8 +37,20 @@ export class MemoryManager {
     this.profile = new ProfileManager();
   }
 
+  private chromaEnabled = false;
+  private collectionName = 'memory';
+
   async initialize(): Promise<boolean> {
-    return true;
+    try {
+      // Try to connect to ChromaDB if configured
+      if (process.env.CHROMA_URL) {
+        this.chromaEnabled = true;
+      }
+      return true;
+    } catch (err) {
+      console.error('MemoryManager init failed:', err);
+      return false;
+    }
   }
 
   isAutonomousEnabled(): boolean {

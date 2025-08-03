@@ -12,8 +12,15 @@ var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require
     return require.apply(this, arguments);
   throw new Error('Dynamic require of "' + x + '" is not supported');
 });
+var __esm = (fn, res) => function __init() {
+  return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
+};
 var __commonJS = (cb, mod) => function __require2() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+};
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
 };
 var __copyProps = (to, from, except, desc) => {
   if (from && typeof from === "object" || typeof from === "function") {
@@ -31,8 +38,26 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
   mod
 ));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-// node_modules/testeranto/src/lib/index.ts
+// ../testeranto/dist/cjs-shim.js
+import path from "node:path";
+import url from "node:url";
+var init_cjs_shim = __esm({
+  "../testeranto/dist/cjs-shim.js"() {
+    globalThis.__filename = url.fileURLToPath(import.meta.url);
+    globalThis.__dirname = path.dirname(__filename);
+  }
+});
+
+// ../testeranto/src/Node.ts
+init_cjs_shim();
+
+// ../testeranto/src/lib/core.ts
+init_cjs_shim();
+
+// ../testeranto/src/lib/index.ts
+init_cjs_shim();
 var BaseAdapter = () => ({
   beforeAll: async (s) => s,
   beforeEach: async function(subject, initialValues, x, testResource, pm) {
@@ -63,7 +88,11 @@ var defaultTestResourceRequirement = {
   ports: 0
 };
 
-// node_modules/testeranto/src/lib/pmProxy.ts
+// ../testeranto/src/lib/abstractBase.ts
+init_cjs_shim();
+
+// ../testeranto/src/lib/pmProxy.ts
+init_cjs_shim();
 var baseProxy = function(pm, mappings) {
   return new Proxy(pm, {
     get: (target, prop, receiver) => {
@@ -83,12 +112,12 @@ var butThenProxy = (pm, filepath) => {
     [
       "screencast",
       (opts, p) => {
-        const path2 = `${filepath}/butThen/${opts.path}`;
-        pm.currentStep?.artifacts?.push(path2);
+        const path3 = `${filepath}/butThen/${opts.path}`;
+        pm.currentStep?.artifacts?.push(path3);
         return [
           {
             ...opts,
-            path: path2
+            path: path3
           },
           p
         ];
@@ -97,28 +126,28 @@ var butThenProxy = (pm, filepath) => {
     [
       "createWriteStream",
       (fp) => {
-        const path2 = `${filepath}/butThen/${fp}`;
-        pm.currentStep?.artifacts?.push(path2);
-        return [path2];
+        const path3 = `${filepath}/butThen/${fp}`;
+        pm.currentStep?.artifacts?.push(path3);
+        return [path3];
       }
     ],
     [
       "writeFileSync",
       (fp, contents) => {
-        const path2 = `${filepath}/butThen/${fp}`;
-        pm.currentStep?.artifacts?.push(path2);
-        return [path2, contents];
+        const path3 = `${filepath}/butThen/${fp}`;
+        pm.currentStep?.artifacts?.push(path3);
+        return [path3, contents];
       }
     ],
     [
       "customScreenShot",
       (opts, p) => {
-        const path2 = `${filepath}/butThen/${opts.path}`;
-        pm.currentStep?.artifacts?.push(path2);
+        const path3 = `${filepath}/butThen/${opts.path}`;
+        pm.currentStep?.artifacts?.push(path3);
         return [
           {
             ...opts,
-            path: path2
+            path: path3
           },
           p
         ];
@@ -242,32 +271,20 @@ var afterAllProxy = (pm, suite) => baseProxy(pm, [
   ]
 ]);
 
-// node_modules/testeranto/src/lib/abstractBase.ts
+// ../testeranto/src/lib/abstractBase.ts
 var BaseGiven = class {
-  name;
-  features;
-  whens;
-  thens;
-  error;
-  fail;
-  store;
-  recommendedFsPath;
-  givenCB;
-  initialValues;
-  key;
-  failed;
-  artifacts = [];
-  addArtifact(path2) {
-    console.log(`[Artifact] Adding to ${this.constructor.name}:`, path2);
-    this.artifacts.push(path2);
-  }
   constructor(name, features, whens, thens, givenCB, initialValues) {
+    this.artifacts = [];
     this.name = name;
     this.features = features;
     this.whens = whens;
     this.thens = thens;
     this.givenCB = givenCB;
     this.initialValues = initialValues;
+  }
+  addArtifact(path3) {
+    console.log(`[Artifact] Adding to ${this.constructor.name}:`, path3);
+    this.artifacts.push(path3);
   }
   beforeAll(store) {
     return store;
@@ -363,11 +380,8 @@ var BaseGiven = class {
   }
 };
 var BaseWhen = class {
-  name;
-  whenCB;
-  error;
-  artifacts = [];
   constructor(name, whenCB) {
+    this.artifacts = [];
     this.name = name;
     this.whenCB = whenCB;
   }
@@ -413,11 +427,8 @@ var BaseWhen = class {
   }
 };
 var BaseThen = class {
-  name;
-  thenCB;
-  error;
-  artifacts = [];
   constructor(name, thenCB) {
+    this.artifacts = [];
     this.name = name;
     this.thenCB = thenCB;
     this.error = false;
@@ -450,20 +461,14 @@ var BaseThen = class {
   }
 };
 
-// node_modules/testeranto/src/lib/basebuilder.ts
+// ../testeranto/src/lib/classBuilder.ts
+init_cjs_shim();
+
+// ../testeranto/src/lib/basebuilder.ts
+init_cjs_shim();
 var BaseBuilder = class {
-  specs;
-  assertThis;
-  testResourceRequirement;
-  artifacts = [];
-  testJobs;
-  testSpecification;
-  suitesOverrides;
-  givenOverides;
-  whenOverides;
-  thenOverides;
-  puppetMaster;
   constructor(input, suitesOverrides, givenOverides, whenOverides, thenOverides, testResourceRequirement, testSpecification) {
+    this.artifacts = [];
     this.artifacts = [];
     this.testResourceRequirement = testResourceRequirement;
     this.suitesOverrides = suitesOverrides;
@@ -547,7 +552,7 @@ var BaseBuilder = class {
   }
 };
 
-// node_modules/testeranto/src/lib/classBuilder.ts
+// ../testeranto/src/lib/classBuilder.ts
 var ClassBuilder = class extends BaseBuilder {
   constructor(testImplementation, testSpecification, input, suiteKlasser, givenKlasser, whenKlasser, thenKlasser, testResourceRequirement) {
     const classySuites = Object.entries(testImplementation.suites).reduce(
@@ -617,15 +622,9 @@ var ClassBuilder = class extends BaseBuilder {
   }
 };
 
-// node_modules/testeranto/src/lib/BaseSuite.ts
+// ../testeranto/src/lib/BaseSuite.ts
+init_cjs_shim();
 var BaseSuite = class {
-  name;
-  givens;
-  store;
-  testResourceConfiguration;
-  index;
-  failed;
-  fails;
   constructor(name, index, givens = {}) {
     const suiteName = name || "testSuite";
     if (!suiteName) {
@@ -716,7 +715,7 @@ var BaseSuite = class {
   }
 };
 
-// node_modules/testeranto/src/lib/core.ts
+// ../testeranto/src/lib/core.ts
 var TesterantoCore = class extends ClassBuilder {
   constructor(input, testSpecification, testImplementation, testResourceRequirement = defaultTestResourceRequirement, testAdapter, uberCatcher) {
     const fullAdapter = DefaultAdapter(testAdapter);
@@ -741,7 +740,10 @@ var TesterantoCore = class extends ClassBuilder {
         }
       },
       class Given extends BaseGiven {
-        uberCatcher = uberCatcher;
+        constructor() {
+          super(...arguments);
+          this.uberCatcher = uberCatcher;
+        }
         async givenThat(subject, testResource, artifactory, initializer, initialValues, pm) {
           return fullAdapter.beforeEach(
             subject,
@@ -756,7 +758,6 @@ var TesterantoCore = class extends ClassBuilder {
             (res) => res(fullAdapter.afterEach(store, key, pm))
           );
         }
-        s;
       },
       class When extends BaseWhen {
         async andWhen(store, whenCB, testResource, pm) {
@@ -773,22 +774,20 @@ var TesterantoCore = class extends ClassBuilder {
   }
 };
 
-// node_modules/testeranto/src/PM/node.ts
+// ../testeranto/src/PM/node.ts
+init_cjs_shim();
 import net from "net";
 import fs from "fs";
-import path from "path";
+import path2 from "path";
 
-// node_modules/testeranto/src/PM/index.ts
+// ../testeranto/src/PM/index.ts
+init_cjs_shim();
 var PM = class {
-  server;
-  testResourceConfiguration;
 };
 
-// node_modules/testeranto/src/PM/node.ts
+// ../testeranto/src/PM/node.ts
 var fPaths = [];
 var PM_Node = class extends PM {
-  testResourceConfiguration;
-  client;
   constructor(t, ipcFile) {
     super();
     this.testResourceConfiguration = t;
@@ -845,7 +844,7 @@ var PM_Node = class extends PM {
   closePage(p) {
     return this.send("closePage", ...arguments);
   }
-  goto(page, url) {
+  goto(page, url2) {
     return this.send("goto", ...arguments);
   }
   async newPage() {
@@ -947,7 +946,7 @@ var PM_Node = class extends PM {
       callback(
         new Promise((res, rej) => {
           tLog("testArtiFactory =>", fPath);
-          const cleanPath = path.resolve(fPath);
+          const cleanPath = path2.resolve(fPath);
           fPaths.push(cleanPath.replace(process.cwd(), ``));
           const targetDir = cleanPath.split("/").slice(0, -1).join("/");
           fs.mkdir(targetDir, { recursive: true }, async (error) => {
@@ -981,7 +980,7 @@ var PM_Node = class extends PM {
   }
 };
 
-// node_modules/testeranto/src/Node.ts
+// ../testeranto/src/Node.ts
 var ipcfile;
 var NodeTesteranto = class extends TesterantoCore {
   constructor(input, testSpecification, testImplementation, testResourceRequirement, testAdapter) {
@@ -1027,7 +1026,11 @@ var Node_default = testeranto;
 
 export {
   __require,
+  __esm,
   __commonJS,
+  __export,
   __toESM,
+  __toCommonJS,
+  init_cjs_shim,
   Node_default
 };

@@ -1,0 +1,146 @@
+{
+  "name": "Cost Analysis",
+  "givens": [
+    {
+      "key": "validTest",
+      "name": "Default",
+      "whens": [
+        {
+          "name": "analyzeCode: // Simple code change",
+          "artifacts": []
+        }
+      ],
+      "thens": [
+        {
+          "name": "verifyAnalysis: [object Object]",
+          "error": "TypeError: store.verifier.analyzeCostImpact is not a function",
+          "artifacts": []
+        }
+      ],
+      "error": null,
+      "features": [
+        "Should accept low-cost changes"
+      ],
+      "artifacts": []
+    },
+    {
+      "key": "budgetEdgeTest",
+      "name": "Default",
+      "whens": [
+        {
+          "name": "analyzeCode: // Large but valid change\nx++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;x++;",
+          "artifacts": []
+        }
+      ],
+      "thens": [
+        {
+          "name": "verifyAnalysis: [object Object]",
+          "error": "TypeError: store.verifier.analyzeCostImpact is not a function",
+          "artifacts": []
+        }
+      ],
+      "error": null,
+      "features": [
+        "Should warn near budget threshold"
+      ],
+      "artifacts": []
+    },
+    {
+      "key": "complexTest",
+      "name": "Default",
+      "whens": [
+        {
+          "name": "analyzeCode: if (x) { while(y) { z++; } }",
+          "artifacts": []
+        }
+      ],
+      "thens": [
+        {
+          "name": "verifyAnalysis: [object Object]",
+          "error": "TypeError: store.verifier.analyzeCostImpact is not a function",
+          "artifacts": []
+        }
+      ],
+      "error": null,
+      "features": [
+        "Should account for complexity"
+      ],
+      "artifacts": []
+    },
+    {
+      "key": "apiTest",
+      "name": "Default",
+      "whens": [
+        {
+          "name": "analyzeCode: api.fetchData()",
+          "artifacts": []
+        }
+      ],
+      "thens": [
+        {
+          "name": "verifyAnalysis: [object Object]",
+          "error": "TypeError: store.verifier.analyzeCostImpact is not a function",
+          "artifacts": []
+        }
+      ],
+      "error": null,
+      "features": [
+        "Should detect API calls"
+      ],
+      "artifacts": []
+    },
+    {
+      "key": "mlTest",
+      "name": "Default",
+      "whens": [
+        {
+          "name": "analyzeCode: model.predict(input)",
+          "artifacts": []
+        }
+      ],
+      "thens": [
+        {
+          "name": "verifyAnalysis: [object Object]",
+          "error": "TypeError: store.verifier.analyzeCostImpact is not a function",
+          "artifacts": []
+        }
+      ],
+      "error": null,
+      "features": [
+        "Should detect ML operations"
+      ],
+      "artifacts": []
+    },
+    {
+      "key": "expensiveTest",
+      "name": "Default",
+      "whens": [
+        {
+          "name": "analyzeCode: \n        // Complex ML-heavy code\n        api.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\napi.callExternal()\n\n        model.predict(x)\nmodel.predict(x)\nmodel.predict(x)\nmodel.predict(x)\nmodel.predict(x)\nmodel.predict(x)\nmodel.predict(x)\nmodel.predict(x)\nmodel.predict(x)\nmodel.predict(x)\nmodel.predict(x)\nmodel.predict(x)\nmodel.predict(x)\nmodel.predict(x)\nmodel.predict(x)\nmodel.predict(x)\nmodel.predict(x)\nmodel.predict(x)\nmodel.predict(x)\nmodel.predict(x)\n\n        while(true) { processData(); }\n      ",
+          "artifacts": []
+        }
+      ],
+      "thens": [
+        {
+          "name": "verifyAnalysis: [object Object]",
+          "error": "TypeError: store.verifier.analyzeCostImpact is not a function",
+          "artifacts": []
+        }
+      ],
+      "error": null,
+      "features": [
+        "Should reject expensive changes"
+      ],
+      "artifacts": []
+    }
+  ],
+  "fails": 0,
+  "features": [
+    "Should accept low-cost changes",
+    "Should warn near budget threshold",
+    "Should account for complexity",
+    "Should detect API calls",
+    "Should detect ML operations",
+    "Should reject expensive changes"
+  ]
+}

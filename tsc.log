@@ -1,0 +1,402 @@
+yarn run v1.22.22
+$ /Users/adam/Code/untitledAiProject0/node_modules/.bin/tsc --noEmit
+../testeranto/src/lib/abstractBase.ts(247,17): error TS1196: Catch clause variable type annotation must be 'any' or 'unknown' if specified.
+../testeranto/src/lib/abstractBase.ts(304,39): error TS2554: Expected 1 arguments, but got 2.
+../testeranto/src/lib/basebuilder.ts(79,15): error TS2349: This expression is not callable.
+  Not all constituents of type 'void | ((fPath: string, value: string | Buffer<ArrayBufferLike> | PassThrough) => void)' are callable.
+    Type 'void' has no call signatures.
+../testeranto/src/lib/basebuilder.ts(125,30): error TS2554: Expected 2 arguments, but got 1.
+../testeranto/src/lib/basebuilder.ts(130,30): error TS2554: Expected 2 arguments, but got 1.
+../testeranto/src/lib/classBuilder.ts(86,18): error TS2556: A spread argument must either have a tuple type or be passed to a rest parameter.
+../testeranto/src/lib/classBuilder.ts(101,28): error TS2556: A spread argument must either have a tuple type or be passed to a rest parameter.
+../testeranto/src/lib/core.ts(46,7): error TS2345: Argument of type 'Omit<{ suites: import("/Users/adam/Code/testeranto/src/Types").TestSuiteImplementation<O>; givens: import("/Users/adam/Code/testeranto/src/Types").TestGivenImplementation<I, O>; whens: import("/Users/adam/Code/testeranto/src/Types").TestWhenImplementation<...>; thens: import("/Users/adam/Code/testeranto/src/Types")....' is not assignable to parameter of type 'Omit<{ suites: import("/Users/adam/Code/testeranto/src/Types").TestSuiteImplementation<O>; givens: import("/Users/adam/Code/testeranto/src/Types").TestGivenImplementation<I, O>; whens: import("/Users/adam/Code/testeranto/src/Types").TestWhenImplementation<...>; thens: import("/Users/adam/Code/testeranto/src/Types")....'.
+  Type 'Omit<{ suites: TestSuiteImplementation<O>; givens: TestGivenImplementation<I, O>; whens: TestWhenImplementation<I, O>; thens: TestThenImplementation<...>; }, keyof M> & M & { ...; }' is not assignable to type '{ suites: Record<string, never>; givens: Record<string, any>; whens: Record<string, any>; thens: Record<string, any>; }'.
+    Types of property 'suites' are incompatible.
+      Type 'Record<string, any>' is not assignable to type 'Record<string, never>'.
+        'string' index signatures are incompatible.
+          Type 'any' is not assignable to type 'never'.
+../testeranto/src/lib/index.ts(16,3): error TS2322: Type '(subject: T["isubject"], initialValues: T["iinitialValues"], x: unknown, testResource: ITTestResourceConfiguration, pm: IPM) => Promise<T["isubject"]>' is not assignable to type '(subject: T["isubject"], initializer: (c?: any) => T["given"], testResource: ITTestResourceConfiguration, initialValues: any, pm: IPM) => Promise<...>'.
+  Types of parameters 'initialValues' and 'initializer' are incompatible.
+    Type '(c?: any) => T["given"]' is not assignable to type 'T["iinitialValues"]'.
+      'T["iinitialValues"]' could be instantiated with an arbitrary type which could be unrelated to '(c?: any) => T["given"]'.
+../testeranto/src/lib/index.ts(18,20): error TS2536: Type '"iinitialValues"' cannot be used to index type 'T'.
+../testeranto/src/lib/index.ts(40,13): error TS2349: This expression is not callable.
+  Type 'unknown' has no call signatures.
+../testeranto/src/lib/index.ts(52,3): error TS2322: Type '{ assertThis?: ((x: T["then"]) => any) | undefined; andWhen?: ((store: T["istore"], whenCB: T["when"], testResource: ITTestResourceConfiguration, pm: IPM) => Promise<T["istore"]>) | undefined; ... 4 more ...; beforeEach?: ((subject: T["isubject"], initializer: (c?: any) => T["given"], testResource: ITTestResourceCon...' is not assignable to type 'ITestAdapter<T>'.
+  Types of property 'assertThis' are incompatible.
+    Type '((x: T["then"]) => any) | undefined' is not assignable to type '(x: T["then"]) => any'.
+      Type 'undefined' is not assignable to type '(x: T["then"]) => any'.
+../testeranto/src/Node.ts(34,7): error TS2345: Argument of type 'ITestImplementation<I, O, M>' is not assignable to parameter of type 'Omit<{ suites: TestSuiteImplementation<O>; givens: TestGivenImplementation<I, O>; whens: TestWhenImplementation<I, O>; thens: TestThenImplementation<...>; }, keyof M> & M & { ...; }'.
+  Type 'Omit<{ suites: TestSuiteImplementation<O>; givens: TestGivenImplementation<I, O>; whens: TestWhenImplementation<I, O>; thens: TestThenImplementation<...>; }, keyof M>' is missing the following properties from type '{ suites: Record<string, any>; givens: Record<string, any>; whens: Record<string, any>; thens: Record<string, any>; }': suites, givens, whens, thens
+../testeranto/src/PM/node.ts(185,9): error TS2416: Property 'writeFileSync' in type 'PM_Node' is not assignable to the same property in base type 'PM'.
+  Type '([filepath, contents]: [string, string]) => Promise<boolean>' is not assignable to type '(f: string, c: string) => Promise<boolean>'.
+    Types of parameters '__0' and 'f' are incompatible.
+      Type 'string' is not assignable to type '[string, string]'.
+../testeranto/src/PM/pure.ts(114,3): error TS2416: Property 'customScreenShot' in type 'PM_Pure' is not assignable to the same property in base type 'PM'.
+  Type '(opts: ScreencastOptions, page: string) => any' is not assignable to type '(opts: { path: string; }, page?: string | undefined) => any'.
+    Types of parameters 'opts' and 'opts' are incompatible.
+      Type '{ path: string; }' is not assignable to type 'ScreencastOptions'.
+        Types of property 'path' are incompatible.
+          Type 'string' is not assignable to type '`${string}.webm`'.
+../testeranto/src/PM/web.ts(56,12): error TS2304: Cannot find name 'opts'.
+../testeranto/src/PM/web.ts(57,57): error TS2304: Cannot find name 'opts'.
+../testeranto/src/PM/web.ts(59,7): error TS2663: Cannot find name 'page'. Did you mean the instance member 'this.page'?
+../testeranto/src/PM/web.ts(138,3): error TS2416: Property 'writeFileSync' in type 'PM_Web' is not assignable to the same property in base type 'PM'.
+  Type '([filepath, contents]: [string, string]) => any' is not assignable to type '(f: string, c: string) => Promise<boolean>'.
+    Types of parameters '__0' and 'f' are incompatible.
+      Type 'string' is not assignable to type '[string, string]'.
+src/changeValidationProtocol.ts(24,28): error TS2304: Cannot find name 'BehaviorVerifier'.
+src/changeValidationProtocol.ts(35,53): error TS2304: Cannot find name 'ValidationResult'.
+src/changeValidationProtocol.ts(58,17): error TS2393: Duplicate function implementation.
+src/changeValidationProtocol.ts(58,61): error TS2304: Cannot find name 'VerificationResult'.
+src/changeValidationProtocol.ts(59,26): error TS2339: Property 'verifyDirectives' does not exist on type 'IdentityEngine'.
+src/changeValidationProtocol.ts(72,17): error TS2393: Duplicate function implementation.
+src/changeValidationProtocol.ts(72,62): error TS2304: Cannot find name 'EconomicAnalysis'.
+src/changeValidationProtocol.ts(76,17): error TS2393: Duplicate function implementation.
+src/changeValidationProtocol.ts(76,61): error TS2304: Cannot find name 'BehaviorResult'.
+src/changeValidationProtocol.ts(81,15): error TS2304: Cannot find name 'VerificationResult'.
+src/changeValidationProtocol.ts(82,16): error TS2304: Cannot find name 'EconomicAnalysis'.
+src/changeValidationProtocol.ts(83,15): error TS2304: Cannot find name 'BehaviorResult'.
+src/changeValidationProtocol.ts(87,21): error TS2345: Argument of type 'string' is not assignable to parameter of type 'never'.
+src/changeValidationProtocol.ts(90,21): error TS2345: Argument of type 'string' is not assignable to parameter of type 'never'.
+src/changeValidationProtocol.ts(95,17): error TS2393: Duplicate function implementation.
+src/changeValidationProtocol.ts(107,17): error TS2393: Duplicate function implementation.
+src/changeValidationProtocol.ts(127,17): error TS2393: Duplicate function implementation.
+src/coreIdentityCalculus.ts(7,30): error TS2307: Cannot find module './wasm-verifier' or its corresponding type declarations.
+src/coreIdentityCalculus.ts(23,11): error TS2300: Duplicate identifier 'directives'.
+src/coreIdentityCalculus.ts(243,15): error TS2339: Property 'result' does not exist on type 'Boolean'.
+src/coreIdentityCalculus.ts(243,23): error TS2339: Property 'timestamp' does not exist on type 'Boolean'.
+src/coreIdentityCalculus.ts(261,57): error TS2554: Expected 1 arguments, but got 2.
+src/coreIdentityCalculus.ts(266,46): error TS2345: Argument of type '{ result: boolean; timestamp: number; }' is not assignable to parameter of type 'boolean'.
+src/economicVerifier.ts(38,56): error TS2304: Cannot find name 'EconomicAnalysis'.
+src/economicVerifier.ts(43,23): error TS2345: Argument of type 'string' is not assignable to parameter of type 'never'.
+src/economicVerifier.ts(46,23): error TS2345: Argument of type 'string' is not assignable to parameter of type 'never'.
+src/goalEngine.ts(53,46): error TS2339: Property 'analyzeGoalCost' does not exist on type 'EconomicVerifier'.
+src/goalEngine.ts(54,38): error TS2339: Property 'getBudget' does not exist on type 'EconomicVerifier'.
+src/goalEngine.ts(59,47): error TS2339: Property 'verifyGoalAlignment' does not exist on type 'IdentityEngine'.
+src/index.ts(41,20): error TS2554: Expected 3 arguments, but got 2.
+src/index.ts(167,30): error TS2341: Property 'memory' is private and only accessible within class 'UntitledAI'.
+src/index.ts(167,45): error TS2339: Property 'getProfileSnapshot' does not exist on type 'ProfileManager'.
+src/index.ts(171,20): error TS2341: Property 'memory' is private and only accessible within class 'UntitledAI'.
+src/index.ts(171,35): error TS2339: Property 'updateDimension' does not exist on type 'ProfileManager'.
+src/index.ts(172,32): error TS2304: Cannot find name 'ProfileDimension'.
+src/index.ts(178,12): error TS2341: Property 'nucleus' is private and only accessible within class 'UntitledAI'.
+src/index.ts(182,36): error TS2341: Property 'memory' is private and only accessible within class 'UntitledAI'.
+src/index.ts(192,37): error TS2341: Property 'memory' is private and only accessible within class 'UntitledAI'.
+src/index.ts(198,39): error TS2341: Property 'memory' is private and only accessible within class 'UntitledAI'.
+src/index.ts(203,33): error TS2341: Property 'memory' is private and only accessible within class 'UntitledAI'.
+src/index.ts(213,18): error TS2341: Property 'memory' is private and only accessible within class 'UntitledAI'.
+src/index.ts(216,12): error TS2341: Property 'nucleus' is private and only accessible within class 'UntitledAI'.
+src/index.ts(227,36): error TS2341: Property 'memory' is private and only accessible within class 'UntitledAI'.
+src/index.ts(230,44): error TS2341: Property 'memory' is private and only accessible within class 'UntitledAI'.
+src/index.ts(239,40): error TS2341: Property 'memory' is private and only accessible within class 'UntitledAI'.
+src/index.ts(242,29): error TS2341: Property 'nucleus' is private and only accessible within class 'UntitledAI'.
+src/index.ts(242,37): error TS2339: Property 'getUnhandledInputs' does not exist on type 'Nucleus'.
+src/index.ts(256,32): error TS2341: Property 'nucleus' is private and only accessible within class 'UntitledAI'.
+src/index.ts(267,66): error TS2341: Property 'memory' is private and only accessible within class 'UntitledAI'.
+src/index.ts(274,34): error TS2341: Property 'memory' is private and only accessible within class 'UntitledAI'.
+src/index.ts(292,36): error TS2341: Property 'nucleus' is private and only accessible within class 'UntitledAI'.
+src/index.ts(309,31): error TS2341: Property 'unhandledInputs' is private and only accessible within class 'UntitledAI'.
+src/index.ts(314,16): error TS2341: Property 'unhandledInputs' is private and only accessible within class 'UntitledAI'.
+src/llm.ts(76,57): error TS2304: Cannot find name 'input'.
+src/memory.ts(12,19): error TS2304: Cannot find name 'MemoryItem'.
+src/memory.ts(75,37): error TS2339: Property 'chroma' does not exist on type 'MemoryManager'.
+src/memory.ts(138,20): error TS2339: Property 'chroma' does not exist on type 'MemoryManager'.
+src/memory.ts(145,24): error TS2339: Property 'chroma' does not exist on type 'MemoryManager'.
+src/memory.ts(219,18): error TS2339: Property 'chroma' does not exist on type 'MemoryManager'.
+src/nucleus.ts(20,20): error TS2304: Cannot find name 'GoalEngine'.
+src/nucleus.ts(30,33): error TS2339: Property 'recordGoal' does not exist on type 'ProfileManager'.
+src/nucleus.ts(61,100): error TS2304: Cannot find name 'ProfileDimension'.
+src/nucleus.ts(64,70): error TS2339: Property 'getDimensionHistory' does not exist on type 'ProfileManager'.
+src/nucleus.ts(65,29): error TS2339: Property 'toUpperCase' does not exist on type 'string | number | symbol'.
+  Property 'toUpperCase' does not exist on type 'number'.
+src/nucleus.ts(76,47): error TS2339: Property 'getRecentEntries' does not exist on type 'ProfileManager'.
+src/nucleus.ts(78,47): error TS2339: Property 'getRecentEntries' does not exist on type 'ProfileManager'.
+src/nucleus.ts(80,47): error TS2339: Property 'getRecentEntries' does not exist on type 'ProfileManager'.
+src/nucleus.ts(119,24): error TS2304: Cannot find name 'COLORS'.
+src/nucleus.ts(119,52): error TS2304: Cannot find name 'COLORS'.
+src/nucleus.ts(131,24): error TS2304: Cannot find name 'COLORS'.
+src/nucleus.ts(131,52): error TS2304: Cannot find name 'COLORS'.
+src/nucleus.ts(143,26): error TS2304: Cannot find name 'COLORS'.
+src/nucleus.ts(143,50): error TS2304: Cannot find name 'COLORS'.
+src/nucleus.ts(153,24): error TS2304: Cannot find name 'COLORS'.
+src/nucleus.ts(153,52): error TS2304: Cannot find name 'COLORS'.
+src/nucleus.ts(165,26): error TS2304: Cannot find name 'COLORS'.
+src/nucleus.ts(165,50): error TS2304: Cannot find name 'COLORS'.
+src/nucleus.ts(174,24): error TS2304: Cannot find name 'COLORS'.
+src/nucleus.ts(174,52): error TS2304: Cannot find name 'COLORS'.
+src/nucleus.ts(212,58): error TS2339: Property 'content' does not exist on type 'string'.
+src/nucleus.ts(213,23): error TS2339: Property 'content' does not exist on type 'string'.
+src/nucleus.ts(294,8): error TS2339: Property 'map' does not exist on type 'void'.
+src/nucleus.ts(309,28): error TS2304: Cannot find name 'ChangeValidator'.
+src/nucleus.ts(312,32): error TS2304: Cannot find name 'Directive'.
+src/nucleus.ts(354,23): error TS2339: Property 'identifyNewDependencies' does not exist on type 'Nucleus'.
+src/nucleus.ts(355,26): error TS2339: Property 'identifyModifiedComponents' does not exist on type 'Nucleus'.
+src/nucleus.ts(361,20): error TS2339: Property 'applyChanges' does not exist on type 'Nucleus'.
+src/nucleus.ts(362,9): error TS2304: Cannot find name 'Logger'.
+src/nucleus.ts(364,9): error TS2304: Cannot find name 'Logger'.
+src/nucleus.ts(394,94): error TS2304: Cannot find name 'ProfileDimension'.
+src/nucleus.ts(397,62): error TS2339: Property 'getDimensionHistory' does not exist on type 'ProfileManager'.
+src/nucleus.ts(400,18): error TS2731: Implicit conversion of a 'symbol' to a 'string' will fail at runtime. Consider wrapping this expression in 'String(...)'.
+src/services/google.ts(38,5): error TS2322: Type '"https://www.googleapis.com/auth/gmail.readonly"' is not assignable to type 'GoogleScope'.
+src/services/google.ts(39,5): error TS2322: Type '"https://www.googleapis.com/auth/gmail.send"' is not assignable to type 'GoogleScope'.
+src/services/google.ts(40,5): error TS2322: Type '"https://www.googleapis.com/auth/contacts.readonly"' is not assignable to type 'GoogleScope'.
+src/services/google.ts(41,5): error TS2322: Type '"https://www.googleapis.com/auth/calendar.readonly"' is not assignable to type 'GoogleScope'.
+src/services/google.ts(216,9): error TS2322: Type 'string | null | undefined' is not assignable to type 'string | undefined'.
+  Type 'null' is not assignable to type 'string | undefined'.
+src/services/google.ts(242,9): error TS2322: Type '{ name: string; email: string; phone: string | null | undefined; }[]' is not assignable to type 'Contact[]'.
+  Type '{ name: string; email: string; phone: string | null | undefined; }' is not assignable to type 'Contact'.
+    Types of property 'phone' are incompatible.
+      Type 'string | null | undefined' is not assignable to type 'string | undefined'.
+        Type 'null' is not assignable to type 'string | undefined'.
+src/services/google.ts(243,9): error TS2322: Type 'string | null | undefined' is not assignable to type 'string | undefined'.
+  Type 'null' is not assignable to type 'string | undefined'.
+src/social.ts(79,7): error TS2322: Type 'number' is not assignable to type 'never'.
+src/social.ts(81,8): error TS2345: Argument of type 'Record<string, number>' is not assignable to parameter of type 'never'.
+src/social.ts(103,24): error TS2362: The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+src/social.ts(103,31): error TS2363: The right-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+src/types/verification.ts(42,16): error TS2304: Cannot find name 'EconomicAnalysis'.
+test/changeValidator.test.ts(56,5): error TS2322: Type '() => { validator: ChangeValidator; change: {}; }' is not assignable to type '() => () => ChangeValidator'.
+  Type '{ validator: ChangeValidator; change: {}; }' is not assignable to type '() => ChangeValidator'.
+    Type '{ validator: ChangeValidator; change: {}; }' provides no match for the signature '(): ChangeValidator'.
+test/changeValidator.test.ts(60,9): error TS2345: Argument of type 'MockEconomicVerifier' is not assignable to parameter of type 'EconomicVerifier'.
+  Type 'MockEconomicVerifier' is missing the following properties from type 'EconomicVerifier': budget, reserve, estimateEconomicImpact, updateBudget
+test/changeValidator.test.ts(67,5): error TS2322: Type '(change: any) => (store: { isValid: boolean; violations: string[]; }) => { isValid: boolean; violations: string[]; }' is not assignable to type '(Iw_0: any) => (zel: { isValid: boolean; violations: string[]; }, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { validator: ChangeValidator; change: any; }) => { ...; }>'.
+  Call signature return types '(store: { isValid: boolean; violations: string[]; }) => { isValid: boolean; violations: string[]; }' and '(zel: { isValid: boolean; violations: string[]; }, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { validator: ChangeValidator; change: any; }) => { ...; }>' are incompatible.
+    Type '{ isValid: boolean; violations: string[]; }' is missing the following properties from type 'Promise<(store: { validator: ChangeValidator; change: any; }) => { validator: ChangeValidator; change: any; }>': then, catch, finally, [Symbol.toStringTag]
+test/changeValidator.test.ts(68,13): error TS2339: Property 'change' does not exist on type '{ isValid: boolean; violations: string[]; }'.
+test/changeValidator.test.ts(73,5): error TS2322: Type '(expected: { isValid: boolean; violations: string[]; }) => (store: { isValid: boolean; violations: string[]; }) => Promise<{ isValid: boolean; violations: string[]; }>' is not assignable to type '(It_0: { isValid: boolean; violations: string[]; }) => (ssel: { isValid: boolean; violations: string[]; }, utils: PM) => (store: { validator: ChangeValidator; change: any; }) => { ...; }'.
+  Call signature return types '(store: { isValid: boolean; violations: string[]; }) => Promise<{ isValid: boolean; violations: string[]; }>' and '(ssel: { isValid: boolean; violations: string[]; }, utils: PM) => (store: { validator: ChangeValidator; change: any; }) => { validator: ChangeValidator; change: any; }' are incompatible.
+    Type 'Promise<{ isValid: boolean; violations: string[]; }>' is not assignable to type '(store: { validator: ChangeValidator; change: any; }) => { validator: ChangeValidator; change: any; }'.
+      Type 'Promise<{ isValid: boolean; violations: string[]; }>' provides no match for the signature '(store: { validator: ChangeValidator; change: any; }): { validator: ChangeValidator; change: any; }'.
+test/changeValidator.test.ts(76,36): error TS2339: Property 'validator' does not exist on type '{ isValid: boolean; violations: string[]; }'.
+test/changeValidator.test.ts(76,67): error TS2339: Property 'change' does not exist on type '{ isValid: boolean; violations: string[]; }'.
+test/changeValidator.test.ts(112,9): error TS2345: Argument of type 'MockEconomicVerifier' is not assignable to parameter of type 'EconomicVerifier'.
+  Type 'MockEconomicVerifier' is missing the following properties from type 'EconomicVerifier': budget, reserve, estimateEconomicImpact, updateBudget
+test/changeValidator.test.ts(124,3): error TS2345: Argument of type 'ChangeValidator' is not assignable to parameter of type 'null'.
+test/changeValidator.test.ts(125,3): error TS2304: Cannot find name 'specification'.
+test/economicVerifier.test.ts(34,5): error TS2322: Type '() => { verifier: EconomicVerifier; code: string; }' is not assignable to type '() => () => EconomicVerifier'.
+  Type '{ verifier: EconomicVerifier; code: string; }' is not assignable to type '() => EconomicVerifier'.
+    Type '{ verifier: EconomicVerifier; code: string; }' provides no match for the signature '(): EconomicVerifier'.
+test/economicVerifier.test.ts(40,5): error TS2322: Type '(code: string) => (store: { isValid: boolean; violations: string[]; }) => { isValid: boolean; violations: string[]; }' is not assignable to type '(Iw_0: string) => (zel: { isValid: boolean; violations: string[]; }, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { verifier: EconomicVerifier; code: string; }) => { ...; }>'.
+  Call signature return types '(store: { isValid: boolean; violations: string[]; }) => { isValid: boolean; violations: string[]; }' and '(zel: { isValid: boolean; violations: string[]; }, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { verifier: EconomicVerifier; code: string; }) => { ...; }>' are incompatible.
+    Type '{ isValid: boolean; violations: string[]; }' is missing the following properties from type 'Promise<(store: { verifier: EconomicVerifier; code: string; }) => { verifier: EconomicVerifier; code: string; }>': then, catch, finally, [Symbol.toStringTag]
+test/economicVerifier.test.ts(41,13): error TS2339: Property 'code' does not exist on type '{ isValid: boolean; violations: string[]; }'.
+test/economicVerifier.test.ts(46,5): error TS2322: Type '(expected: { isValid: boolean; violations: string[]; }) => (store: { isValid: boolean; violations: string[]; }) => Promise<{ isValid: boolean; violations: string[]; }>' is not assignable to type '(It_0: { isValid: boolean; violations: string[]; }) => (ssel: { isValid: boolean; violations: string[]; }, utils: PM) => (store: { verifier: EconomicVerifier; code: string; }) => { ...; }'.
+  Call signature return types '(store: { isValid: boolean; violations: string[]; }) => Promise<{ isValid: boolean; violations: string[]; }>' and '(ssel: { isValid: boolean; violations: string[]; }, utils: PM) => (store: { verifier: EconomicVerifier; code: string; }) => { verifier: EconomicVerifier; code: string; }' are incompatible.
+    Type 'Promise<{ isValid: boolean; violations: string[]; }>' is not assignable to type '(store: { verifier: EconomicVerifier; code: string; }) => { verifier: EconomicVerifier; code: string; }'.
+      Type 'Promise<{ isValid: boolean; violations: string[]; }>' provides no match for the signature '(store: { verifier: EconomicVerifier; code: string; }): { verifier: EconomicVerifier; code: string; }'.
+test/economicVerifier.test.ts(47,34): error TS2339: Property 'verifier' does not exist on type '{ isValid: boolean; violations: string[]; }'.
+test/economicVerifier.test.ts(47,67): error TS2339: Property 'code' does not exist on type '{ isValid: boolean; violations: string[]; }'.
+test/economicVerifier.test.ts(72,3): error TS2345: Argument of type 'EconomicVerifier' is not assignable to parameter of type 'null'.
+test/goalEngine.test.ts(38,20): error TS2322: Type '{ engine: GoalEngine; }' is not assignable to type '() => { engine: GoalEngine; }'.
+  Type '{ engine: GoalEngine; }' provides no match for the signature '(): { engine: GoalEngine; }'.
+test/goalEngine.test.ts(65,5): error TS2322: Type '(description: string, dependencies?: string[]) => (store: { engine: GoalEngine; valid?: boolean | undefined; }) => Promise<{ currentGoal: Goal; engine: GoalEngine; valid?: boolean | undefined; }>' is not assignable to type '(Iw_0: string) => (zel: { engine: GoalEngine; valid?: boolean | undefined; }, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { ...; }) => { ...; }>'.
+  Call signature return types '(store: { engine: GoalEngine; valid?: boolean | undefined; }) => Promise<{ currentGoal: Goal; engine: GoalEngine; valid?: boolean | undefined; }>' and '(zel: { engine: GoalEngine; valid?: boolean | undefined; }, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { engine: GoalEngine; goal?: string | undefined; }) => { ...; }>' are incompatible.
+    Type 'Promise<{ currentGoal: Goal; engine: GoalEngine; valid?: boolean | undefined; }>' is not assignable to type 'Promise<(store: { engine: GoalEngine; goal?: string | undefined; }) => { engine: GoalEngine; goal?: string | undefined; }>'.
+      Type '{ currentGoal: Goal; engine: GoalEngine; valid?: boolean; }' is not assignable to type '(store: { engine: GoalEngine; goal?: string | undefined; }) => { engine: GoalEngine; goal?: string | undefined; }'.
+        Type '{ currentGoal: Goal; engine: GoalEngine; valid?: boolean | undefined; }' provides no match for the signature '(store: { engine: GoalEngine; goal?: string | undefined; }): { engine: GoalEngine; goal?: string | undefined; }'.
+test/goalEngine.test.ts(66,60): error TS2554: Expected 1 arguments, but got 2.
+test/goalEngine.test.ts(69,5): error TS2322: Type '(expected: boolean) => (store: { engine: GoalEngine; valid?: boolean | undefined; }) => Promise<{ verificationResult: { valid: boolean; reason?: string | undefined; }; engine: GoalEngine; valid?: boolean | undefined; }>' is not assignable to type '(Iw_0: boolean) => (zel: { engine: GoalEngine; valid?: boolean | undefined; }, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { ...; }) => { ...; }>'.
+  Call signature return types '(store: { engine: GoalEngine; valid?: boolean | undefined; }) => Promise<{ verificationResult: { valid: boolean; reason?: string | undefined; }; engine: GoalEngine; valid?: boolean | undefined; }>' and '(zel: { engine: GoalEngine; valid?: boolean | undefined; }, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { engine: GoalEngine; goal?: string | undefined; }) => { ...; }>' are incompatible.
+    Type 'Promise<{ verificationResult: { valid: boolean; reason?: string | undefined; }; engine: GoalEngine; valid?: boolean | undefined; }>' is not assignable to type 'Promise<(store: { engine: GoalEngine; goal?: string | undefined; }) => { engine: GoalEngine; goal?: string | undefined; }>'.
+      Type '{ verificationResult: { valid: boolean; reason?: string; }; engine: GoalEngine; valid?: boolean; }' is not assignable to type '(store: { engine: GoalEngine; goal?: string | undefined; }) => { engine: GoalEngine; goal?: string | undefined; }'.
+        Type '{ verificationResult: { valid: boolean; reason?: string | undefined; }; engine: GoalEngine; valid?: boolean | undefined; }' provides no match for the signature '(store: { engine: GoalEngine; goal?: string | undefined; }): { engine: GoalEngine; goal?: string | undefined; }'.
+test/goalEngine.test.ts(70,26): error TS2339: Property 'currentGoal' does not exist on type '{ engine: GoalEngine; valid?: boolean | undefined; }'.
+test/goalEngine.test.ts(82,5): error TS2322: Type '(expected: boolean) => (store: { engine: GoalEngine; valid?: boolean | undefined; }) => { engine: GoalEngine; valid?: boolean | undefined; }' is not assignable to type '(It_0: boolean) => (ssel: { engine: GoalEngine; valid?: boolean | undefined; }, utils: PM) => (store: { engine: GoalEngine; valid?: boolean | undefined; }) => { ...; }'.
+  Call signature return types '(store: { engine: GoalEngine; valid?: boolean | undefined; }) => { engine: GoalEngine; valid?: boolean | undefined; }' and '(ssel: { engine: GoalEngine; valid?: boolean | undefined; }, utils: PM) => (store: { engine: GoalEngine; valid?: boolean | undefined; }) => { engine: GoalEngine; valid?: boolean | undefined; }' are incompatible.
+    Type '{ engine: GoalEngine; valid?: boolean | undefined; }' is not assignable to type '(store: { engine: GoalEngine; valid?: boolean | undefined; }) => { engine: GoalEngine; valid?: boolean | undefined; }'.
+      Type '{ engine: GoalEngine; valid?: boolean | undefined; }' provides no match for the signature '(store: { engine: GoalEngine; valid?: boolean | undefined; }): { engine: GoalEngine; valid?: boolean | undefined; }'.
+test/goalEngine.test.ts(83,17): error TS2339: Property 'verificationResult' does not exist on type '{ engine: GoalEngine; valid?: boolean | undefined; }'.
+test/goalEngine.test.ts(84,72): error TS2339: Property 'verificationResult' does not exist on type '{ engine: GoalEngine; valid?: boolean | undefined; }'.
+test/goalEngine.test.ts(119,3): error TS2345: Argument of type 'GoalEngine' is not assignable to parameter of type 'null'.
+test/identityEngine.test.ts(25,22): error TS2304: Cannot find name 'Directive'.
+test/identityEngine.test.ts(49,5): error TS2322: Type '() => { engine: IdentityEngine; code: string; }' is not assignable to type '() => () => IdentityEngine'.
+  Type '{ engine: IdentityEngine; code: string; }' is not assignable to type '() => IdentityEngine'.
+    Type '{ engine: IdentityEngine; code: string; }' provides no match for the signature '(): IdentityEngine'.
+test/identityEngine.test.ts(53,5): error TS2322: Type '(directives: Directive[]) => { engine: IdentityEngine; code: string; }' is not assignable to type '(Ig_0: Directive[]) => () => IdentityEngine'.
+  Type '{ engine: IdentityEngine; code: string; }' is not assignable to type '() => IdentityEngine'.
+    Type '{ engine: IdentityEngine; code: string; }' provides no match for the signature '(): IdentityEngine'.
+test/identityEngine.test.ts(53,34): error TS2304: Cannot find name 'Directive'.
+test/identityEngine.test.ts(65,5): error TS2322: Type '(code: string) => (store: boolean) => boolean' is not assignable to type '(Iw_0: string) => (zel: boolean, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { engine: IdentityEngine; code: string; }) => { ...; }>'.
+  Call signature return types '(store: boolean) => boolean' and '(zel: boolean, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { engine: IdentityEngine; code: string; }) => { engine: IdentityEngine; code: string; }>' are incompatible.
+    Type 'boolean' is not assignable to type 'Promise<(store: { engine: IdentityEngine; code: string; }) => { engine: IdentityEngine; code: string; }>'.
+test/identityEngine.test.ts(67,13): error TS2339: Property 'code' does not exist on type 'boolean'.
+test/identityEngine.test.ts(70,5): error TS2322: Type '(code: string) => (store: boolean) => boolean' is not assignable to type '(Iw_0: string) => (zel: boolean, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { engine: IdentityEngine; code: string; }) => { ...; }>'.
+  Call signature return types '(store: boolean) => boolean' and '(zel: boolean, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { engine: IdentityEngine; code: string; }) => { engine: IdentityEngine; code: string; }>' are incompatible.
+    Type 'boolean' is not assignable to type 'Promise<(store: { engine: IdentityEngine; code: string; }) => { engine: IdentityEngine; code: string; }>'.
+test/identityEngine.test.ts(72,13): error TS2339: Property 'code' does not exist on type 'boolean'.
+test/identityEngine.test.ts(75,5): error TS2322: Type '(code: string) => (store: boolean) => boolean' is not assignable to type '(Iw_0: string) => (zel: boolean, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { engine: IdentityEngine; code: string; }) => { ...; }>'.
+  Call signature return types '(store: boolean) => boolean' and '(zel: boolean, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { engine: IdentityEngine; code: string; }) => { engine: IdentityEngine; code: string; }>' are incompatible.
+    Type 'boolean' is not assignable to type 'Promise<(store: { engine: IdentityEngine; code: string; }) => { engine: IdentityEngine; code: string; }>'.
+test/identityEngine.test.ts(77,13): error TS2339: Property 'code' does not exist on type 'boolean'.
+test/identityEngine.test.ts(82,34): error TS2322: Type '(store: boolean) => boolean' is not assignable to type '(ssel: boolean, utils: PM) => (store: { engine: IdentityEngine; code: string; }) => { engine: IdentityEngine; code: string; }'.
+  Type 'boolean' is not assignable to type '(store: { engine: IdentityEngine; code: string; }) => { engine: IdentityEngine; code: string; }'.
+test/identityEngine.test.ts(86,5): error TS2322: Type '(expected: string[]) => (store: boolean) => boolean' is not assignable to type '(It_0: string[]) => (ssel: boolean, utils: PM) => (store: { engine: IdentityEngine; code: string; }) => { engine: IdentityEngine; code: string; }'.
+  Call signature return types '(store: boolean) => boolean' and '(ssel: boolean, utils: PM) => (store: { engine: IdentityEngine; code: string; }) => { engine: IdentityEngine; code: string; }' are incompatible.
+    Type 'boolean' is not assignable to type '(store: { engine: IdentityEngine; code: string; }) => { engine: IdentityEngine; code: string; }'.
+test/identityEngine.test.ts(90,30): error TS2322: Type '(store: boolean) => boolean' is not assignable to type '(ssel: boolean, utils: PM) => (store: { engine: IdentityEngine; code: string; }) => { engine: IdentityEngine; code: string; }'.
+  Type 'boolean' is not assignable to type '(store: { engine: IdentityEngine; code: string; }) => { engine: IdentityEngine; code: string; }'.
+test/identityEngine.test.ts(112,3): error TS2345: Argument of type 'IdentityEngine' is not assignable to parameter of type 'null'.
+test/llm.test.ts(41,5): error TS2322: Type '() => Promise<{ llm: LLMIntegration; input: string; context: never[]; }>' is not assignable to type '() => () => LLMIntegration'.
+  Type 'Promise<{ llm: LLMIntegration; input: string; context: never[]; }>' is not assignable to type '() => LLMIntegration'.
+    Type 'Promise<{ llm: LLMIntegration; input: string; context: never[]; }>' provides no match for the signature '(): LLMIntegration'.
+test/llm.test.ts(51,5): error TS2322: Type '(input: string, context: string[]) => (store: string) => string' is not assignable to type '(Iw_0: string, Iw_1: string[]) => (zel: string, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { llm: LLMIntegration; input: string; context: string[]; }) => { ...; }>'.
+  Call signature return types '(store: string) => string' and '(zel: string, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { llm: LLMIntegration; input: string; context: string[]; }) => { ...; }>' are incompatible.
+    Type 'string' is not assignable to type 'Promise<(store: { llm: LLMIntegration; input: string; context: string[]; }) => { llm: LLMIntegration; input: string; context: string[]; }>'.
+test/llm.test.ts(52,13): error TS2339: Property 'input' does not exist on type 'string'.
+test/llm.test.ts(53,13): error TS2339: Property 'context' does not exist on type 'string'.
+test/llm.test.ts(56,5): error TS2322: Type '(context: string[]) => (store: string) => string' is not assignable to type '(Iw_0: string[]) => (zel: string, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { llm: LLMIntegration; input: string; context: string[]; }) => { ...; }>'.
+  Call signature return types '(store: string) => string' and '(zel: string, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { llm: LLMIntegration; input: string; context: string[]; }) => { ...; }>' are incompatible.
+    Type 'string' is not assignable to type 'Promise<(store: { llm: LLMIntegration; input: string; context: string[]; }) => { llm: LLMIntegration; input: string; context: string[]; }>'.
+test/llm.test.ts(57,13): error TS2339: Property 'context' does not exist on type 'string'.
+test/llm.test.ts(60,5): error TS2322: Type '(patterns: string[]) => (store: string) => string' is not assignable to type '(Iw_0: string[]) => (zel: string, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { llm: LLMIntegration; input: string; context: string[]; }) => { ...; }>'.
+  Call signature return types '(store: string) => string' and '(zel: string, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { llm: LLMIntegration; input: string; context: string[]; }) => { ...; }>' are incompatible.
+    Type 'string' is not assignable to type 'Promise<(store: { llm: LLMIntegration; input: string; context: string[]; }) => { llm: LLMIntegration; input: string; context: string[]; }>'.
+test/llm.test.ts(61,13): error TS2339: Property 'input' does not exist on type 'string'.
+test/llm.test.ts(64,5): error TS2322: Type '(pattern: string) => (store: string) => string' is not assignable to type '(Iw_0: string) => (zel: string, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { llm: LLMIntegration; input: string; context: string[]; }) => { ...; }>'.
+  Call signature return types '(store: string) => string' and '(zel: string, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { llm: LLMIntegration; input: string; context: string[]; }) => { ...; }>' are incompatible.
+    Type 'string' is not assignable to type 'Promise<(store: { llm: LLMIntegration; input: string; context: string[]; }) => { llm: LLMIntegration; input: string; context: string[]; }>'.
+test/llm.test.ts(65,13): error TS2339: Property 'input' does not exist on type 'string'.
+test/llm.test.ts(70,27): error TS2322: Type '(store: string) => Promise<string>' is not assignable to type '(ssel: string, utils: PM) => (store: { llm: LLMIntegration; input: string; context: string[]; }) => { llm: LLMIntegration; input: string; context: string[]; }'.
+  Type 'Promise<string>' is not assignable to type '(store: { llm: LLMIntegration; input: string; context: string[]; }) => { llm: LLMIntegration; input: string; context: string[]; }'.
+    Type 'Promise<string>' provides no match for the signature '(store: { llm: LLMIntegration; input: string; context: string[]; }): { llm: LLMIntegration; input: string; context: string[]; }'.
+test/llm.test.ts(71,36): error TS2339: Property 'llm' does not exist on type 'string'.
+test/llm.test.ts(71,63): error TS2339: Property 'input' does not exist on type 'string'.
+test/llm.test.ts(71,76): error TS2339: Property 'context' does not exist on type 'string'.
+test/llm.test.ts(77,5): error TS2322: Type '(expected: string) => (store: string) => Promise<string>' is not assignable to type '(It_0: string) => (ssel: string, utils: PM) => (store: { llm: LLMIntegration; input: string; context: string[]; }) => { llm: LLMIntegration; input: string; context: string[]; }'.
+  Call signature return types '(store: string) => Promise<string>' and '(ssel: string, utils: PM) => (store: { llm: LLMIntegration; input: string; context: string[]; }) => { llm: LLMIntegration; input: string; context: string[]; }' are incompatible.
+    Type 'Promise<string>' is not assignable to type '(store: { llm: LLMIntegration; input: string; context: string[]; }) => { llm: LLMIntegration; input: string; context: string[]; }'.
+      Type 'Promise<string>' provides no match for the signature '(store: { llm: LLMIntegration; input: string; context: string[]; }): { llm: LLMIntegration; input: string; context: string[]; }'.
+test/llm.test.ts(78,36): error TS2339: Property 'llm' does not exist on type 'string'.
+test/llm.test.ts(78,63): error TS2339: Property 'input' does not exist on type 'string'.
+test/llm.test.ts(78,76): error TS2339: Property 'context' does not exist on type 'string'.
+test/llm.test.ts(84,27): error TS2322: Type '(store: string) => Promise<string>' is not assignable to type '(ssel: string, utils: PM) => (store: { llm: LLMIntegration; input: string; context: string[]; }) => { llm: LLMIntegration; input: string; context: string[]; }'.
+  Type 'Promise<string>' is not assignable to type '(store: { llm: LLMIntegration; input: string; context: string[]; }) => { llm: LLMIntegration; input: string; context: string[]; }'.
+    Type 'Promise<string>' provides no match for the signature '(store: { llm: LLMIntegration; input: string; context: string[]; }): { llm: LLMIntegration; input: string; context: string[]; }'.
+test/llm.test.ts(85,36): error TS2339: Property 'llm' does not exist on type 'string'.
+test/llm.test.ts(85,63): error TS2339: Property 'input' does not exist on type 'string'.
+test/llm.test.ts(85,76): error TS2339: Property 'context' does not exist on type 'string'.
+test/llm.test.ts(91,36): error TS2322: Type '(store: string) => Promise<string>' is not assignable to type '(ssel: string, utils: PM) => (store: { llm: LLMIntegration; input: string; context: string[]; }) => { llm: LLMIntegration; input: string; context: string[]; }'.
+  Type 'Promise<string>' is not assignable to type '(store: { llm: LLMIntegration; input: string; context: string[]; }) => { llm: LLMIntegration; input: string; context: string[]; }'.
+    Type 'Promise<string>' provides no match for the signature '(store: { llm: LLMIntegration; input: string; context: string[]; }): { llm: LLMIntegration; input: string; context: string[]; }'.
+test/llm.test.ts(92,36): error TS2339: Property 'llm' does not exist on type 'string'.
+test/llm.test.ts(92,63): error TS2339: Property 'input' does not exist on type 'string'.
+test/llm.test.ts(92,76): error TS2339: Property 'context' does not exist on type 'string'.
+test/llm.test.ts(117,3): error TS2345: Argument of type 'LLMIntegration' is not assignable to parameter of type 'null'.
+test/memory.test.ts(43,5): error TS2322: Type '() => Promise<{ manager: MemoryManager; query: string; }>' is not assignable to type '() => () => MemoryManager'.
+  Type 'Promise<{ manager: MemoryManager; query: string; }>' is not assignable to type '() => MemoryManager'.
+    Type 'Promise<{ manager: MemoryManager; query: string; }>' provides no match for the signature '(): MemoryManager'.
+test/memory.test.ts(53,5): error TS2322: Type '(input: string, output: string) => (store: boolean | string[]) => boolean | string[]' is not assignable to type '(Iw_0: string, Iw_1: string) => (zel: boolean | string[], tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { ...; }>'.
+  Call signature return types '(store: boolean | string[]) => boolean | string[]' and '(zel: boolean | string[], tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { ...; }>' are incompatible.
+    Type 'boolean | string[]' is not assignable to type 'Promise<(store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { manager: MemoryManager; query: string; url?: string | undefined; }>'.
+      Type 'boolean' is not assignable to type 'Promise<(store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { manager: MemoryManager; query: string; url?: string | undefined; }>'.
+test/memory.test.ts(54,13): error TS2339: Property 'manager' does not exist on type 'boolean | string[]'.
+  Property 'manager' does not exist on type 'false'.
+test/memory.test.ts(57,5): error TS2322: Type '(query: string) => (store: boolean | string[]) => boolean | string[]' is not assignable to type '(Iw_0: string) => (zel: boolean | string[], tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { ...; }>'.
+  Call signature return types '(store: boolean | string[]) => boolean | string[]' and '(zel: boolean | string[], tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { ...; }>' are incompatible.
+    Type 'boolean | string[]' is not assignable to type 'Promise<(store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { manager: MemoryManager; query: string; url?: string | undefined; }>'.
+      Type 'boolean' is not assignable to type 'Promise<(store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { manager: MemoryManager; query: string; url?: string | undefined; }>'.
+test/memory.test.ts(58,13): error TS2339: Property 'query' does not exist on type 'boolean | string[]'.
+  Property 'query' does not exist on type 'false'.
+test/memory.test.ts(61,5): error TS2322: Type '(url: string) => (store: boolean | string[]) => boolean | string[]' is not assignable to type '(Iw_0: string) => (zel: boolean | string[], tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { ...; }>'.
+  Call signature return types '(store: boolean | string[]) => boolean | string[]' and '(zel: boolean | string[], tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { ...; }>' are incompatible.
+    Type 'boolean | string[]' is not assignable to type 'Promise<(store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { manager: MemoryManager; query: string; url?: string | undefined; }>'.
+      Type 'boolean' is not assignable to type 'Promise<(store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { manager: MemoryManager; query: string; url?: string | undefined; }>'.
+test/memory.test.ts(62,13): error TS2339: Property 'url' does not exist on type 'boolean | string[]'.
+  Property 'url' does not exist on type 'false'.
+test/memory.test.ts(65,32): error TS2322: Type 'boolean | string[]' is not assignable to type 'Promise<(store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { manager: MemoryManager; query: string; url?: string | undefined; }>'.
+  Type 'boolean' is not assignable to type 'Promise<(store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { manager: MemoryManager; query: string; url?: string | undefined; }>'.
+test/memory.test.ts(66,5): error TS2322: Type '(url?: string | undefined) => (store: boolean | string[]) => boolean | string[]' is not assignable to type '(Iw_0?: string | undefined) => (zel: boolean | string[], tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { ...; }>'.
+  Call signature return types '(store: boolean | string[]) => boolean | string[]' and '(zel: boolean | string[], tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { ...; }>' are incompatible.
+    Type 'boolean | string[]' is not assignable to type 'Promise<(store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { manager: MemoryManager; query: string; url?: string | undefined; }>'.
+      Type 'boolean' is not assignable to type 'Promise<(store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { manager: MemoryManager; query: string; url?: string | undefined; }>'.
+test/memory.test.ts(67,13): error TS2339: Property 'url' does not exist on type 'boolean | string[]'.
+  Property 'url' does not exist on type 'false'.
+test/memory.test.ts(72,5): error TS2322: Type '(expected: number) => (store: boolean | string[]) => Promise<boolean | string[]>' is not assignable to type '(It_0: number) => (ssel: boolean | string[], utils: PM) => (store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { manager: MemoryManager; query: string; url?: string | undefined; }'.
+  Call signature return types '(store: boolean | string[]) => Promise<boolean | string[]>' and '(ssel: boolean | string[], utils: PM) => (store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { manager: MemoryManager; query: string; url?: string | undefined; }' are incompatible.
+    Type 'Promise<boolean | string[]>' is not assignable to type '(store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { manager: MemoryManager; query: string; url?: string | undefined; }'.
+      Type 'Promise<boolean | string[]>' provides no match for the signature '(store: { manager: MemoryManager; query: string; url?: string | undefined; }): { manager: MemoryManager; query: string; url?: string | undefined; }'.
+test/memory.test.ts(73,35): error TS2339: Property 'manager' does not exist on type 'boolean | string[]'.
+  Property 'manager' does not exist on type 'false'.
+test/memory.test.ts(73,68): error TS2339: Property 'query' does not exist on type 'boolean | string[]'.
+  Property 'query' does not exist on type 'false'.
+test/memory.test.ts(79,5): error TS2322: Type '(expected: string) => (store: boolean | string[]) => boolean | string[]' is not assignable to type '(It_0: string) => (ssel: boolean | string[], utils: PM) => (store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { manager: MemoryManager; query: string; url?: string | undefined; }'.
+  Call signature return types '(store: boolean | string[]) => boolean | string[]' and '(ssel: boolean | string[], utils: PM) => (store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { manager: MemoryManager; query: string; url?: string | undefined; }' are incompatible.
+    Type 'boolean | string[]' is not assignable to type '(store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { manager: MemoryManager; query: string; url?: string | undefined; }'.
+      Type 'boolean' is not assignable to type '(store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { manager: MemoryManager; query: string; url?: string | undefined; }'.
+test/memory.test.ts(80,30): error TS2339: Property 'manager' does not exist on type 'boolean | string[]'.
+  Property 'manager' does not exist on type 'false'.
+test/memory.test.ts(80,63): error TS2339: Property 'query' does not exist on type 'boolean | string[]'.
+  Property 'query' does not exist on type 'false'.
+test/memory.test.ts(86,32): error TS2322: Type '(store: boolean | string[]) => Promise<boolean | string[]>' is not assignable to type '(ssel: boolean | string[], utils: PM) => (store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { manager: MemoryManager; query: string; url?: string | undefined; }'.
+  Type 'Promise<boolean | string[]>' is not assignable to type '(store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { manager: MemoryManager; query: string; url?: string | undefined; }'.
+    Type 'Promise<boolean | string[]>' provides no match for the signature '(store: { manager: MemoryManager; query: string; url?: string | undefined; }): { manager: MemoryManager; query: string; url?: string | undefined; }'.
+test/memory.test.ts(87,18): error TS2339: Property 'url' does not exist on type 'boolean | string[]'.
+  Property 'url' does not exist on type 'false'.
+test/memory.test.ts(88,35): error TS2339: Property 'manager' does not exist on type 'boolean | string[]'.
+  Property 'manager' does not exist on type 'false'.
+test/memory.test.ts(88,71): error TS2339: Property 'url' does not exist on type 'boolean | string[]'.
+  Property 'url' does not exist on type 'false'.
+test/memory.test.ts(94,24): error TS2322: Type '(store: boolean | string[]) => Promise<boolean | string[]>' is not assignable to type '(ssel: boolean | string[], utils: PM) => (store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { manager: MemoryManager; query: string; url?: string | undefined; }'.
+  Type 'Promise<boolean | string[]>' is not assignable to type '(store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { manager: MemoryManager; query: string; url?: string | undefined; }'.
+    Type 'Promise<boolean | string[]>' provides no match for the signature '(store: { manager: MemoryManager; query: string; url?: string | undefined; }): { manager: MemoryManager; query: string; url?: string | undefined; }'.
+test/memory.test.ts(95,33): error TS2339: Property 'manager' does not exist on type 'boolean | string[]'.
+  Property 'manager' does not exist on type 'false'.
+test/memory.test.ts(101,5): error TS2322: Type '(url?: string | undefined) => (store: boolean | string[]) => Promise<boolean | string[]>' is not assignable to type '(It_0?: string | undefined) => (ssel: boolean | string[], utils: PM) => (store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { manager: MemoryManager; query: string; url?: string | undefined; }'.
+  Call signature return types '(store: boolean | string[]) => Promise<boolean | string[]>' and '(ssel: boolean | string[], utils: PM) => (store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { manager: MemoryManager; query: string; url?: string | undefined; }' are incompatible.
+    Type 'Promise<boolean | string[]>' is not assignable to type '(store: { manager: MemoryManager; query: string; url?: string | undefined; }) => { manager: MemoryManager; query: string; url?: string | undefined; }'.
+      Type 'Promise<boolean | string[]>' provides no match for the signature '(store: { manager: MemoryManager; query: string; url?: string | undefined; }): { manager: MemoryManager; query: string; url?: string | undefined; }'.
+test/memory.test.ts(102,35): error TS2339: Property 'manager' does not exist on type 'boolean | string[]'.
+  Property 'manager' does not exist on type 'false'.
+test/memory.test.ts(127,3): error TS2345: Argument of type 'MemoryManager' is not assignable to parameter of type 'null'.
+test/nucleus.test.ts(102,5): error TS2322: Type '() => Promise<{ memory: any; llm: any; }>' is not assignable to type '() => () => Promise<{ memory: MemoryManager; llm: LLMIntegration; }>'.
+  Type 'Promise<{ memory: any; llm: any; }>' is not assignable to type '() => Promise<{ memory: MemoryManager; llm: LLMIntegration; }>'.
+    Type 'Promise<{ memory: any; llm: any; }>' provides no match for the signature '(): Promise<{ memory: MemoryManager; llm: LLMIntegration; }>'.
+test/nucleus.test.ts(108,5): error TS2322: Type '() => Promise<{ memory: any; llm: any; }>' is not assignable to type '(Ig_0: "With initialized components") => () => Promise<{ memory: MemoryManager; llm: LLMIntegration; }>'.
+  Type 'Promise<{ memory: any; llm: any; }>' is not assignable to type '() => Promise<{ memory: MemoryManager; llm: LLMIntegration; }>'.
+    Type 'Promise<{ memory: any; llm: any; }>' provides no match for the signature '(): Promise<{ memory: MemoryManager; llm: LLMIntegration; }>'.
+test/nucleus.test.ts(112,5): error TS2322: Type '() => Promise<{ memory: any; llm: any; context: string[]; }>' is not assignable to type '(Ig_0: "With conversation context") => () => Promise<{ memory: MemoryManager; llm: LLMIntegration; }>'.
+  Type 'Promise<{ memory: any; llm: any; context: string[]; }>' is not assignable to type '() => Promise<{ memory: MemoryManager; llm: LLMIntegration; }>'.
+    Type 'Promise<{ memory: any; llm: any; context: string[]; }>' provides no match for the signature '(): Promise<{ memory: MemoryManager; llm: LLMIntegration; }>'.
+test/nucleus.test.ts(122,5): error TS2322: Type '(input: string) => (store: { response?: string | undefined; stats?: any; state?: boolean | undefined; }) => { response?: string | undefined; stats?: any; state?: boolean | undefined; }' is not assignable to type '(Iw_0: string, Iw_1?: string[] | undefined) => (zel: { response?: string | undefined; stats?: any; state?: boolean | undefined; }, tr: ITTestResourceConfiguration, utils: PM) => Promise<...>'.
+  Call signature return types '(store: { response?: string | undefined; stats?: any; state?: boolean | undefined; }) => { response?: string | undefined; stats?: any; state?: boolean | undefined; }' and '(zel: { response?: string | undefined; stats?: any; state?: boolean | undefined; }, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }) => Promise<...>>' are incompatible.
+    Type '{ response?: string | undefined; stats?: any; state?: boolean | undefined; }' is missing the following properties from type 'Promise<(store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }) => Promise<{ nucleus: Nucleus; input: string; context?: string[] | undefined; }>>': then, catch, finally, [Symbol.toStringTag]
+test/nucleus.test.ts(124,13): error TS2339: Property 'input' does not exist on type '{ response?: string | undefined; stats?: any; state?: boolean | undefined; }'.
+test/nucleus.test.ts(127,5): error TS2322: Type '(enabled: boolean) => (store: { response?: string | undefined; stats?: any; state?: boolean | undefined; }) => { response?: string | undefined; stats?: any; state?: boolean | undefined; }' is not assignable to type '(Iw_0: boolean) => (zel: { response?: string | undefined; stats?: any; state?: boolean | undefined; }, tr: ITTestResourceConfiguration, utils: PM) => Promise<...>'.
+  Call signature return types '(store: { response?: string | undefined; stats?: any; state?: boolean | undefined; }) => { response?: string | undefined; stats?: any; state?: boolean | undefined; }' and '(zel: { response?: string | undefined; stats?: any; state?: boolean | undefined; }, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }) => Promise<...>>' are incompatible.
+    Type '{ response?: string | undefined; stats?: any; state?: boolean | undefined; }' is missing the following properties from type 'Promise<(store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }) => Promise<{ nucleus: Nucleus; input: string; context?: string[] | undefined; }>>': then, catch, finally, [Symbol.toStringTag]
+test/nucleus.test.ts(131,24): error TS2322: Type '(store: { response?: string | undefined; stats?: any; state?: boolean | undefined; }) => { response?: string | undefined; stats?: any; state?: boolean | undefined; }' is not assignable to type '(zel: { response?: string | undefined; stats?: any; state?: boolean | undefined; }, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }) => Promise<...>>'.
+  Type '{ response?: string | undefined; stats?: any; state?: boolean | undefined; }' is missing the following properties from type 'Promise<(store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }) => Promise<{ nucleus: Nucleus; input: string; context?: string[] | undefined; }>>': then, catch, finally, [Symbol.toStringTag]
+test/nucleus.test.ts(135,25): error TS2322: Type '(store: { response?: string | undefined; stats?: any; state?: boolean | undefined; }) => { response?: string | undefined; stats?: any; state?: boolean | undefined; }' is not assignable to type '(zel: { response?: string | undefined; stats?: any; state?: boolean | undefined; }, tr: ITTestResourceConfiguration, utils: PM) => Promise<(store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }) => Promise<...>>'.
+  Type '{ response?: string | undefined; stats?: any; state?: boolean | undefined; }' is missing the following properties from type 'Promise<(store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }) => Promise<{ nucleus: Nucleus; input: string; context?: string[] | undefined; }>>': then, catch, finally, [Symbol.toStringTag]
+test/nucleus.test.ts(141,27): error TS2322: Type '(store: { response?: string | undefined; stats?: any; state?: boolean | undefined; }) => Promise<{ response?: string | undefined; stats?: any; state?: boolean | undefined; }>' is not assignable to type '(ssel: { response?: string | undefined; stats?: any; state?: boolean | undefined; }, utils: PM) => (store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }) => Promise<...>'.
+  Type 'Promise<{ response?: string | undefined; stats?: any; state?: boolean | undefined; }>' is not assignable to type '(store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }) => Promise<{ nucleus: Nucleus; input: string; context?: string[] | undefined; }>'.
+    Type 'Promise<{ response?: string | undefined; stats?: any; state?: boolean | undefined; }>' provides no match for the signature '(store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }): Promise<{ nucleus: Nucleus; input: string; context?: string[] | undefined; }>'.
+test/nucleus.test.ts(145,5): error TS2322: Type '(expected: boolean) => (store: { response?: string | undefined; stats?: any; state?: boolean | undefined; }) => { response?: string | undefined; stats?: any; state?: boolean | undefined; }' is not assignable to type '(It_0: boolean) => (ssel: { response?: string | undefined; stats?: any; state?: boolean | undefined; }, utils: PM) => (store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }) => Promise<...>'.
+  Call signature return types '(store: { response?: string | undefined; stats?: any; state?: boolean | undefined; }) => { response?: string | undefined; stats?: any; state?: boolean | undefined; }' and '(ssel: { response?: string | undefined; stats?: any; state?: boolean | undefined; }, utils: PM) => (store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }) => Promise<...>' are incompatible.
+    Type '{ response?: string | undefined; stats?: any; state?: boolean | undefined; }' is not assignable to type '(store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }) => Promise<{ nucleus: Nucleus; input: string; context?: string[] | undefined; }>'.
+      Type '{ response?: string | undefined; stats?: any; state?: boolean | undefined; }' provides no match for the signature '(store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }): Promise<{ nucleus: Nucleus; input: string; context?: string[] | undefined; }>'.
+test/nucleus.test.ts(149,5): error TS2322: Type '(minCoverage: number) => (store: { response?: string | undefined; stats?: any; state?: boolean | undefined; }) => Promise<{ response?: string | undefined; stats?: any; state?: boolean | undefined; }>' is not assignable to type '(It_0: number) => (ssel: { response?: string | undefined; stats?: any; state?: boolean | undefined; }, utils: PM) => (store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }) => Promise<...>'.
+  Call signature return types '(store: { response?: string | undefined; stats?: any; state?: boolean | undefined; }) => Promise<{ response?: string | undefined; stats?: any; state?: boolean | undefined; }>' and '(ssel: { response?: string | undefined; stats?: any; state?: boolean | undefined; }, utils: PM) => (store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }) => Promise<...>' are incompatible.
+    Type 'Promise<{ response?: string | undefined; stats?: any; state?: boolean | undefined; }>' is not assignable to type '(store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }) => Promise<{ nucleus: Nucleus; input: string; context?: string[] | undefined; }>'.
+      Type 'Promise<{ response?: string | undefined; stats?: any; state?: boolean | undefined; }>' provides no match for the signature '(store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }): Promise<{ nucleus: Nucleus; input: string; context?: string[] | undefined; }>'.
+test/nucleus.test.ts(153,5): error TS2322: Type '(maxCount: number) => (store: { response?: string | undefined; stats?: any; state?: boolean | undefined; }) => Promise<{ response?: string | undefined; stats?: any; state?: boolean | undefined; }>' is not assignable to type '(It_0: number) => (ssel: { response?: string | undefined; stats?: any; state?: boolean | undefined; }, utils: PM) => (store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }) => Promise<...>'.
+  Call signature return types '(store: { response?: string | undefined; stats?: any; state?: boolean | undefined; }) => Promise<{ response?: string | undefined; stats?: any; state?: boolean | undefined; }>' and '(ssel: { response?: string | undefined; stats?: any; state?: boolean | undefined; }, utils: PM) => (store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }) => Promise<...>' are incompatible.
+    Type 'Promise<{ response?: string | undefined; stats?: any; state?: boolean | undefined; }>' is not assignable to type '(store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }) => Promise<{ nucleus: Nucleus; input: string; context?: string[] | undefined; }>'.
+      Type 'Promise<{ response?: string | undefined; stats?: any; state?: boolean | undefined; }>' provides no match for the signature '(store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }): Promise<{ nucleus: Nucleus; input: string; context?: string[] | undefined; }>'.
+test/nucleus.test.ts(157,5): error TS2322: Type '(handlerName: string) => (store: { response?: string | undefined; stats?: any; state?: boolean | undefined; }) => Promise<{ response?: string | undefined; stats?: any; state?: boolean | undefined; }>' is not assignable to type '(It_0: string) => (ssel: { response?: string | undefined; stats?: any; state?: boolean | undefined; }, utils: PM) => (store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }) => Promise<...>'.
+  Call signature return types '(store: { response?: string | undefined; stats?: any; state?: boolean | undefined; }) => Promise<{ response?: string | undefined; stats?: any; state?: boolean | undefined; }>' and '(ssel: { response?: string | undefined; stats?: any; state?: boolean | undefined; }, utils: PM) => (store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }) => Promise<...>' are incompatible.
+    Type 'Promise<{ response?: string | undefined; stats?: any; state?: boolean | undefined; }>' is not assignable to type '(store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }) => Promise<{ nucleus: Nucleus; input: string; context?: string[] | undefined; }>'.
+      Type 'Promise<{ response?: string | undefined; stats?: any; state?: boolean | undefined; }>' provides no match for the signature '(store: { nucleus: Nucleus; input: string; context?: string[] | undefined; }): Promise<{ nucleus: Nucleus; input: string; context?: string[] | undefined; }>'.
+test/nucleus.test.ts(170,16): error TS2554: Expected 3 arguments, but got 2.
+test/nucleus.test.ts(186,3): error TS2345: Argument of type 'Nucleus' is not assignable to parameter of type 'null'.
+test/specs/autonomy.spec.ts(31,37): error TS2314: Generic type 'ITestSpecification' requires 2 type argument(s).
+test/specs/changeValidator.spec.ts(15,44): error TS2314: Generic type 'ITestSpecification' requires 2 type argument(s).
+test/specs/economicVerifier.spec.ts(15,45): error TS2314: Generic type 'ITestSpecification' requires 2 type argument(s).
+test/specs/goalEngine.spec.ts(18,39): error TS2314: Generic type 'ITestSpecification' requires 2 type argument(s).
+test/specs/identityEngine.spec.ts(30,43): error TS2314: Generic type 'ITestSpecification' requires 2 type argument(s).
+test/specs/llm.spec.ts(21,32): error TS2314: Generic type 'ITestSpecification' requires 2 type argument(s).
+test/specs/memory.spec.ts(23,35): error TS2314: Generic type 'ITestSpecification' requires 2 type argument(s).
+test/specs/nucleus.spec.ts(32,36): error TS2314: Generic type 'ITestSpecification' requires 2 type argument(s).
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

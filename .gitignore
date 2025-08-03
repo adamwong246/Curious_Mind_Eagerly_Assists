@@ -24,7 +24,7 @@ node_modules/
 dist/
 .npm
 .eslintcache
-*.log
+
 logs/
 .DS_Store
 
@@ -48,3 +48,5 @@ chroma-storage/
 # Aider
 .aider*
 .history/
+
+testeranto/bundle

@@ -1,0 +1,11 @@
+stderr > goodbye node with caught error TypeError: When.verifyDependencies is not a function
+    at IdentityEngineSpecification (file:///Users/adam/Code/untitledAiProject0/testeranto/bundles/node/core/test/identityEngine.test.mjs:54:14)
+    at new BaseBuilder (file:///Users/adam/Code/untitledAiProject0/testeranto/bundles/node/core/chunk-LFLTOQ4W.mjs:479:18)
+    at new ClassBuilder (file:///Users/adam/Code/untitledAiProject0/testeranto/bundles/node/core/chunk-LFLTOQ4W.mjs:613:5)
+    at new TesterantoCore (file:///Users/adam/Code/untitledAiProject0/testeranto/bundles/node/core/chunk-LFLTOQ4W.mjs:722:5)
+    at new NodeTesteranto (file:///Users/adam/Code/untitledAiProject0/testeranto/bundles/node/core/chunk-LFLTOQ4W.mjs:987:5)
+    at testeranto (file:///Users/adam/Code/untitledAiProject0/testeranto/bundles/node/core/chunk-LFLTOQ4W.mjs:1006:15)
+    at file:///Users/adam/Code/untitledAiProject0/testeranto/bundles/node/core/test/identityEngine.test.mjs:156:35
+    at ModuleJob.run (node:internal/modules/esm/module_job:192:25)
+    at async DefaultModuleLoader.import (node:internal/modules/esm/loader:228:24)
+    at async loadESM (node:internal/process/esm_loader:40:7)

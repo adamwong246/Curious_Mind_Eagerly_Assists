@@ -10,5 +10,21 @@
   "test/nucleus.test.ts": {
     "runTimeErrors": -1,
     "failingFeatures": {}
+  },
+  "test/changeValidator.test.ts": {
+    "runTimeErrors": 1,
+    "failingFeatures": {}
+  },
+  "test/economicVerifier.test.ts": {
+    "runTimeErrors": 0,
+    "failingFeatures": {}
+  },
+  "test/identityEngine.test.ts": {
+    "runTimeErrors": -1,
+    "failingFeatures": {}
+  },
+  "test/goalEngine.test.ts": {
+    "runTimeErrors": -1,
+    "failingFeatures": {}
   }
 }

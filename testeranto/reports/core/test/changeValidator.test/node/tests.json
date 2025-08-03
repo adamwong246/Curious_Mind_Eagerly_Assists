@@ -1,0 +1,100 @@
+{
+  "name": "Validation Scenarios",
+  "givens": [
+    {
+      "key": "validTest",
+      "name": "Default",
+      "whens": [
+        {
+          "name": "validateChange: [object Object]",
+          "artifacts": []
+        }
+      ],
+      "thens": [
+        {
+          "name": "verifyValidation: [object Object]",
+          "error": "TypeError: store.validator.validateChange is not a function",
+          "artifacts": []
+        }
+      ],
+      "error": null,
+      "features": [
+        "Should accept valid change"
+      ],
+      "artifacts": []
+    },
+    {
+      "key": "invalidTest",
+      "name": "Default",
+      "whens": [
+        {
+          "name": "validateChange: [object Object]",
+          "artifacts": []
+        }
+      ],
+      "thens": [
+        {
+          "name": "verifyValidation: [object Object]",
+          "error": "TypeError: store.validator.validateChange is not a function",
+          "artifacts": []
+        }
+      ],
+      "error": null,
+      "features": [
+        "Should catch multiple violations"
+      ],
+      "artifacts": []
+    },
+    {
+      "key": "warningTest",
+      "name": "Default",
+      "whens": [
+        {
+          "name": "validateChange: [object Object]",
+          "artifacts": []
+        }
+      ],
+      "thens": [
+        {
+          "name": "verifyValidation: [object Object]",
+          "error": "TypeError: store.validator.validateChange is not a function",
+          "artifacts": []
+        }
+      ],
+      "error": null,
+      "features": [
+        "Should generate warnings"
+      ],
+      "artifacts": []
+    },
+    {
+      "key": "behaviorTest",
+      "name": "Default",
+      "whens": [
+        {
+          "name": "validateChange: [object Object]",
+          "artifacts": []
+        }
+      ],
+      "thens": [
+        {
+          "name": "verifyValidation: [object Object]",
+          "error": "TypeError: store.validator.validateChange is not a function",
+          "artifacts": []
+        }
+      ],
+      "error": null,
+      "features": [
+        "Should reject behavior-breaking change"
+      ],
+      "artifacts": []
+    }
+  ],
+  "fails": 0,
+  "features": [
+    "Should accept valid change",
+    "Should catch multiple violations",
+    "Should generate warnings",
+    "Should reject behavior-breaking change"
+  ]
+}

@@ -1,3 +1,5 @@
+import { MemorySpecification } from "./specs/memory.spec";
+
 import Testeranto from "testeranto/src/Node";
 import { Ibdd_in, Ibdd_out, ITestImplementation, ITestSpecification } from 'testeranto/src/CoreTypes';
 import { MemoryManager } from '../src/memory';
@@ -5,23 +7,31 @@ import { MemoryManager } from '../src/memory';
 type I = Ibdd_in<
   null,
   MemoryManager,
-  { manager: MemoryManager, query: string },
-  string[],
+  { manager: MemoryManager, query: string, url?: string },
+  string[] | boolean,
   () => MemoryManager,
-  (store: { manager: MemoryManager, query: string }) => { manager: MemoryManager, query: string },
-  (store: { manager: MemoryManager, query: string }) => { manager: MemoryManager, query: string }
+  (store: { manager: MemoryManager, query: string, url?: string }) => 
+    { manager: MemoryManager, query: string, url?: string },
+  (store: { manager: MemoryManager, query: string, url?: string }) => 
+    { manager: MemoryManager, query: string, url?: string }
 >;
 
 type O = Ibdd_out<
   { Default: ['MemoryManager Test Suite'] },
   { Default: [] },
   {
-    storeMessage: [string, string];
+    storeInteraction: [string, string];
     getContext: [string];
+    scrapePage: [string];
+    getStats: [];
+    getScraped: [string?];
   },
   {
-    verifyMessageCount: [number];
-    verifyMessageContent: [string];
+    verifyContextCount: [number];
+    verifyContextContent: [string];
+    verifyScrapeSuccess: [];
+    verifyStats: [];
+    verifyScrapedContent: [string?];
   }
 >;
 
@@ -30,67 +40,79 @@ const implementation: ITestImplementation<I, O> = {
     Default: 'MemoryManager Test Suite'
   },
   givens: {
-    Default: () => {
+    Default: async () => {
       const manager = new MemoryManager();
+      // Stub initialization
+      if (typeof manager.initialize === 'function') {
+        await manager.initialize();
+      }
       return { manager, query: 'test query' };
     }
   },
   whens: {
-    storeMessage: (input: string, output: string) => (store) => {
+    storeInteraction: (input: string, output: string) => (store) => {
       store.manager.storeInteraction(input, output);
       return store;
     },
     getContext: (query: string) => (store) => {
       store.query = query;
       return store;
+    },
+    scrapePage: (url: string) => (store) => {
+      store.url = url;
+      return store;
+    },
+    getStats: () => (store) => store,
+    getScraped: (url?: string) => (store) => {
+      store.url = url;
+      return store;
     }
   },
   thens: {
-    verifyMessageCount: (expected: number) => (store) => {
-      const actual = store.manager.getRelevantContext(store.query).length;
-      if (actual !== expected) {
-        throw new Error(`Expected ${expected} messages, got ${actual}`);
+    verifyContextCount: (expected: number) => async (store) => {
+      const context = await store.manager.getRelevantContext(store.query);
+      if (context.length !== expected) {
+        throw new Error(`Expected ${expected} messages, got ${context.length}`);
       }
       return store;
     },
-    verifyMessageContent: (expected: string) => (store) => {
+    verifyContextContent: (expected: string) => (store) => {
       const messages = store.manager.getRelevantContext(store.query);
       if (!messages.some(msg => msg.includes(expected))) {
         throw new Error(`Expected message containing "${expected}" not found`);
+      }
+      return store;
+    },
+    verifyScrapeSuccess: () => async (store) => {
+      if (!store.url) throw new Error('No URL specified');
+      const success = await store.manager.scrapeAndStoreWebpage(store.url);
+      if (!success) {
+        throw new Error('Scrape failed');
+      }
+      return store;
+    },
+    verifyStats: () => async (store) => {
+      const stats = await store.manager.getMemoryStats();
+      if (typeof stats.shortTerm !== 'number') {
+        throw new Error('Invalid stats returned');
+      }
+      return store;
+    },
+    verifyScrapedContent: (url?: string) => async (store) => {
+      const content = await store.manager.getScrapedContent(url);
+      if (!Array.isArray(content)) {
+        throw new Error('Invalid scraped content format');
       }
       return store;
     }
   }
 };
 
-const specification: ITestSpecification<I, O> = (Suite, Given, When, Then) => [
-  Suite.Default('Basic Operations', {
-    emptyTest: Given.Default(
-      ['Should start with empty memory'],
-      [],
-      [Then.verifyMessageCount(0)]
-    ),
-    storeTest: Given.Default(
-      ['Should store messages'],
-      [When.storeMessage('hello', 'hi there')],
-      [Then.verifyMessageCount(1), Then.verifyMessageContent('hello')]
-    ),
-    contextTest: Given.Default(
-      ['Should retrieve context'],
-      [
-        When.storeMessage('msg1', 'response1'),
-        When.storeMessage('msg2', 'response2'),
-        When.getContext('test')
-      ],
-      [Then.verifyMessageCount(2)]
-    )
-  })
-];
 
 const adapter = {
   beforeEach: async (subject, initializer) => {
     const manager = initializer();
-    await manager.connect();
+    await manager.initialize();
     return { manager, query: 'test query' };
   },
   andWhen: async (store, whenCB) => whenCB(store),
@@ -103,7 +125,7 @@ const adapter = {
 
 export default Testeranto(
   MemoryManager.prototype,
-  specification,
+  MemorySpecification,
   implementation,
   adapter,
 )

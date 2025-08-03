@@ -23,6 +23,38 @@
         "ports": 0
       },
       []
+    ],
+    [
+      "test/changeValidator.test.ts",
+      "node",
+      {
+        "ports": 0
+      },
+      []
+    ],
+    [
+      "test/economicVerifier.test.ts",
+      "node",
+      {
+        "ports": 0
+      },
+      []
+    ],
+    [
+      "test/identityEngine.test.ts",
+      "node",
+      {
+        "ports": 0
+      },
+      []
+    ],
+    [
+      "test/goalEngine.test.ts",
+      "node",
+      {
+        "ports": 0
+      },
+      []
     ]
   ],
   "ports": [
